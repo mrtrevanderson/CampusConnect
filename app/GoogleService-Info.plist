@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>114123943431-p77goi68b9rb2mmlhvccn02175hg14ha.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.114123943431-p77goi68b9rb2mmlhvccn02175hg14ha</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDiuLHfI2bf4QU8yR6OE2ShVBq_43Yk7TU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>114123943431</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.relatedcode.chat</string>
+	<key>PROJECT_ID</key>
+	<string>messenger47-61ca2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>messenger47-61ca2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:114123943431:ios:8a9354d6483948fd</string>
+	<key>DATABASE_URL</key>
+	<string>https://messenger47-61ca2.firebaseio.com</string>
+</dict>
+</plist>
