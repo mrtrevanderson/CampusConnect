@@ -1,15 +1,4 @@
-//
-// Copyright (c) 2018 Related Code - http://relatedcode.com
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
 class SettingsView: UITableViewController {
 
 	@IBOutlet var viewHeader: UIView!
@@ -275,7 +264,7 @@ class SettingsView: UITableViewController {
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	override func numberOfSections(in tableView: UITableView) -> Int {
 
-		return 6
+		return 4
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
@@ -285,8 +274,8 @@ class SettingsView: UITableViewController {
 
 		if (section == 0) { return emailLogin ? 2 : 1				}
 		if (section == 1) { return 1								}
-		if (section == 2) { return 5								}
-		if (section == 3) { return 2								}
+		if (section == 2) { return 1								}
+		if (section == 3) { return 1								}
 		if (section == 4) { return emailLogin ? 2 : 0				}
 		if (section == 5) { return (Account.count() > 1) ? 2 : 1	}
 		
@@ -297,6 +286,9 @@ class SettingsView: UITableViewController {
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 
 		if (section == 1) { return "Status" }
+        if (section == 2) { return "Message Background" }
+        if (section == 3) { return "     " }
+
 
 		return nil
 	}
@@ -307,17 +299,8 @@ class SettingsView: UITableViewController {
 		if (indexPath.section == 0) && (indexPath.row == 0) { return cellProfile			}
 		if (indexPath.section == 0) && (indexPath.row == 1) { return cellPassword			}
 		if (indexPath.section == 1) && (indexPath.row == 0) { return cellStatus				}
-		if (indexPath.section == 2) && (indexPath.row == 0) { return cellBlocked			}
-		if (indexPath.section == 2) && (indexPath.row == 1) { return cellArchive			}
-		if (indexPath.section == 2) && (indexPath.row == 2) { return cellCache				}
-		if (indexPath.section == 2) && (indexPath.row == 3) { return cellMedia				}
-		if (indexPath.section == 2) && (indexPath.row == 4) { return cellWallpapers			}
-		if (indexPath.section == 3) && (indexPath.row == 0) { return cellPrivacy			}
-		if (indexPath.section == 3) && (indexPath.row == 1) { return cellTerms				}
-		if (indexPath.section == 4) && (indexPath.row == 0) { return cellAddAccount			}
-		if (indexPath.section == 4) && (indexPath.row == 1) { return cellSwitchAccount		}
-		if (indexPath.section == 5) && (indexPath.row == 0) { return cellLogout				}
-		if (indexPath.section == 5) && (indexPath.row == 1) { return cellLogoutAll			}
+		if (indexPath.section == 2) && (indexPath.row == 0) { return cellWallpapers			}
+		if (indexPath.section == 3) && (indexPath.row == 0) { return cellLogout				}
 
 		return UITableViewCell()
 	}
@@ -331,16 +314,7 @@ class SettingsView: UITableViewController {
 		if (indexPath.section == 0) && (indexPath.row == 0) { actionProfile()			}
 		if (indexPath.section == 0) && (indexPath.row == 1) { actionPassword()			}
 		if (indexPath.section == 1) && (indexPath.row == 0) { actionStatus()			}
-		if (indexPath.section == 2) && (indexPath.row == 0) { actionBlocked()			}
-		if (indexPath.section == 2) && (indexPath.row == 1) { actionArchive()			}
-		if (indexPath.section == 2) && (indexPath.row == 2) { actionCache()				}
-		if (indexPath.section == 2) && (indexPath.row == 3) { actionMedia()				}
-		if (indexPath.section == 2) && (indexPath.row == 4) { actionWallpapers()		}
-		if (indexPath.section == 3) && (indexPath.row == 0) { actionPrivacy()			}
-		if (indexPath.section == 3) && (indexPath.row == 1) { actionTerms()				}
-		if (indexPath.section == 4) && (indexPath.row == 0) { actionAddAccount()		}
-		if (indexPath.section == 4) && (indexPath.row == 1) { actionSwitchAccount()		}
-		if (indexPath.section == 5) && (indexPath.row == 0) { actionLogout()			}
-		if (indexPath.section == 5) && (indexPath.row == 1) { actionLogoutAll()			}
+		if (indexPath.section == 2) && (indexPath.row == 0) { actionWallpapers()		}
+		if (indexPath.section == 3) && (indexPath.row == 0) { actionLogout()			}
 	}
 }

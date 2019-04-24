@@ -118,19 +118,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SINServiceDelegate, SINCa
 		window = UIWindow(frame: UIScreen.main.bounds)
 
 		chatsView = ChatsView(nibName: "ChatsView", bundle: nil)
-		callsView = CallsView(nibName: "CallsView", bundle: nil)
 		peopleView = PeopleView(nibName: "PeopleView", bundle: nil)
-		groupsView = GroupsView(nibName: "GroupsView", bundle: nil)
 		settingsView = SettingsView(nibName: "SettingsView", bundle: nil)
 
 		let navController1 = NavigationController(rootViewController: chatsView)
-		let navController2 = NavigationController(rootViewController: callsView)
 		let navController3 = NavigationController(rootViewController: peopleView)
-		let navController4 = NavigationController(rootViewController: groupsView)
 		let navController5 = NavigationController(rootViewController: settingsView)
 
 		tabBarController = UITabBarController()
-		tabBarController.viewControllers = [navController1, navController2, navController3, navController4, navController5]
+		tabBarController.viewControllers = [navController1, navController3 , navController5]
 		tabBarController.tabBar.isTranslucent = false
 		tabBarController.selectedIndex = Int(DEFAULT_TAB)
 
@@ -138,9 +134,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SINServiceDelegate, SINCa
 		window?.makeKeyAndVisible()
 
 		_ = chatsView.view
-		_ = callsView.view
 		_ = peopleView.view
-		_ = groupsView.view
 		_ = settingsView.view
 
 

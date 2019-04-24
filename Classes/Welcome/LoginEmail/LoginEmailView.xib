@@ -22,7 +22,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tq2-dv-c6I">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="campus_connect_logo_black.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tq2-dv-c6I">
                     <rect key="frame" x="120" y="90" width="80" height="80"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="hih-bJ-qNl"/>
@@ -138,6 +138,6 @@
         </view>
     </objects>
     <resources>
-        <image name="welcome_logo.png" width="360" height="360"/>
+        <image name="campus_connect_logo_black.png" width="299" height="300"/>
     </resources>
 </document>

@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchscreen_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="wZt-bn-hmY">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="campus_connect_logo_black.png" translatesAutoresizingMaskIntoConstraints="NO" id="wZt-bn-hmY">
                                 <rect key="frame" x="95" y="219" width="130" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="TAW-Cs-Jop"/>
@@ -42,6 +42,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launchscreen_logo.png" width="130" height="130"/>
+        <image name="campus_connect_logo_black.png" width="299" height="300"/>
     </resources>
 </document>

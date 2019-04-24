@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="pqY-FQ-3aY">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="campus_connect_logo.png" highlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pqY-FQ-3aY">
                     <rect key="frame" x="95" y="110" width="130" height="130"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="130" id="1vW-nc-RuT"/>
@@ -85,6 +85,6 @@
         </view>
     </objects>
     <resources>
-        <image name="welcome_logo.png" width="360" height="360"/>
+        <image name="campus_connect_logo.png" width="299" height="300"/>
     </resources>
 </document>
