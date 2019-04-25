@@ -432,7 +432,6 @@
 		29BB8FCC1F5C266100560F3F /* wallpaper_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29BB8F841F5C266100560F3F /* wallpaper_selected@2x.png */; };
 		29C299631F8A647B00DB8BF0 /* addfriends_blank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C299621F8A647B00DB8BF0 /* addfriends_blank@2x.png */; };
 		29C4BD3A2095EA900047886E /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C4BD382095EA900047886E /* UserStatus.swift */; };
-		29CAE58720971787000D857D /* ChatGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CAE58620971786000D857D /* ChatGroupView.swift */; };
 		29D29EF91D9A59E4006CA074 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D29EF81D9A59E4006CA074 /* AppDelegate.swift */; };
 		29D29F011D9A59E4006CA074 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29D29F001D9A59E4006CA074 /* Assets.xcassets */; };
 		29D29F041D9A59E4006CA074 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29D29F021D9A59E4006CA074 /* LaunchScreen.storyboard */; };
@@ -941,7 +940,6 @@
 		29BB8F841F5C266100560F3F /* wallpaper_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wallpaper_selected@2x.png"; sourceTree = "<group>"; };
 		29C299621F8A647B00DB8BF0 /* addfriends_blank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addfriends_blank@2x.png"; sourceTree = "<group>"; };
 		29C4BD382095EA900047886E /* UserStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStatus.swift; sourceTree = "<group>"; };
-		29CAE58620971786000D857D /* ChatGroupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatGroupView.swift; sourceTree = "<group>"; };
 		29D29EF11D9A59E4006CA074 /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29D29EF81D9A59E4006CA074 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29D29F001D9A59E4006CA074 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1097,7 +1095,6 @@
 		29601FE31F2CF5F600544468 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				29CAE58620971786000D857D /* ChatGroupView.swift */,
 				29601FE51F2CF5F600544468 /* ChatPrivateView.swift */,
 				295C70C11FE0486700109DF0 /* DialogflowView.swift */,
 			);
@@ -3087,7 +3084,6 @@
 				29AA54BD20D3B3DA004067FE /* RelayManager.swift in Sources */,
 				294E496D1F8A6AA800045345 /* AddFriendsCell.swift in Sources */,
 				29D7605920EFD49D006C7148 /* RCAudioMessageCell.swift in Sources */,
-				29CAE58720971787000D857D /* ChatGroupView.swift in Sources */,
 				296021CE1F2CF5F600544468 /* Cryptor.swift in Sources */,
 				29D7605F20EFD49E006C7148 /* RCBubbleHeaderCell.swift in Sources */,
 				29DC391A20EF76E1004E41BE /* FUser+Util.swift in Sources */,

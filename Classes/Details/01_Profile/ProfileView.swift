@@ -22,14 +22,11 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 	@IBOutlet var cellCountry: UITableViewCell!
 	@IBOutlet var cellLocation: UITableViewCell!
 	@IBOutlet var cellPhone: UITableViewCell!
-	@IBOutlet var buttonCallPhone: UIButton!
 	@IBOutlet var cellMedia: UITableViewCell!
 	@IBOutlet var cellChat: UITableViewCell!
 	@IBOutlet var cellFriend: UITableViewCell!
-	@IBOutlet var cellBlock: UITableViewCell!
 
 	private var userId = ""
-	private var isBlocker = false
 	private var isChatEnabled = false
 	private var timer: Timer?
 	private var dbuser: DBUser!
@@ -40,7 +37,6 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 		userId = userId_
 		isChatEnabled = chat_
 
-		isBlocker = Blocker.isBlocker(userId: userId)
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
@@ -98,10 +94,8 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 		cellCountry.detailTextLabel?.text = dbuser.country
 		cellLocation.detailTextLabel?.text = dbuser.location
 
-		buttonCallPhone.setTitle(dbuser.phone, for: .normal)
 
 		cellFriend.textLabel?.text = Friend.isFriend(userId: userId) ? "Remove Friend" : "Add Friend"
-		cellBlock.textLabel?.text = Blocked.isBlocked(userId: userId) ? "Unblock User" : "Block User"
 
 		tableView.reloadData()
 	}
@@ -261,9 +255,9 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-		if (section == 0) {		return isBlocker ? 3 : 4		}
+		if (section == 0) {		return 3 }
 		if (section == 1) {		return isChatEnabled ? 2 : 1	}
-		if (section == 2) {		return 2						}
+		if (section == 2) {		return 1						}
 
 		return 0
 	}
@@ -274,11 +268,9 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 		if (indexPath.section == 0) && (indexPath.row == 0) {	return cellStatus			}
 		if (indexPath.section == 0) && (indexPath.row == 1) {	return cellCountry			}
 		if (indexPath.section == 0) && (indexPath.row == 2) {	return cellLocation			}
-		if (indexPath.section == 0) && (indexPath.row == 3) {	return cellPhone			}
 		if (indexPath.section == 1) && (indexPath.row == 0) {	return cellMedia			}
 		if (indexPath.section == 1) && (indexPath.row == 1) {	return cellChat				}
 		if (indexPath.section == 2) && (indexPath.row == 0) {	return cellFriend			}
-		if (indexPath.section == 2) && (indexPath.row == 1) {	return cellBlock			}
 
 		return UITableViewCell()
 	}
@@ -292,6 +284,5 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 		if (indexPath.section == 1) && (indexPath.row == 0) {	actionMedia()				}
 		if (indexPath.section == 1) && (indexPath.row == 1) {	actionChatPrivate()			}
 		if (indexPath.section == 2) && (indexPath.row == 0) {	actionFriendOrUnfriend()	}
-		if (indexPath.section == 2) && (indexPath.row == 1) {	actionBlockOrUnblock()		}
 	}
 }

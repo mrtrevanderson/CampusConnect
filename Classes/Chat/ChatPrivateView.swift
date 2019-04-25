@@ -393,7 +393,6 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		let dbuser = DBUser.objects(with: predicate).firstObject() as! DBUser
 
 		labelTitle1.text = dbuser.fullname
-		labelTitle2.text = UserLastActive(dbuser: dbuser)
 	}
 
 	// MARK: - Refresh methods

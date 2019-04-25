@@ -18,7 +18,7 @@ target 'app' do
 	pod 'Realm'
 	pod 'SinchRTC'
 	pod 'SinchVerification'
-
+	pod 'Fabric'
 	pod 'MBProgressHUD'
 	pod 'MGSwipeTableCell'
 	pod 'NYTPhotoViewer', '1.2.0'

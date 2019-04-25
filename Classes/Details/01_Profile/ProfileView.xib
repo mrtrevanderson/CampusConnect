@@ -12,14 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileView">
             <connections>
-                <outlet property="buttonCallPhone" destination="Oru-V3-8Dx" id="cX9-9u-NwQ"/>
-                <outlet property="cellBlock" destination="l9I-wg-8Da" id="83A-oc-ZTJ"/>
                 <outlet property="cellChat" destination="aOd-kf-7ia" id="zLo-Ka-QZL"/>
                 <outlet property="cellCountry" destination="MCx-Oc-8cz" id="tJy-hf-eSF"/>
                 <outlet property="cellFriend" destination="SWU-kN-TQb" id="oPT-cd-oTw"/>
                 <outlet property="cellLocation" destination="sJh-QA-NH8" id="K6F-ac-iAt"/>
                 <outlet property="cellMedia" destination="74l-f0-fKy" id="cpe-rY-HlH"/>
-                <outlet property="cellPhone" destination="vH9-SI-ypF" id="Dum-bj-4iD"/>
                 <outlet property="cellStatus" destination="OiJ-DS-LfB" id="3NC-0K-CdS"/>
                 <outlet property="imageUser" destination="b1o-fd-eKH" id="u6z-Ns-K0J"/>
                 <outlet property="labelDetails" destination="Yze-2E-uZC" id="r3N-cK-e7O"/>
@@ -200,56 +197,6 @@
             </tableViewCellContentView>
             <point key="canvasLocation" x="415" y="-15"/>
         </tableViewCell>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vH9-SI-ypF">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-            <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vH9-SI-ypF" id="T02-2i-B0h">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oru-V3-8Dx">
-                        <rect key="frame" x="16" y="0.0" width="180" height="50"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <connections>
-                            <action selector="actionCallPhone:" destination="-1" eventType="touchUpInside" id="fAj-22-qfi"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKo-9p-rK6">
-                        <rect key="frame" x="202" y="3" width="50" height="45"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="50" id="oGH-Pq-8nS"/>
-                        </constraints>
-                        <state key="normal" image="profile_callaudio.png"/>
-                        <connections>
-                            <action selector="actionCallAudio:" destination="-1" eventType="touchUpInside" id="6b6-0M-OCb"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3X-ut-1ux">
-                        <rect key="frame" x="252" y="2" width="50" height="45"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="50" id="R55-2d-auP"/>
-                        </constraints>
-                        <state key="normal" image="profile_callvideo.png"/>
-                        <connections>
-                            <action selector="actionCallVideo:" destination="-1" eventType="touchUpInside" id="qtc-WD-y0B"/>
-                        </connections>
-                    </button>
-                </subviews>
-                <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="Oru-V3-8Dx" secondAttribute="trailing" constant="108" id="HaF-B6-pjd"/>
-                    <constraint firstItem="Oru-V3-8Dx" firstAttribute="leading" secondItem="T02-2i-B0h" secondAttribute="leadingMargin" id="IEj-ST-x6T"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="dKo-9p-rK6" secondAttribute="bottom" constant="-9" id="MAw-dk-ftq"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="d3X-ut-1ux" secondAttribute="bottom" constant="-8" id="V2Z-5j-KEt"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="d3X-ut-1ux" secondAttribute="trailing" constant="2" id="VOY-6M-4bh"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="dKo-9p-rK6" secondAttribute="trailing" constant="52" id="fqa-Mp-ife"/>
-                    <constraint firstItem="dKo-9p-rK6" firstAttribute="top" secondItem="T02-2i-B0h" secondAttribute="topMargin" constant="-8" id="phv-bU-lQ2"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Oru-V3-8Dx" secondAttribute="bottom" constant="-11" id="ueT-Xl-Bwd"/>
-                    <constraint firstItem="d3X-ut-1ux" firstAttribute="top" secondItem="T02-2i-B0h" secondAttribute="topMargin" constant="-9" id="xKG-ru-eU2"/>
-                    <constraint firstItem="Oru-V3-8Dx" firstAttribute="top" secondItem="T02-2i-B0h" secondAttribute="topMargin" constant="-11" id="xO6-R5-owK"/>
-                </constraints>
-            </tableViewCellContentView>
-            <point key="canvasLocation" x="415" y="79"/>
-        </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="6b0-44-N3W" style="IBUITableViewCellStyleDefault" id="74l-f0-fKy">
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
@@ -304,28 +251,8 @@
             </tableViewCellContentView>
             <point key="canvasLocation" x="415" y="365"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="V51-hK-O1v" style="IBUITableViewCellStyleDefault" id="l9I-wg-8Da">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-            <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l9I-wg-8Da" id="FuJ-6T-tu6">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Block User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V51-hK-O1v">
-                        <rect key="frame" x="16" y="0.0" width="288" height="49.5"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                </subviews>
-            </tableViewCellContentView>
-            <point key="canvasLocation" x="415" y="458"/>
-        </tableViewCell>
     </objects>
     <resources>
         <image name="profile_blank.png" width="70" height="70"/>
-        <image name="profile_callaudio.png" width="35.200000762939453" height="35.200000762939453"/>
-        <image name="profile_callvideo.png" width="35.200000762939453" height="35.200000762939453"/>
     </resources>
 </document>
