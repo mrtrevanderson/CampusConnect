@@ -202,48 +202,14 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 
 	// MARK: - User actions (Block/Unblock)
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionBlockOrUnblock() {
-
-		Blocked.isBlocked(userId: userId) ? actionUnblock() : actionBlock()
-	}
+	
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionBlock() {
-
-		let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-
-		alert.addAction(UIAlertAction(title: "Block User", style: .destructive, handler: { action in
-			self.actionBlockUser()
-		}))
-		alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-
-		present(alert, animated: true)
-	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionBlockUser() {
-
-		AdvertPremium(target: self);
-	}
-
+	
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionUnblock() {
 
-		let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-
-		alert.addAction(UIAlertAction(title: "Unblock User", style: .destructive, handler: { action in
-			self.actionUnblockUser()
-		}))
-		alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-
-		present(alert, animated: true)
-	}
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionUnblockUser() {
-
-		AdvertPremium(target: self);
-	}
 
 	// MARK: - Table view data source
 	//---------------------------------------------------------------------------------------------------------------------------------------------
