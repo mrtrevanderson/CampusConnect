@@ -138,5 +138,5 @@ func UpdateLastTerminate(fetch: Bool) {
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 func UserLastActive(dbuser: DBUser) -> String {
 
-	return "last active: premium only"
+	return ""
 }
