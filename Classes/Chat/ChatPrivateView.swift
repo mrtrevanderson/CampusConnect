@@ -451,16 +451,13 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		let alertStickers = UIAlertAction(title: "Sticker", style: .default, handler: { action in
 			self.actionStickers()
 		})
-		let alertLocation = UIAlertAction(title: "Location", style: .default, handler: { action in
-			self.actionLocation()
-		})
+
 
 		alertCamera.setValue(UIImage(named: "chat_camera"), forKey: "image"); 		alert.addAction(alertCamera)
 		alertPicture.setValue(UIImage(named: "chat_picture"), forKey: "image");		alert.addAction(alertPicture)
 		alertVideo.setValue(UIImage(named: "chat_video"), forKey: "image");			alert.addAction(alertVideo)
 		alertAudio.setValue(UIImage(named: "chat_audio"), forKey: "image");			alert.addAction(alertAudio)
 		alertStickers.setValue(UIImage(named: "chat_sticker"), forKey: "image");	alert.addAction(alertStickers)
-		alertLocation.setValue(UIImage(named: "chat_location"), forKey: "image");	alert.addAction(alertLocation)
 
 		alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
@@ -596,13 +593,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 			}
 		}
 
-		if (rcmessage.type == RC_TYPE_LOCATION) {
-			let location = CLLocation(latitude: rcmessage.latitude, longitude: rcmessage.longitude)
-			let mapView = MapView()
-			mapView.myInit(location: location)
-			let navController = NavigationController(rootViewController: mapView)
-			present(navController, animated: true)
-		}
+		
 	}
 
 	// MARK: - User actions (avatar tap)

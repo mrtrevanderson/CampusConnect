@@ -6,7 +6,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SINServiceDelegate, SINCa
 	var tabBarController: UITabBarController!
 
 	var chatsView: ChatsView!
-	var callsView: CallsView!
 	var peopleView: PeopleView!
 	var settingsView: SettingsView!
 
