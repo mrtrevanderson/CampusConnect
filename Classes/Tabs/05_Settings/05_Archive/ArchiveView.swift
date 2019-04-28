@@ -65,6 +65,10 @@ class ArchiveView: UIViewController, UISearchBarDelegate, UITableViewDataSource,
 
 	// MARK: - User actions
 	//---------------------------------------------------------------------------------------------------------------------------------------------
+	func actionChatGroup(groupId: String) {
+
+		AdvertCustom(target: self);
+	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func actionChatPrivate(recipientId: String) {
@@ -173,6 +177,8 @@ class ArchiveView: UIViewController, UISearchBarDelegate, UITableViewDataSource,
 
 		let dbchat = dbchats[UInt(indexPath.row)] as! DBChat
 
+		if (dbchat.groupId.count != 0)		{	actionChatGroup(groupId: dbchat.groupId)			}
+		if (dbchat.recipientId.count != 0)	{	actionChatPrivate(recipientId: dbchat.recipientId)	}
 	}
 
 	// MARK: - UISearchBarDelegate

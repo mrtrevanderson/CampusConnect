@@ -60,7 +60,10 @@ class WallpapersView: UIViewController, UIImagePickerControllerDelegate, UINavig
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	
+	@IBAction func actionPhoto(_ sender: Any) {
+
+		AdvertPremium(target: self);
+	}
 
 	// MARK: - UIImagePickerControllerDelegate
 	//---------------------------------------------------------------------------------------------------------------------------------------------

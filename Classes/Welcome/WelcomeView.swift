@@ -8,7 +8,10 @@ class WelcomeView: UIViewController, LoginGoogleDelegate, LoginPhoneDelegate, Lo
 
 	// MARK: - Phone login methods
 	//---------------------------------------------------------------------------------------------------------------------------------------------
+	@IBAction func actionLoginPhone(_ sender: Any) {
 
+		AdvertPremium(target: self);
+	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func didLoginPhone() {
@@ -17,7 +20,10 @@ class WelcomeView: UIViewController, LoginGoogleDelegate, LoginPhoneDelegate, Lo
 
 	// MARK: - Google login methods
 	//---------------------------------------------------------------------------------------------------------------------------------------------
+	@IBAction func actionLoginGoogle(_ sender: Any) {
 
+		AdvertPremium(target: self);
+	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func didLoginGoogle() {
@@ -26,10 +32,15 @@ class WelcomeView: UIViewController, LoginGoogleDelegate, LoginPhoneDelegate, Lo
 
 	// MARK: - Facebook login methods
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	
+	@IBAction func actionLoginFacebook(_ sender: Any) {
+
+		AdvertPremium(target: self);
+	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
+	func signInWithFacebook(completion: @escaping (_ user: FUser?, _ error: Error?) -> Void) {
 
+	}
 
 	// MARK: - Email login methods
 	//---------------------------------------------------------------------------------------------------------------------------------------------
