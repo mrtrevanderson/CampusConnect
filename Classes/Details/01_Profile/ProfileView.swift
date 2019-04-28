@@ -111,19 +111,8 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	@IBAction func actionCallAudio(_ sender: Any) {
 
-		AdvertPremium(target: self);
-	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	@IBAction func actionCallVideo(_ sender: Any) {
-
-		AdvertPremium(target: self);
-	}
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func actionMedia() {
 
 		let recipientId = dbuser.objectId

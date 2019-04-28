@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SINServiceDelegate, SINCa
 	var chatsView: ChatsView!
 	var callsView: CallsView!
 	var peopleView: PeopleView!
-	var groupsView: GroupsView!
 	var settingsView: SettingsView!
 
 	@objc var sinchService: SINService?
@@ -102,12 +101,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SINServiceDelegate, SINCa
 		//-----------------------------------------------------------------------------------------------------------------------------------------
 		// Realm initialization
 		//-----------------------------------------------------------------------------------------------------------------------------------------
-		_ = Blockeds.shared
-		_ = Blockers.shared
-		_ = CallHistories.shared
-		_ = Friends.shared
-		_ = Groups.shared
-		_ = Messages.shared
+
 		_ = Statuses.shared
 		_ = Users.shared
 		_ = UserStatuses.shared

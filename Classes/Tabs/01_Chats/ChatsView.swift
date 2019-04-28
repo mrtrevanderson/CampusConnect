@@ -146,10 +146,7 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionChatGroup(groupId: String) {
 
-		AdvertCustom(target: self);
-	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func actionChatPrivate(recipientId: String) {
@@ -209,7 +206,6 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func actionMute(index: Int) {
 
-		AdvertPremium(target: self);
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
@@ -325,7 +321,6 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 
 		let dbchat = dbchats[UInt(indexPath.row)] as! DBChat
 
-		if (dbchat.groupId.count != 0)		{	actionChatGroup(groupId: dbchat.groupId)			}
 		if (dbchat.recipientId.count != 0)	{	actionChatPrivate(recipientId: dbchat.recipientId)	}
 	}
 

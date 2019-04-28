@@ -112,29 +112,9 @@ class AllMediaView: UIViewController, UICollectionViewDataSource, UICollectionVi
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	@IBAction func actionShare(_ sender: Any) {
-
-		AdvertPremium(target: self);
-	}
-
+	
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	@IBAction func actionDelete(_ sender: Any) {
 
-		let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-
-		alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
-			self.actionDelete()
-		}))
-		alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-
-		present(alert, animated: true)
-	}
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionDelete() {
-
-		AdvertPremium(target: self);
-	}
 
 	// MARK: - Helper methods
 	//---------------------------------------------------------------------------------------------------------------------------------------------
