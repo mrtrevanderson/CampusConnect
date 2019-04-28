@@ -147,84 +147,7 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 		navigationController?.pushViewController(chatPrivateView, animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionMore(index: Int) {
 
-		let dbchat = dbchats[UInt(index)] as! DBChat
-
-		let mutedUntil = Status.mutedUntil(chatId: dbchat.chatId)
-
-		if (mutedUntil < Date().timestamp()) {
-			actionMoreMute(index: index)
-		} else {
-			actionMoreUnmute(index: index)
-		}
-	}
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionMoreMute(index: Int) {
-
-		let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-
-		alert.addAction(UIAlertAction(title: "Mute", style: .default, handler: { action in
-			self.actionMute(index: index)
-		}))
-		alert.addAction(UIAlertAction(title: "Archive", style: .default, handler: { action in
-			self.actionArchive(index: index)
-		}))
-		alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-
-		present(alert, animated: true)
-	}
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionMoreUnmute(index: Int) {
-
-		let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-
-		alert.addAction(UIAlertAction(title: "Unmute", style: .default, handler: { action in
-			self.actionUnmute(index: index)
-		}))
-		alert.addAction(UIAlertAction(title: "Archive", style: .default, handler: { action in
-			self.actionArchive(index: index)
-		}))
-		alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-
-		present(alert, animated: true)
-	}
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionMute(index: Int) {
-
-	}
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionMute(index: Int, until hours: Int) {
-
-	}
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionUnmute(index: Int) {
-
-	}
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionArchive(index: Int) {
-
-		let dbchat = dbchats[UInt(index)] as! DBChat
-
-		Chat.archiveItem(dbchat: dbchat)
-		refreshTabCounter()
-
-		let indexPath = IndexPath(row: index, section: 0)
-		tableView.deleteRows(at: [indexPath], with: .fade)
-
-		DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-			self.refreshTableView()
-		}
-	}
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func actionDelete(index: Int) {
 
 		let dbchat = dbchats[UInt(index)] as! DBChat
@@ -280,8 +203,7 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 
 		let cell = tableView.dequeueReusableCell(withIdentifier: "ChatsCell", for: indexPath) as! ChatsCell
 
-		cell.rightButtons = [MGSwipeButton(title: "Delete", backgroundColor: UIColor.red),
-							 MGSwipeButton(title: "More", backgroundColor: UIColor.lightGray)]
+		cell.rightButtons = [MGSwipeButton(title: "Delete", backgroundColor: UIColor.red)]
 
 		cell.delegate = self
 		cell.tag = indexPath.row
@@ -298,7 +220,6 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 	func swipeTableCell(_ cell: MGSwipeTableCell, tappedButtonAt index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
 
 		if (index == 0) { actionDelete(index: cell.tag) }
-		if (index == 1) { actionMore(index: cell.tag)	}
 
 		return true
 	}
