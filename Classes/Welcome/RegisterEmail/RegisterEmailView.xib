@@ -85,6 +85,15 @@
                         <action selector="actionRegister:" destination="-1" eventType="touchUpInside" id="1RP-MK-VWf"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By signing up you accept the Terms &amp; Privacy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5I3-OK-1j5">
+                    <rect key="frame" x="0.0" y="400" width="320" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="ckH-l3-0sq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvS-O5-gyd">
                     <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                     <constraints>
@@ -112,11 +121,14 @@
                 <constraint firstItem="jVC-Fi-mBC" firstAttribute="top" secondItem="DFm-Uv-m27" secondAttribute="top" constant="320" id="cJY-to-WjO"/>
                 <constraint firstItem="DFm-Uv-m27" firstAttribute="trailing" secondItem="6WO-1D-5cz" secondAttribute="trailing" constant="16" id="cuD-y4-24K"/>
                 <constraint firstItem="wiw-WP-O7Z" firstAttribute="top" secondItem="DFm-Uv-m27" secondAttribute="top" constant="200" id="d3n-G8-pm5"/>
+                <constraint firstItem="DFm-Uv-m27" firstAttribute="trailing" secondItem="5I3-OK-1j5" secondAttribute="trailing" id="eTN-os-UCk"/>
                 <constraint firstItem="OZ7-2i-VuJ" firstAttribute="leading" secondItem="DFm-Uv-m27" secondAttribute="leading" constant="16" id="fLf-aU-qbq"/>
                 <constraint firstItem="DFm-Uv-m27" firstAttribute="trailing" secondItem="OZ7-2i-VuJ" secondAttribute="trailing" constant="16" id="j5O-8t-hW9"/>
                 <constraint firstItem="DFm-Uv-m27" firstAttribute="trailing" secondItem="wiw-WP-O7Z" secondAttribute="trailing" constant="16" id="keH-LF-imr"/>
                 <constraint firstItem="6WO-1D-5cz" firstAttribute="top" secondItem="DFm-Uv-m27" secondAttribute="top" constant="300" id="kgV-Ji-fOW"/>
                 <constraint firstItem="DFm-Uv-m27" firstAttribute="bottom" secondItem="YvS-O5-gyd" secondAttribute="bottom" id="lxB-3A-xe0"/>
+                <constraint firstItem="5I3-OK-1j5" firstAttribute="top" secondItem="DFm-Uv-m27" secondAttribute="top" constant="380" id="nDu-sy-b5g"/>
+                <constraint firstItem="5I3-OK-1j5" firstAttribute="leading" secondItem="DFm-Uv-m27" secondAttribute="leading" id="ozB-54-Ajq"/>
                 <constraint firstItem="6WO-1D-5cz" firstAttribute="leading" secondItem="DFm-Uv-m27" secondAttribute="leading" constant="16" id="qdl-6B-3fQ"/>
                 <constraint firstItem="jVC-Fi-mBC" firstAttribute="leading" secondItem="DFm-Uv-m27" secondAttribute="leading" constant="20" id="qe4-ko-Jze"/>
                 <constraint firstItem="SkL-eY-oeP" firstAttribute="top" secondItem="DFm-Uv-m27" secondAttribute="top" constant="250" id="z9L-aj-KOB"/>
