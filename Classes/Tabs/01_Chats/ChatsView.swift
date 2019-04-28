@@ -107,16 +107,6 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 		UIApplication.shared.applicationIconBadgeNumber = total
 	}
 
-	// MARK: - User actions
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	@objc func actionDialogflow() {
-
-		let dialogflowView = DialogflowView()
-		let navController = NavigationController(rootViewController: dialogflowView)
-		present(navController, animated: true)
-	}
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
 	@objc func actionCompose() {
 		
 		let selectUserView = SelectUserView()
@@ -125,7 +115,7 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 		present(navController, animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+
 	func actionNewChat() {
 
 		if (tabBarController?.tabBar.isHidden ?? true) { return }

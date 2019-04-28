@@ -21,7 +21,6 @@
 		294E496B1F8A6AA800045345 /* AddFriendsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 294E49651F8A6AA700045345 /* AddFriendsCell.xib */; };
 		294E496C1F8A6AA800045345 /* AddFriendsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 294E49661F8A6AA700045345 /* AddFriendsView.xib */; };
 		294E496D1F8A6AA800045345 /* AddFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294E49681F8A6AA800045345 /* AddFriendsCell.swift */; };
-		295C70C21FE0486700109DF0 /* DialogflowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295C70C11FE0486700109DF0 /* DialogflowView.swift */; };
 		295D938C209496CF00A222CA /* DBGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295D938B209496CF00A222CA /* DBGroup.swift */; };
 		296021471F2CF5F600544468 /* ChatPrivateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29601FE51F2CF5F600544468 /* ChatPrivateView.swift */; };
 		296021481F2CF5F600544468 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29601FE91F2CF5F600544468 /* ProfileView.swift */; };
@@ -225,7 +224,6 @@
 		294E49661F8A6AA700045345 /* AddFriendsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddFriendsView.xib; sourceTree = "<group>"; };
 		294E49681F8A6AA800045345 /* AddFriendsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendsCell.swift; sourceTree = "<group>"; };
 		295018301D9A5CE600AFD8B3 /* AppConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConstant.h; sourceTree = "<group>"; };
-		295C70C11FE0486700109DF0 /* DialogflowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogflowView.swift; sourceTree = "<group>"; };
 		295D938B209496CF00A222CA /* DBGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBGroup.swift; sourceTree = "<group>"; };
 		29601FE51F2CF5F600544468 /* ChatPrivateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatPrivateView.swift; sourceTree = "<group>"; };
 		29601FE91F2CF5F600544468 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -478,7 +476,6 @@
 			isa = PBXGroup;
 			children = (
 				29601FE51F2CF5F600544468 /* ChatPrivateView.swift */,
-				295C70C11FE0486700109DF0 /* DialogflowView.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -1628,7 +1625,6 @@
 				29D29EF91D9A59E4006CA074 /* AppDelegate.swift in Sources */,
 				2920B18B2030AD3500DB6E07 /* AudioView.swift in Sources */,
 				296021B41F2CF5F600544468 /* NSError+Util.swift in Sources */,
-				295C70C21FE0486700109DF0 /* DialogflowView.swift in Sources */,
 				29AA54BD20D3B3DA004067FE /* RelayManager.swift in Sources */,
 				294E496D1F8A6AA800045345 /* AddFriendsCell.swift in Sources */,
 				29D7605920EFD49D006C7148 /* RCAudioMessageCell.swift in Sources */,
