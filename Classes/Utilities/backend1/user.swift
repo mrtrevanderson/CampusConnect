@@ -4,9 +4,7 @@ func LogoutUser(delAccount: Int32) {
 	if (delAccount == DEL_ACCOUNT_ONE) { Account.delOne() }
 	if (delAccount == DEL_ACCOUNT_ALL) { Account.delAll() }
 
-	if (FUser.loginMethod() == LOGIN_GOOGLE) {
-		GIDSignIn.sharedInstance().signOut()
-	}
+
 
 	if (FUser.logOut()) {
 		CacheManager.cleanupManual(logout: true)

@@ -4,7 +4,6 @@
 
 #import <AVKit/AVKit.h>
 #import <Contacts/Contacts.h>
-#import <CoreLocation/CoreLocation.h>
 #import <CoreSpotlight/CoreSpotlight.h>
 #import <CommonCrypto/CommonCrypto.h>
 #import <MapKit/MapKit.h>
@@ -17,14 +16,8 @@
 #import <ApiAI/ApiAI.h>
 #import <Crashlytics/Crashlytics.h>
 #import <Fabric/Fabric.h>
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <Firebase/Firebase.h>
-#import <GoogleSignIn/GoogleSignIn.h>
 #import <Realm/Realm.h>
-#import <Sinch/Sinch.h>
-
-#import <SinchVerification/SinchVerification.h>
 
 #pragma mark -
 
@@ -41,7 +34,6 @@
 
 #import "AppConstant.h"
 
-#pragma mark - advert
 
 #pragma mark - backend1
 

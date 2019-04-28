@@ -1,5 +1,5 @@
 
-class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AudioDelegate, StickersDelegate, SelectUsersDelegate {
+class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AudioDelegate, SelectUsersDelegate {
 
 	private var recipientId = ""
 	private var chatId = ""
@@ -164,11 +164,6 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 				MediaLoader.loadAudio(rcmessage: rcmessage, dbmessage: dbmessage, tableView: tableView)
 			}
 
-			if (dbmessage.type == MESSAGE_LOCATION) {
-				rcmessage = RCMessage(latitude: dbmessage.latitude, longitude: dbmessage.longitude, incoming: incoming) {
-					self.tableView.reloadData()
-				}
-			}
 
 			rcmessages[messageId] = rcmessage
 		}
@@ -474,20 +469,6 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		present(navController, animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionStickers() {
-
-		let stickersView = StickersView()
-		stickersView.delegate = self
-		let navController = NavigationController(rootViewController: stickersView)
-		present(navController, animated: true)
-	}
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionLocation() {
-
-		messageSend(nil, picture: nil, video: nil, audio: nil)
-	}
 
 	// MARK: - UIImagePickerControllerDelegate
 	//---------------------------------------------------------------------------------------------------------------------------------------------
@@ -508,13 +489,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		messageSend(nil, picture: nil, video: nil, audio: path)
 	}
 
-	// MARK: - StickersDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func didSelectSticker(sticker: String) {
 
-		let picture = UIImage(named: sticker)
-		messageSend(nil, picture: picture, video: nil, audio: nil)
-	}
 
 	// MARK: - User actions (load earlier)
 	//---------------------------------------------------------------------------------------------------------------------------------------------

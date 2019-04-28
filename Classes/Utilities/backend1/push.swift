@@ -9,7 +9,6 @@ func SendPushNotification1(message: FObject) {
 	if (type == MESSAGE_PICTURE)	{ text = text + (" sent you a picture.")		}
 	if (type == MESSAGE_VIDEO)		{ text = text + (" sent you a video.")			}
 	if (type == MESSAGE_AUDIO) 		{ text = text + (" sent you an audio.")			}
-	if (type == MESSAGE_LOCATION)	{ text = text + (" sent you a location.")		}
 
 	let firebase = Database.database().reference(withPath: FMUTEDUNTIL_PATH).child(chatId)
 	firebase.observeSingleEvent(of: DataEventType.value, with: { snapshot in

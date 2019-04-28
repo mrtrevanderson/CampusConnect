@@ -3,7 +3,6 @@ class DBUser: RLMObject {
 	@objc dynamic var objectId = ""
 
 	@objc dynamic var email = ""
-	@objc dynamic var phone = ""
 
 	@objc dynamic var firstname = ""
 	@objc dynamic var lastname = ""

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,11 +16,9 @@
                 <outlet property="cellFirstname" destination="aQo-yz-UZ4" id="OYt-nC-zod"/>
                 <outlet property="cellLastname" destination="1Sz-Ld-d44" id="eBJ-8I-Kvx"/>
                 <outlet property="cellLocation" destination="dic-It-oKn" id="fwG-c1-pLG"/>
-                <outlet property="cellPhone" destination="PGH-FY-EZx" id="EPg-KO-f5u"/>
                 <outlet property="fieldFirstname" destination="cmp-jB-JV2" id="x8c-Ff-WHn"/>
                 <outlet property="fieldLastname" destination="8ij-nO-Kbg" id="8of-5w-JAA"/>
                 <outlet property="fieldLocation" destination="G0J-cp-GJT" id="4p8-ZB-ksl"/>
-                <outlet property="fieldPhone" destination="4QE-xe-WjA" id="O4d-QT-Cm7"/>
                 <outlet property="imageUser" destination="b1o-fd-eKH" id="u6z-Ns-K0J"/>
                 <outlet property="labelCountry" destination="MsO-bg-jYA" id="c4g-Jo-Dmk"/>
                 <outlet property="labelInitials" destination="rPB-HI-Qez" id="fCo-P5-i3d"/>
@@ -208,31 +207,6 @@
                 </constraints>
             </tableViewCellContentView>
             <point key="canvasLocation" x="395" y="80"/>
-        </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="PGH-FY-EZx">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PGH-FY-EZx" id="prp-nz-hlv">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4QE-xe-WjA">
-                        <rect key="frame" x="16" y="0.0" width="288" height="50"/>
-                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done"/>
-                        <connections>
-                            <outlet property="delegate" destination="-1" id="tW6-IB-099"/>
-                        </connections>
-                    </textField>
-                </subviews>
-                <constraints>
-                    <constraint firstItem="4QE-xe-WjA" firstAttribute="top" secondItem="prp-nz-hlv" secondAttribute="top" id="5aU-g0-GeA"/>
-                    <constraint firstAttribute="trailing" secondItem="4QE-xe-WjA" secondAttribute="trailing" constant="16" id="IbW-Rn-rWL"/>
-                    <constraint firstItem="4QE-xe-WjA" firstAttribute="leading" secondItem="prp-nz-hlv" secondAttribute="leading" constant="16" id="Txf-tj-WJi"/>
-                    <constraint firstAttribute="bottom" secondItem="4QE-xe-WjA" secondAttribute="bottom" constant="-0.5" id="d9J-aL-YBe"/>
-                </constraints>
-            </tableViewCellContentView>
-            <point key="canvasLocation" x="395" y="179"/>
         </tableViewCell>
     </objects>
     <resources>

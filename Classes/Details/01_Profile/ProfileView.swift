@@ -10,7 +10,6 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 	@IBOutlet var cellStatus: UITableViewCell!
 	@IBOutlet var cellCountry: UITableViewCell!
 	@IBOutlet var cellLocation: UITableViewCell!
-	@IBOutlet var cellPhone: UITableViewCell!
 	@IBOutlet var cellMedia: UITableViewCell!
 	@IBOutlet var cellChat: UITableViewCell!
 	@IBOutlet var cellFriend: UITableViewCell!
@@ -100,15 +99,7 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	@IBAction func actionCallPhone(_ sender: Any) {
 
-		let number1 = "tel://\(dbuser.phone)"
-		let number2 = number1.replacingOccurrences(of: " ", with: "")
-
-		if let url = URL(string: number2) {
-			UIApplication.shared.open(url, options: [:], completionHandler: nil)
-		}
-	}
 
 
 

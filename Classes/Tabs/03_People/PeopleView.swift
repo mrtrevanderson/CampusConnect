@@ -72,16 +72,6 @@ class PeopleView: UIViewController, UISearchBarDelegate, UITableViewDataSource, 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	@objc func loadBlockers() {
 
-		blockerIds.removeAll()
-
-		let predicate = NSPredicate(format: "isDeleted == NO")
-		let dbblockers = DBBlocker.objects(with: predicate)
-
-		for i in 0..<dbblockers.count {
-			let dbblocker = dbblockers[i] as! DBBlocker
-			blockerIds.append(dbblocker.blockerId)
-		}
-
 		loadFriends()
 	}
 

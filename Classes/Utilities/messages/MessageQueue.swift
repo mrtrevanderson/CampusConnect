@@ -46,8 +46,6 @@ class MessageQueue: NSObject {
 		message[FMESSAGE_AUDIO_DURATION] = 0
 		message[FMESSAGE_AUDIO_MD5] = ""
 
-		message[FMESSAGE_LATITUDE] = 0
-		message[FMESSAGE_LONGITUDE] = 0
 
 		message[FMESSAGE_STATUS] = TEXT_QUEUED
 		message[FMESSAGE_ISDELETED] = false
@@ -61,71 +59,6 @@ class MessageQueue: NSObject {
 		else if (picture != nil)	{ sendPictureMessage(message: message, picture: picture!)	}
 		else if (video != nil)		{ sendVideoMessage(message: message, video: video!)			}
 		else if (audio != nil)		{ sendAudioMessage(message: message, audio: audio!)			}
-		else						{ sendLoactionMessage(message: message)						}
-	}
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	class func send(chatId: String, groupId: String, status: String?, text: String?, picture: UIImage?, video: URL?, audio: String?) {
-
-		let predicate = NSPredicate(format: "objectId == %@", groupId)
-		let dbgroup = DBGroup.objects(with: predicate).firstObject() as! DBGroup
-
-		let senderPicture = FUser.thumbnail()
-		let groupPicture = dbgroup.picture
-
-		let message = FObject(path: FMESSAGE_PATH)
-
-		message.objectIdInit()
-
-		message[FMESSAGE_CHATID] = chatId
-		message[FMESSAGE_MEMBERS] = dbgroup.members.components(separatedBy: ",")
-
-		message[FMESSAGE_SENDERID] = FUser.currentId()
-		message[FMESSAGE_SENDERNAME] = FUser.fullname()
-		message[FMESSAGE_SENDERINITIALS] = FUser.initials()
-		message[FMESSAGE_SENDERPICTURE] = senderPicture
-
-		message[FMESSAGE_RECIPIENTID] = ""
-		message[FMESSAGE_RECIPIENTNAME] = ""
-		message[FMESSAGE_RECIPIENTINITIALS] = ""
-		message[FMESSAGE_RECIPIENTPICTURE] = ""
-
-		message[FMESSAGE_GROUPID] = groupId
-		message[FMESSAGE_GROUPNAME] = dbgroup.name
-		message[FMESSAGE_GROUPPICTURE] = groupPicture
-
-		message[FMESSAGE_TYPE] = ""
-		message[FMESSAGE_TEXT] = ""
-
-		message[FMESSAGE_PICTURE] = ""
-		message[FMESSAGE_PICTURE_WIDTH] = 0
-		message[FMESSAGE_PICTURE_HEIGHT] = 0
-		message[FMESSAGE_PICTURE_MD5] = ""
-
-		message[FMESSAGE_VIDEO] = ""
-		message[FMESSAGE_VIDEO_DURATION] = 0
-		message[FMESSAGE_VIDEO_MD5] = ""
-
-		message[FMESSAGE_AUDIO] = ""
-		message[FMESSAGE_AUDIO_DURATION] = 0
-		message[FMESSAGE_AUDIO_MD5] = ""
-
-		message[FMESSAGE_LATITUDE] = 0
-		message[FMESSAGE_LONGITUDE] = 0
-
-		message[FMESSAGE_STATUS] = TEXT_QUEUED
-		message[FMESSAGE_ISDELETED] = false
-
-		let timestamp = Date().timestamp()
-		message[FMESSAGE_CREATEDAT] = timestamp
-		message[FMESSAGE_UPDATEDAT] = timestamp
-
-		if (status != nil)			{ sendStatusMessage(message: message, status: status!)		}
-		else if (text != nil)		{ sendTextMessage(message: message, text: text!)			}
-		else if (picture != nil)	{ sendPictureMessage(message: message, picture: picture!)	}
-		else if (video != nil)		{ sendVideoMessage(message: message, video: video!)			}
-		else if (audio != nil)		{ sendAudioMessage(message: message, audio: audio!)			}
-		else						{ sendLoactionMessage(message: message)						}
 	}
 
 
@@ -202,17 +135,6 @@ class MessageQueue: NSObject {
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	class func sendLoactionMessage(message: FObject) {
-
-		message[FMESSAGE_TYPE] = MESSAGE_LOCATION
-		message[FMESSAGE_TEXT] = "[Location message]"
-
-		message[FMESSAGE_LATITUDE] = Location.latitude()
-		message[FMESSAGE_LONGITUDE] = Location.longitude()
-
-		createMessage(message: message)
-	}
 
 	// MARK: -
 	//---------------------------------------------------------------------------------------------------------------------------------------------

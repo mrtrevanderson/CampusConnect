@@ -107,11 +107,6 @@ class StatusView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
 		tableView.deselectRow(at: indexPath, animated: true)
 
-		if (indexPath.section == 0) {
-			let customStatusView = CustomStatusView()
-			let navController = NavigationController(rootViewController: customStatusView)
-			present(navController, animated: true)
-		}
 
 		if (indexPath.section == 1) {
 			let dbuserstatus = dbuserstatuses[UInt(indexPath.row)] as! DBUserStatus

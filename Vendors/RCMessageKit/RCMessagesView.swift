@@ -38,7 +38,7 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 		tableView.register(RCPictureMessageCell.self, forCellReuseIdentifier: "RCPictureMessageCell")
 		tableView.register(RCVideoMessageCell.self, forCellReuseIdentifier: "RCVideoMessageCell")
 		tableView.register(RCAudioMessageCell.self, forCellReuseIdentifier: "RCAudioMessageCell")
-		tableView.register(RCLocationMessageCell.self, forCellReuseIdentifier: "RCLocationMessageCell")
+
 
 		tableView.register(RCStatusCell.self, forCellReuseIdentifier: "RCStatusCell")
 
@@ -413,7 +413,7 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 			if (rcmessage.type == RC_TYPE_PICTURE)	{ return RCPictureMessageCell.height(indexPath, messagesView: self)		}
 			if (rcmessage.type == RC_TYPE_VIDEO)	{ return RCVideoMessageCell.height(indexPath, messagesView: self)		}
 			if (rcmessage.type == RC_TYPE_AUDIO)	{ return RCAudioMessageCell.height(indexPath, messagesView: self)		}
-			if (rcmessage.type == RC_TYPE_LOCATION)	{ return RCLocationMessageCell.height(indexPath, messagesView: self)	}
+
 		}
 
 		if (indexPath.row == 3) {
@@ -473,11 +473,7 @@ class RCMessagesView: UIViewController, UITableViewDataSource, UITableViewDelega
 				cell.bindData(indexPath, messagesView: self)
 				return cell
 			}
-			if (rcmessage.type == RC_TYPE_LOCATION) {
-				let cell = tableView.dequeueReusableCell(withIdentifier: "RCLocationMessageCell", for: indexPath) as! RCLocationMessageCell
-				cell.bindData(indexPath, messagesView: self)
-				return cell
-			}
+
 		}
 
 		if (indexPath.row == 3) {

@@ -9,13 +9,11 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 	@IBOutlet var cellLastname: UITableViewCell!
 	@IBOutlet var cellCountry: UITableViewCell!
 	@IBOutlet var cellLocation: UITableViewCell!
-	@IBOutlet var cellPhone: UITableViewCell!
 	@IBOutlet var fieldFirstname: UITextField!
 	@IBOutlet var fieldLastname: UITextField!
 	@IBOutlet var labelPlaceholder: UILabel!
 	@IBOutlet var labelCountry: UILabel!
 	@IBOutlet var fieldLocation: UITextField!
-	@IBOutlet var fieldPhone: UITextField!
 
 	private var isOnboard = false
 
@@ -82,16 +80,12 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 		labelCountry.text = user[FUSER_COUNTRY] as? String
 		fieldLocation.text = user[FUSER_LOCATION] as? String
 
-		fieldPhone.text = user[FUSER_PHONE] as? String
-
 		let loginMethod = user[FUSER_LOGINMETHOD] as? String
-		fieldPhone.isUserInteractionEnabled = (loginMethod != LOGIN_PHONE)
-
 		updateDetails()
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func saveUser(firstname: String, lastname: String, country: String, location: String, phone: String) {
+	func saveUser(firstname: String, lastname: String, country: String, location: String) {
 
 		let user = FUser.currentUser()
 
@@ -100,7 +94,7 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 		user[FUSER_FULLNAME] = "\(firstname) \(lastname)"
 		user[FUSER_COUNTRY] = country
 		user[FUSER_LOCATION] = location
-		user[FUSER_PHONE] = phone
+
 
 		user.saveInBackground(block: { error in
 			if (error == nil) {
@@ -158,15 +152,13 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 		let lastname = fieldLastname.text ?? ""
 		let country = labelCountry.text ?? ""
 		let location = fieldLocation.text ?? ""
-		let phone = fieldPhone.text ?? ""
 
 		if (firstname.count == 0)	{ ProgressHUD.showError("Firstname must be set.");		return	}
 		if (lastname.count == 0)	{ ProgressHUD.showError("Lastname must be set.");		return	}
 		if (country.count == 0)		{ ProgressHUD.showError("Country must be set.");		return	}
 		if (location.count == 0)	{ ProgressHUD.showError("Location must be set.");		return	}
-		if (phone.count == 0)		{ ProgressHUD.showError("Phone number must be set.");	return	}
 
-		saveUser(firstname: firstname, lastname: lastname, country: country, location: location, phone: phone)
+		saveUser(firstname: firstname, lastname: lastname, country: country, location: location)
 
 		dismiss(animated: true)
 	}
@@ -274,7 +266,6 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 		if (indexPath.section == 0) && (indexPath.row == 1) { return cellLastname	}
 		if (indexPath.section == 0) && (indexPath.row == 2) { return cellCountry	}
 		if (indexPath.section == 0) && (indexPath.row == 3) { return cellLocation	}
-		if (indexPath.section == 1) && (indexPath.row == 0) { return cellPhone		}
 
 		return UITableViewCell()
 	}
@@ -294,8 +285,7 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 
 		if (textField == fieldFirstname)	{ fieldLastname.becomeFirstResponder()	}
 		if (textField == fieldLastname)		{ actionCountries()						}
-		if (textField == fieldLocation)		{ fieldPhone.becomeFirstResponder()		}
-		if (textField == fieldPhone)		{ actionDone()							}
+		if (textField == fieldLocation)		{ actionDone()    	}
 
 		return true
 	}

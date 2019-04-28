@@ -40,8 +40,6 @@ class MessageRelay: NSObject {
 		message[FMESSAGE_AUDIO_DURATION] = dbmessage.audio_duration
 		message[FMESSAGE_AUDIO_MD5] = ""
 
-		message[FMESSAGE_LATITUDE] = dbmessage.latitude
-		message[FMESSAGE_LONGITUDE] = dbmessage.longitude
 
 		message[FMESSAGE_STATUS] = TEXT_SENT
 		message[FMESSAGE_ISDELETED] = dbmessage.isDeleted
@@ -54,7 +52,6 @@ class MessageRelay: NSObject {
 		if (dbmessage.type == MESSAGE_PICTURE)	{ sendPictureMessage(message: message, completion: completion) 	}
 		if (dbmessage.type == MESSAGE_VIDEO)	{ sendVideoMessage(message: message, completion: completion)	}
 		if (dbmessage.type == MESSAGE_AUDIO)	{ sendAudioMessage(message: message, completion: completion)	}
-		if (dbmessage.type == MESSAGE_LOCATION)	{ sendMessage(message: message, completion: completion)			}
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------

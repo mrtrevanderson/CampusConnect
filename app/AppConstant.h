@@ -1,19 +1,5 @@
 #define		FIREBASE_STORAGE					@"gs://chatproject-b824e.appspot.com"
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-#define		SINCH_HOST							@"sandbox.sinch.com"
-#define		SINCH_KEY							@"b515eb8b-dcaf-473d-982a-81c5a97a3a1e"
-#define		SINCH_SECRET						@"mgnwHKZLIkahFoj90UsbCg=="
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-#define		DIALOGFLOW_ACCESS_TOKEN				@"bbf2a09367b948e49d44d5aaa97724f6"
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-#define		PHONE_LOGIN_DOMAIN					@"yourdomain.com"
-#define		PHONE_LOGIN_PASSWORD				@"Q0wD3gtRv73Olz6E8g8G"
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-
-//-------------------------------------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------
 #define		DEFAULT_TAB							0
 #define		DEFAULT_COUNTRY						188
 //---------------------------------------------------------------------------------
@@ -42,9 +28,6 @@
 #define		DEL_ACCOUNT_ONE						2
 #define		DEL_ACCOUNT_ALL						3
 //---------------------------------------------------------------------------------
-#define		CALLHISTORY_AUDIO					@"audio"
-#define		CALLHISTORY_VIDEO					@"video"
-//---------------------------------------------------------------------------------
 #define		MESSAGE_STATUS						@"status"
 #define		MESSAGE_TEXT						@"text"
 #define		MESSAGE_EMOJI						@"emoji"
@@ -54,59 +37,11 @@
 #define		MESSAGE_LOCATION					@"location"
 //---------------------------------------------------------------------------------
 #define		LOGIN_EMAIL							@"Email"
-#define		LOGIN_FACEBOOK						@"Facebook"
-#define		LOGIN_GOOGLE						@"Google"
-#define		LOGIN_PHONE							@"Phone"
+
 //---------------------------------------------------------------------------------
 #define		TEXT_QUEUED							@"Queued"
 #define		TEXT_SENT							@"Sent"
 #define		TEXT_READ							@"Read"
-//---------------------------------------------------------------------------------
-#define		LINK_PREMIUM						@"http://www.relatedcode.com/premium"
-//---------------------------------------------------------------------------------
-#define		TEXT_SHARE_APP						@"Check out PremiumChat for your smartphone. Download it today."
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-#define		FBLOCKED_PATH						@"Blocked"				//	Path name
-#define		FBLOCKED_OBJECTID					@"objectId"				//	String
-
-#define		FBLOCKED_BLOCKEDID					@"blockedId"			//	String
-#define		FBLOCKED_ISDELETED					@"isDeleted"			//	Boolean
-
-#define		FBLOCKED_CREATEDAT					@"createdAt"			//	Timestamp
-#define		FBLOCKED_UPDATEDAT					@"updatedAt"			//	Timestamp
-//---------------------------------------------------------------------------------
-#define		FBLOCKER_PATH						@"Blocker"				//	Path name
-#define		FBLOCKER_OBJECTID					@"objectId"				//	String
-
-#define		FBLOCKER_BLOCKERID					@"blockerId"			//	String
-#define		FBLOCKER_ISDELETED					@"isDeleted"			//	Boolean
-
-#define		FBLOCKER_CREATEDAT					@"createdAt"			//	Timestamp
-#define		FBLOCKER_UPDATEDAT					@"updatedAt"			//	Timestamp
-//---------------------------------------------------------------------------------
-#define		FCALLHISTORY_PATH					@"CallHistory"			//	Path name
-#define		FCALLHISTORY_OBJECTID				@"objectId"				//	String
-
-#define		FCALLHISTORY_INITIATORID			@"initiatorId"			//	String
-#define		FCALLHISTORY_RECIPIENTID			@"recipientId"			//	String
-#define		FCALLHISTORY_PHONENUMBER			@"phoneNumber"			//	String
-
-#define		FCALLHISTORY_TYPE					@"type"					//	String
-#define		FCALLHISTORY_TEXT					@"text"					//	String
-
-#define		FCALLHISTORY_STATUS					@"status"				//	String
-#define		FCALLHISTORY_DURATION				@"duration"				//	Number
-
-#define		FCALLHISTORY_STARTEDAT				@"startedAt"			//	Timestamp
-#define		FCALLHISTORY_ESTABLISHEDAT			@"establishedAt"		//	Timestamp
-#define		FCALLHISTORY_ENDEDAT				@"endedAt"				//	Timestamp
-
-#define		FCALLHISTORY_ISDELETED				@"isDeleted"			//	Boolean
-
-#define		FCALLHISTORY_CREATEDAT				@"createdAt"			//	Timestamp
-#define		FCALLHISTORY_UPDATEDAT				@"updatedAt"			//	Timestamp
 //---------------------------------------------------------------------------------
 #define		FFRIEND_PATH						@"Friend"				//	Path name
 #define		FFRIEND_OBJECTID					@"objectId"				//	String
@@ -116,19 +51,6 @@
 
 #define		FFRIEND_CREATEDAT					@"createdAt"			//	Timestamp
 #define		FFRIEND_UPDATEDAT					@"updatedAt"			//	Timestamp
-//---------------------------------------------------------------------------------
-#define		FGROUP_PATH							@"Group"				//	Path name
-#define		FGROUP_OBJECTID						@"objectId"				//	String
-
-#define		FGROUP_USERID						@"userId"				//	String
-#define		FGROUP_NAME							@"name"					//	String
-#define		FGROUP_PICTURE						@"picture"				//	String
-#define		FGROUP_MEMBERS						@"members"				//	Array
-
-#define		FGROUP_ISDELETED					@"isDeleted"			//	Boolean
-
-#define		FGROUP_CREATEDAT					@"createdAt"			//	Timestamp
-#define		FGROUP_UPDATEDAT					@"updatedAt"			//	Timestamp
 //---------------------------------------------------------------------------------
 #define		FLASTREAD_PATH						@"LastRead"				//	Path name
 //---------------------------------------------------------------------------------
@@ -196,7 +118,7 @@
 #define		FUSER_OBJECTID						@"objectId"				//	String
 
 #define		FUSER_EMAIL							@"email"				//	String
-#define		FUSER_PHONE							@"phone"				//	String
+
 
 #define		FUSER_FIRSTNAME						@"firstname"			//	String
 #define		FUSER_LASTNAME						@"lastname"				//	String
