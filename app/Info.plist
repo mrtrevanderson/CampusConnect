@@ -53,10 +53,6 @@
 			</dict>
 		</array>
 	</dict>
-	<key>FacebookAppID</key>
-	<string>595525590872151</string>
-	<key>FacebookDisplayName</key>
-	<string>Related Chat</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
@@ -83,8 +79,6 @@
 	<string>We use photo library to save picture and video messages.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>We use photo library to send picture and video messages.</string>
-	<key>OneSignal_disable_badge_clearing</key>
-	<true/>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>

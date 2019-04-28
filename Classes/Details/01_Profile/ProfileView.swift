@@ -77,7 +77,6 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 		}
 
 		labelName.text = dbuser.fullname
-		labelDetails.text = UserLastActive(dbuser: dbuser)
 
 		cellStatus.detailTextLabel?.text = dbuser.status
 		cellCountry.detailTextLabel?.text = dbuser.country

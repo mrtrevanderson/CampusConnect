@@ -30,14 +30,11 @@ func SendPushNotification2(userIds: [String], text: String) {
 	let predicate = NSPredicate(format: "objectId IN %@", userIds)
 	let dbusers = DBUser.objects(with: predicate).sortedResults(usingKeyPath: FUSER_FULLNAME, ascending: true)
 
-	var oneSignalIds:[String] = []
+
 
 	for i in 0..<dbusers.count {
 		let dbuser = dbusers[i] as! DBUser
-		if (dbuser.oneSignalId.count != 0) {
-			oneSignalIds.append(dbuser.oneSignalId)
-		}
+
 	}
 
-	OneSignal.postNotification(["contents": ["en": text], "include_player_ids": oneSignalIds])
 }

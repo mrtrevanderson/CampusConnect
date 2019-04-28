@@ -22,7 +22,6 @@ class DBUser: RLMObject {
 	@objc dynamic var wallpaper = ""
 
 	@objc dynamic var loginMethod = ""
-	@objc dynamic var oneSignalId = ""
 
 	@objc dynamic var lastActive: Int64 = 0
 	@objc dynamic var lastTerminate: Int64 = 0

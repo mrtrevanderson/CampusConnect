@@ -26,7 +26,6 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		recipientId = recipientId_
 
 		chatId = Chat.chatId(recipientId: recipientId)
-		isBlocker = Blocker.isBlocker(userId: recipientId)
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------

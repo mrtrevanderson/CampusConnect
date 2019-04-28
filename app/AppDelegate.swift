@@ -1,6 +1,6 @@
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, SINServiceDelegate, SINCallClientDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate  {
 
 	var window: UIWindow?
 	var tabBarController: UITabBarController!
@@ -9,7 +9,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SINServiceDelegate, SINCa
 	var peopleView: PeopleView!
 	var settingsView: SettingsView!
 
-	@objc var sinchService: SINService?
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
@@ -46,22 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SINServiceDelegate, SINCa
 		//-----------------------------------------------------------------------------------------------------------------------------------------
 		// Push notification initialization
 		//-----------------------------------------------------------------------------------------------------------------------------------------
-		let authorizationOptions: UNAuthorizationOptions = [.sound, .alert, .badge]
-		let userNotificationCenter = UNUserNotificationCenter.current()
-		userNotificationCenter.requestAuthorization(options: authorizationOptions, completionHandler: { granted, error in
-			if (error == nil) {
-				DispatchQueue.main.async {
-					UIApplication.shared.registerForRemoteNotifications()
-				}
-			}
-		})
 
-		//-----------------------------------------------------------------------------------------------------------------------------------------
-		// OneSignal initialization
-		//-----------------------------------------------------------------------------------------------------------------------------------------
-		OneSignal.initWithLaunchOptions(launchOptions, appId: ONESIGNAL_APPID, handleNotificationReceived: nil, handleNotificationAction: nil, settings: [kOSSettingsKeyAutoPrompt: false])
-		OneSignal.setLogLevel(ONE_S_LOG_LEVEL.LL_NONE, visualLevel: ONE_S_LOG_LEVEL.LL_NONE)
-
+    
 		//-----------------------------------------------------------------------------------------------------------------------------------------
 		// This can be removed once Firebase auth issue is resolved
 		//-----------------------------------------------------------------------------------------------------------------------------------------
@@ -133,7 +118,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SINServiceDelegate, SINCa
 	func applicationDidEnterBackground(_ application: UIApplication) {
 
 		Location.stop()
-		UpdateLastTerminate(fetch: true)
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
@@ -145,18 +129,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SINServiceDelegate, SINCa
 	func applicationDidBecomeActive(_ application: UIApplication) {
 
 		Location.start()
-		UpdateLastActive()
 
 		FBSDKAppEvents.activateApp()
 
-		OneSignal.idsAvailable({ userId, pushToken in
-			if (pushToken != nil) {
-				UserDefaults.standard.set(userId, forKey: ONESIGNALID)
-			} else {
-				UserDefaults.standard.removeObject(forKey: ONESIGNALID)
-			}
-			UpdateOneSignalId()
-		})
 
 		CacheManager.cleanupExpired()
 

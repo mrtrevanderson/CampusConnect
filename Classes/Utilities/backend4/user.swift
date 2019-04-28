@@ -1,7 +1,5 @@
 func LogoutUser(delAccount: Int32) {
 
-	ResignOneSignalId()
-	UpdateLastTerminate(fetch: false)
 
 	if (delAccount == DEL_ACCOUNT_ONE) { Account.delOne() }
 	if (delAccount == DEL_ACCOUNT_ALL) { Account.delAll() }
@@ -43,8 +41,6 @@ func OnboardUser(target: Any) {
 func UserLoggedIn(loginMethod: String) {
 
 	UpdateUserSettings(loginMethod: loginMethod)
-	UpdateOneSignalId()
-	UpdateLastActive()
 
 	LinkedId.createItem()
 
@@ -78,53 +74,3 @@ func UpdateUserSettings(loginMethod: String) {
 	}
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-func UpdateOneSignalId() {
-
-	if (FUser.currentId() != "") {
-		if (UserDefaultsX.string(key: ONESIGNALID) != nil) {
-			AssignOneSignalId()
-		} else {
-			ResignOneSignalId()
-		}
-	}
-}
-
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-func AssignOneSignalId() {
-
-	if let oneSignalId = UserDefaultsX.string(key: ONESIGNALID) {
-		if (FUser.oneSignalId() != oneSignalId) {
-			let user = FUser.currentUser()
-			user[FUSER_ONESIGNALID] = oneSignalId
-			user.saveInBackground()
-		}
-	}
-}
-
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-func ResignOneSignalId() {
-
-	let oneSignalId = FUser.oneSignalId()
-	if (oneSignalId.count != 0) {
-		let user = FUser.currentUser()
-		user[FUSER_ONESIGNALID] = ""
-		user.saveInBackground()
-	}
-}
-
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-func UpdateLastActive() {
-
-}
-
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-func UpdateLastTerminate(fetch: Bool) {
-
-}
-
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-func UserLastActive(dbuser: DBUser) -> String {
-
-	return ""
-}

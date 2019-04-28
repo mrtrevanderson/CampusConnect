@@ -1,6 +1,5 @@
 #define		FIREBASE_STORAGE					@"gs://messenger47-61ca2.appspot.com"
 //-------------------------------------------------------------------------------------------------------------------------------------------------
-#define		ONESIGNAL_APPID						@"15cad58e-b84c-47e1-a29b-932e88457132"
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 #define		SINCH_HOST							@"sandbox.sinch.com"
 #define		SINCH_KEY							@"b515eb8b-dcaf-473d-982a-81c5a97a3a1e"
@@ -216,7 +215,6 @@
 #define		FUSER_WALLPAPER						@"wallpaper"			//	String
 
 #define		FUSER_LOGINMETHOD					@"loginMethod"			//	String
-#define		FUSER_ONESIGNALID					@"oneSignalId"			//	String
 
 #define		FUSER_LASTACTIVE					@"lastActive"			//	Timestamp
 #define		FUSER_LASTTERMINATE					@"lastTerminate"		//	Timestamp
@@ -235,8 +233,6 @@
 #define		FUSERSTATUS_UPDATEDAT				@"updatedAt"			//	Timestamp
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
-#define		ONESIGNALID							@"OneSignalId"
 #define		USER_ACCOUNTS						@"UserAccounts"
 //---------------------------------------------------------------------------------
 #define		NOTIFICATION_APP_STARTED			@"NotificationAppStarted"

@@ -14,7 +14,6 @@ target 'app' do
 	pod 'Firebase/Database'
 	pod 'Firebase/Storage'
 	pod 'GoogleSignIn'
-	pod 'OneSignal', '2.5.0'
 	pod 'Realm'
 	pod 'SinchRTC'
 	pod 'SinchVerification'

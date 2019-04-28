@@ -21,10 +21,9 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <Firebase/Firebase.h>
 #import <GoogleSignIn/GoogleSignIn.h>
-#import <OneSignal/OneSignal.h>
 #import <Realm/Realm.h>
 #import <Sinch/Sinch.h>
-#import "SinchService.h"
+
 #import <SinchVerification/SinchVerification.h>
 
 #pragma mark -
