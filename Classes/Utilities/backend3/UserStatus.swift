@@ -4,10 +4,10 @@ class UserStatus: NSObject {
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	class func createItems() {
 
-		createItem(name: "Accounting")
-		createItem(name: "Anthropology")
-		createItem(name: "Architecture")
-		createItem(name: " ")
+		createItem(name: "Available")
+		createItem(name: "Busy")
+		createItem(name: "At school")
+		createItem(name: "At the movies")
 		createItem(name: "At work")
 		createItem(name: "Battery about to die")
 		createItem(name: "Can't talk now")
