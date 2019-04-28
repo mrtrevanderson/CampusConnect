@@ -247,14 +247,13 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func numberOfSections(in tableView: UITableView) -> Int {
 
-		return 2
+		return 1
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
 		if (section == 0) { return 4 }
-		if (section == 1) { return 1 }
 
 		return 0
 	}
