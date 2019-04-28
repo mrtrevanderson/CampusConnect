@@ -28,7 +28,6 @@ class MediaView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
 		super.viewDidAppear(animated)
 
-		AdvertPremium(target: self);
 	}
 
 	// MARK: - Backend methods

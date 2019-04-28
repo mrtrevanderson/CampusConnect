@@ -117,12 +117,7 @@ class SettingsView: UITableViewController {
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionBlocked() {
-
-		let blockedView = BlockedView()
-		blockedView.hidesBottomBarWhenPushed = true
-		navigationController?.pushViewController(blockedView, animated: true)
-	}
+	
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func actionArchive() {
@@ -157,32 +152,13 @@ class SettingsView: UITableViewController {
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionPrivacy() {
 
-		let privacyView = PrivacyView()
-		privacyView.hidesBottomBarWhenPushed = true
-		navigationController?.pushViewController(privacyView, animated: true)
-	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionTerms() {
 
-		let termsView = TermsView()
-		termsView.hidesBottomBarWhenPushed = true
-		navigationController?.pushViewController(termsView, animated: true)
-	}
-
+	//--------------------------------------------------------------------------------------------------------------------------------
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionAddAccount() {
 
-		AdvertPremium(target: self);
-	}
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionSwitchAccount() {
-
-		AdvertPremium(target: self);
-	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func actionLogout() {

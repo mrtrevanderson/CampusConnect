@@ -37,11 +37,8 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		navigationController?.interactivePopGestureRecognizer?.delegate = self
 
 		let buttonBack = UIBarButtonItem(image: UIImage(named: "chat_back"), style: .plain, target: self, action: #selector(actionBack))
-		let buttonCallAudio = UIBarButtonItem(image: UIImage(named: "chat_callaudio"), style: .plain, target: self, action: #selector(actionCallAudio))
-		let buttonCallVideo = UIBarButtonItem(image: UIImage(named: "chat_callvideo"), style: .plain, target: self, action: #selector(actionCallVideo))
 
 		navigationItem.leftBarButtonItem = buttonBack
-		navigationItem.rightBarButtonItems = [buttonCallVideo, buttonCallAudio]
 
 		if (isBlocker) {
 			navigationItem.rightBarButtonItems = nil
@@ -278,12 +275,10 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		let menuItemCopy = RCMenuItem(title: "Copy", action: #selector(actionMenuCopy(_:)))
 		let menuItemSave = RCMenuItem(title: "Save", action: #selector(actionMenuSave(_:)))
 		let menuItemDelete = RCMenuItem(title: "Delete", action: #selector(actionMenuDelete(_:)))
-		let menuItemForward = RCMenuItem(title: "Forward", action: #selector(actionMenuForward(_:)))
 
 		menuItemCopy.indexPath = indexPath
 		menuItemSave.indexPath = indexPath
 		menuItemDelete.indexPath = indexPath
-		menuItemForward.indexPath = indexPath
 
 		let rcmessage = self.rcmessage(indexPath)
 
@@ -297,7 +292,6 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		if (rcmessage.type == RC_TYPE_AUDIO)	{ array.append(menuItemSave)	}
 
 		array.append(menuItemDelete)
-		array.append(menuItemForward)
 
 		return array
 	}
@@ -308,7 +302,6 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		if (action == #selector(actionMenuCopy(_:)))	{ return true	}
 		if (action == #selector(actionMenuSave(_:)))	{ return true	}
 		if (action == #selector(actionMenuDelete(_:)))	{ return true 	}
-		if (action == #selector(actionMenuForward(_:)))	{ return true	}
 
 		return false
 	}
@@ -435,16 +428,6 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	@objc func actionCallAudio() {
-
-		AdvertPremium(target: self);
-	}
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	@objc func actionCallVideo() {
-
-		AdvertPremium(target: self);
-	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	override func actionAttachMessage() {
@@ -682,11 +665,6 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	@objc func actionMenuForward(_ sender: Any?) {
-
-		AdvertPremium(target: self);
-	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	@objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeMutableRawPointer?) {
