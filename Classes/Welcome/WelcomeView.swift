@@ -1,4 +1,4 @@
-class WelcomeView: UIViewController, LoginGoogleDelegate, LoginPhoneDelegate, LoginEmailDelegate, RegisterEmailDelegate {
+class WelcomeView: UIViewController, LoginEmailDelegate, RegisterEmailDelegate {
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	override func viewDidLoad() {
