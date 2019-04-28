@@ -218,6 +218,7 @@
 		355FA13822711CC70093FAC4 /* campus_connect_logo_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 355FA13722711CC70093FAC4 /* campus_connect_logo_black@2x.png */; };
 		6C0888E250EDDE30BCA104EB /* Pods_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A8835041C05399266378E9 /* Pods_app.framework */; };
 		71794A38227552080017712C /* chat_audio@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71794A37227552070017712C /* chat_audio@2x.png */; };
+		71794A3C227555E30017712C /* chat_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71794A3B227555E20017712C /* chat_back@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -477,6 +478,7 @@
 		355FA13522711B050093FAC4 /* campus_connect_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "campus_connect_logo@2x.png"; sourceTree = "<group>"; };
 		355FA13722711CC70093FAC4 /* campus_connect_logo_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "campus_connect_logo_black@2x.png"; sourceTree = "<group>"; };
 		71794A37227552070017712C /* chat_audio@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_audio@2x.png"; sourceTree = "<group>"; };
+		71794A3B227555E20017712C /* chat_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_back@2x.png"; sourceTree = "<group>"; };
 		7393A6F3A4D6270AF7ACDCFA /* Pods-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-app/Pods-app.release.xcconfig"; sourceTree = "<group>"; };
 		AA3F4F54A03FBAE7CEC0B5DB /* app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "app-Bridging-Header.h"; sourceTree = "<group>"; };
 		DED94DC0AC66CCD8277DB3AF /* app-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "app-Prefix.pch"; sourceTree = "<group>"; };
@@ -1177,6 +1179,7 @@
 		29BB8F4C1F5C266100560F3F /* chat */ = {
 			isa = PBXGroup;
 			children = (
+				71794A3B227555E20017712C /* chat_back@2x.png */,
 				71794A37227552070017712C /* chat_audio@2x.png */,
 				29BB8F501F5C266100560F3F /* chat_camera@2x.png */,
 				29BB8F521F5C266100560F3F /* chat_picture@2x.png */,
@@ -1578,6 +1581,7 @@
 				298990691F1B6FFD00AC73B3 /* wallpapers03@2x.jpg in Resources */,
 				29BB8F941F5C266100560F3F /* allmedia_selected@2x.png in Resources */,
 				296021991F2CF5F600544468 /* NetworkView.xib in Resources */,
+				71794A3C227555E30017712C /* chat_back@2x.png in Resources */,
 				2989906C1F1B6FFD00AC73B3 /* wallpapers06@2x.jpg in Resources */,
 				355FA13822711CC70093FAC4 /* campus_connect_logo_black@2x.png in Resources */,
 				298990671F1B6FFD00AC73B3 /* wallpapers01@2x.jpg in Resources */,
