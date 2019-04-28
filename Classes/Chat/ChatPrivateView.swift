@@ -448,16 +448,12 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		let alertAudio = UIAlertAction(title: "Audio", style: .default, handler: { action in
 			self.actionAudio()
 		})
-		let alertStickers = UIAlertAction(title: "Sticker", style: .default, handler: { action in
-			self.actionStickers()
-		})
-
+	
 
 		alertCamera.setValue(UIImage(named: "chat_camera"), forKey: "image"); 		alert.addAction(alertCamera)
 		alertPicture.setValue(UIImage(named: "chat_picture"), forKey: "image");		alert.addAction(alertPicture)
 		alertVideo.setValue(UIImage(named: "chat_video"), forKey: "image");			alert.addAction(alertVideo)
 		alertAudio.setValue(UIImage(named: "chat_audio"), forKey: "image");			alert.addAction(alertAudio)
-		alertStickers.setValue(UIImage(named: "chat_sticker"), forKey: "image");	alert.addAction(alertStickers)
 
 		alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
