@@ -336,8 +336,6 @@
 		2989906E1F1B6FFD00AC73B3 /* wallpapers08@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29898F7D1F1B6FFD00AC73B3 /* wallpapers08@2x.jpg */; };
 		2989906F1F1B6FFD00AC73B3 /* wallpapers09@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29898F7E1F1B6FFD00AC73B3 /* wallpapers09@2x.jpg */; };
 		298990701F1B6FFD00AC73B3 /* wallpapers10@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29898F7F1F1B6FFD00AC73B3 /* wallpapers10@2x.jpg */; };
-		298990711F1B6FFD00AC73B3 /* privacy.html in Resources */ = {isa = PBXBuildFile; fileRef = 29898F811F1B6FFD00AC73B3 /* privacy.html */; };
-		298990721F1B6FFD00AC73B3 /* terms.html in Resources */ = {isa = PBXBuildFile; fileRef = 29898F821F1B6FFD00AC73B3 /* terms.html */; };
 		299702621F9CC88900830794 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299702611F9CC88900830794 /* Friend.swift */; };
 		29AA54BD20D3B3DA004067FE /* RelayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AA54BB20D3B3D9004067FE /* RelayManager.swift */; };
 		29B72CC720EE93A900E4C078 /* FObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B72CC620EE93A900E4C078 /* FObject.swift */; };
@@ -815,8 +813,6 @@
 		29898F7D1F1B6FFD00AC73B3 /* wallpapers08@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wallpapers08@2x.jpg"; sourceTree = "<group>"; };
 		29898F7E1F1B6FFD00AC73B3 /* wallpapers09@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wallpapers09@2x.jpg"; sourceTree = "<group>"; };
 		29898F7F1F1B6FFD00AC73B3 /* wallpapers10@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wallpapers10@2x.jpg"; sourceTree = "<group>"; };
-		29898F811F1B6FFD00AC73B3 /* privacy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = privacy.html; sourceTree = "<group>"; };
-		29898F821F1B6FFD00AC73B3 /* terms.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = terms.html; sourceTree = "<group>"; };
 		299702611F9CC88900830794 /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		29AA54BB20D3B3D9004067FE /* RelayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelayManager.swift; sourceTree = "<group>"; };
 		29B72CC620EE93A900E4C078 /* FObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FObject.swift; sourceTree = "<group>"; };
@@ -1635,7 +1631,6 @@
 				29898ED71F1B6FFC00AC73B3 /* Stickers1 */,
 				29898F261F1B6FFC00AC73B3 /* Stickers2 */,
 				29898F751F1B6FFD00AC73B3 /* Wallpapers */,
-				29898F801F1B6FFD00AC73B3 /* Web */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1850,15 +1845,6 @@
 				29898F7F1F1B6FFD00AC73B3 /* wallpapers10@2x.jpg */,
 			);
 			path = Wallpapers;
-			sourceTree = "<group>";
-		};
-		29898F801F1B6FFD00AC73B3 /* Web */ = {
-			isa = PBXGroup;
-			children = (
-				29898F811F1B6FFD00AC73B3 /* privacy.html */,
-				29898F821F1B6FFD00AC73B3 /* terms.html */,
-			);
-			path = Web;
 			sourceTree = "<group>";
 		};
 		29BB8F221F5C266100560F3F /* Images */ = {
@@ -2499,7 +2485,6 @@
 				298990651F1B6FFD00AC73B3 /* stickersend77@2x.png in Resources */,
 				2989906A1F1B6FFD00AC73B3 /* wallpapers04@2x.jpg in Resources */,
 				298990591F1B6FFD00AC73B3 /* stickersend65@2x.png in Resources */,
-				298990721F1B6FFD00AC73B3 /* terms.html in Resources */,
 				29898FEF1F1B6FFD00AC73B3 /* stickerlocal37@2x.png in Resources */,
 				298990191F1B6FFD00AC73B3 /* stickersend01@2x.png in Resources */,
 				298990611F1B6FFD00AC73B3 /* stickersend73@2x.png in Resources */,
@@ -2519,7 +2504,6 @@
 				296021971F2CF5F600544468 /* CacheView.xib in Resources */,
 				29BB8F9D1F5C266100560F3F /* callaudio_mute2@2x.png in Resources */,
 				2989900D1F1B6FFD00AC73B3 /* stickerlocal67@2x.png in Resources */,
-				298990711F1B6FFD00AC73B3 /* privacy.html in Resources */,
 				298990621F1B6FFD00AC73B3 /* stickersend74@2x.png in Resources */,
 				29898FE71F1B6FFD00AC73B3 /* stickerlocal29@2x.png in Resources */,
 				29BB8F921F5C266100560F3F /* advert11@2x.png in Resources */,
