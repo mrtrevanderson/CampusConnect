@@ -85,15 +85,6 @@
                         <action selector="actionLogin:" destination="-1" eventType="touchUpInside" id="clI-GL-xXm"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By signing in you accept the Terms &amp; Privacy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5I3-OK-1j5">
-                    <rect key="frame" x="0.0" y="400" width="320" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="ckH-l3-0sq"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvS-O5-gyd">
                     <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                     <constraints>
@@ -111,11 +102,9 @@
             <constraints>
                 <constraint firstItem="SkL-eY-oeP" firstAttribute="leading" secondItem="cHL-mJ-N0N" secondAttribute="leading" constant="16" id="5lR-9Z-q2O"/>
                 <constraint firstItem="YvS-O5-gyd" firstAttribute="leading" secondItem="cHL-mJ-N0N" secondAttribute="leading" id="8CH-Pz-YIK"/>
-                <constraint firstItem="5I3-OK-1j5" firstAttribute="top" secondItem="cHL-mJ-N0N" secondAttribute="top" constant="380" id="8E1-hw-PN8"/>
                 <constraint firstItem="cHL-mJ-N0N" firstAttribute="trailing" secondItem="SkL-eY-oeP" secondAttribute="trailing" constant="16" id="AER-p6-TEb"/>
                 <constraint firstItem="Tq2-dv-c6I" firstAttribute="centerX" secondItem="cHL-mJ-N0N" secondAttribute="centerX" id="ErQ-yH-pEO"/>
                 <constraint firstItem="SkL-eY-oeP" firstAttribute="top" secondItem="cHL-mJ-N0N" secondAttribute="top" constant="250" id="H6K-Uy-RiM"/>
-                <constraint firstItem="cHL-mJ-N0N" firstAttribute="trailing" secondItem="5I3-OK-1j5" secondAttribute="trailing" id="HxS-YP-6le"/>
                 <constraint firstItem="OZ7-2i-VuJ" firstAttribute="leading" secondItem="cHL-mJ-N0N" secondAttribute="leading" constant="16" id="J67-4S-Oah"/>
                 <constraint firstItem="cHL-mJ-N0N" firstAttribute="bottom" secondItem="YvS-O5-gyd" secondAttribute="bottom" id="Nvr-jz-JpP"/>
                 <constraint firstItem="jVC-Fi-mBC" firstAttribute="leading" secondItem="cHL-mJ-N0N" secondAttribute="leading" constant="20" id="RIw-2D-aPK"/>
@@ -129,7 +118,6 @@
                 <constraint firstItem="jVC-Fi-mBC" firstAttribute="top" secondItem="cHL-mJ-N0N" secondAttribute="top" constant="320" id="pqr-i6-T0I"/>
                 <constraint firstItem="cHL-mJ-N0N" firstAttribute="trailing" secondItem="jVC-Fi-mBC" secondAttribute="trailing" constant="20" id="qG3-e0-yen"/>
                 <constraint firstItem="6WO-1D-5cz" firstAttribute="leading" secondItem="cHL-mJ-N0N" secondAttribute="leading" constant="16" id="tC0-5E-vZW"/>
-                <constraint firstItem="5I3-OK-1j5" firstAttribute="leading" secondItem="cHL-mJ-N0N" secondAttribute="leading" id="tnK-dk-u97"/>
                 <constraint firstItem="6WO-1D-5cz" firstAttribute="top" secondItem="cHL-mJ-N0N" secondAttribute="top" constant="300" id="uGp-Ib-bod"/>
                 <constraint firstItem="cHL-mJ-N0N" firstAttribute="trailing" secondItem="wiw-WP-O7Z" secondAttribute="trailing" constant="16" id="yLN-PA-SYg"/>
             </constraints>
