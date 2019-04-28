@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -71,18 +72,10 @@
                         <color key="textColor" red="0.41510283946990967" green="0.75574278831481934" blue="0.13843157887458801" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chats_muted.png" translatesAutoresizingMaskIntoConstraints="NO" id="R8P-C1-LFY">
-                        <rect key="frame" x="282" y="35" width="20" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="20" id="D6W-s6-h13"/>
-                            <constraint firstAttribute="height" constant="20" id="VMk-kX-hw9"/>
-                        </constraints>
-                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="aCl-zV-J5y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="31W-Dz-LrV"/>
                     <constraint firstItem="Ifk-Hu-PIe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="7jP-ce-Qy0"/>
-                    <constraint firstItem="R8P-C1-LFY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="35" id="AMP-PD-kqZ"/>
                     <constraint firstAttribute="trailing" secondItem="uxG-h3-jPt" secondAttribute="trailing" constant="80" id="BJy-dq-AAB"/>
                     <constraint firstItem="lLy-F7-ciQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="BbT-qR-h8d"/>
                     <constraint firstItem="Ifk-Hu-PIe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="GDb-jo-Ziy"/>
@@ -93,11 +86,9 @@
                     <constraint firstItem="Ois-e3-M4I" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="35" id="cPk-SL-PLm"/>
                     <constraint firstItem="Ois-e3-M4I" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="70" id="ft4-yw-wBM"/>
                     <constraint firstItem="uxG-h3-jPt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="l39-Wo-2cv"/>
-                    <constraint firstAttribute="trailing" secondItem="R8P-C1-LFY" secondAttribute="trailing" constant="18" id="loC-Ok-pQA"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="imageMuted" destination="R8P-C1-LFY" id="nZv-cU-yhY"/>
                 <outlet property="imageUser" destination="Ifk-Hu-PIe" id="jXg-NP-iy1"/>
                 <outlet property="labelDescription" destination="uxG-h3-jPt" id="zZj-wb-Zmk"/>
                 <outlet property="labelElapsed" destination="aCl-zV-J5y" id="ojp-rj-HN6"/>
@@ -110,6 +101,5 @@
     </objects>
     <resources>
         <image name="chats_blank.png" width="50" height="50"/>
-        <image name="chats_muted.png" width="20" height="20"/>
     </resources>
 </document>
