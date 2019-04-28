@@ -31,7 +31,7 @@ class CacheView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
 		super.viewDidAppear(animated)
 
-		AdvertPremium(target: self);
+	
 	}
 
 	// MARK: - Backend methods

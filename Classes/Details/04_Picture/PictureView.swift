@@ -68,13 +68,7 @@ class PictureView: NYTPhotosViewController, SelectUsersDelegate {
 
 		statusBarIsHidden = UIApplication.shared.isStatusBarHidden
 
-		if (isMessages) {
-			let buttonMore = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(actionMore))
-			let buttonDelete = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(actionDelete))
-			rightBarButtonItems = [buttonMore, buttonDelete]
-		} else {
-			rightBarButtonItem = nil
-		}
+		
 
 		updateOverlayViewConstraints()
 	}
@@ -112,26 +106,17 @@ class PictureView: NYTPhotosViewController, SelectUsersDelegate {
 
 		let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
-		alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { action in
-			self.actionSave()
-		}))
-		alert.addAction(UIAlertAction(title: "Forward", style: .default, handler: { action in
-			self.actionForward()
-		}))
-		alert.addAction(UIAlertAction(title: "Share", style: .default, handler: { action in
-			self.actionShare()
-		}))
-		alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+		
+		
+	
+
 
 		present(alert, animated: true)
 	}
 
 	// MARK: - User actions (save)
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionSave() {
 
-		AdvertPremium(target: self);
-	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	@objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeMutableRawPointer?) {
@@ -140,10 +125,6 @@ class PictureView: NYTPhotosViewController, SelectUsersDelegate {
 
 	// MARK: - User actions (forward)
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionForward() {
-
-		AdvertPremium(target: self);
-	}
 
 	// MARK: - SelectUsersDelegate
 	//---------------------------------------------------------------------------------------------------------------------------------------------
@@ -153,28 +134,10 @@ class PictureView: NYTPhotosViewController, SelectUsersDelegate {
 
 	// MARK: - User actions (share)
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionShare() {
-
-		AdvertPremium(target: self);
-	}
 
 	// MARK: - User actions (delete)
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	@objc func actionDelete() {
 
-		let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-
-		alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
-			self.actionDeletePhoto()
-		}))
-		alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-
-		present(alert, animated: true)
-	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func actionDeletePhoto() {
 
-		AdvertPremium(target: self);
-	}
 }
