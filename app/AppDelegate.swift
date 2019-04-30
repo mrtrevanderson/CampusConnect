@@ -1,4 +1,7 @@
 import RealmSwift
+import Fabric
+import Crashlytics
+import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate  {
 
@@ -14,16 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         
         // Handle Migration if needed
+        //increment schema version and old schema version if you wish to update schema
+        //update schema by deleting obj in respective file for each table
         var config = Realm.Configuration(
             schemaVersion: 6,
             migrationBlock: { migration, oldSchemaVersion in
-                if (oldSchemaVersion < 5) {
+            if (oldSchemaVersion < 5) {
                 }
         })
         Realm.Configuration.defaultConfiguration = config
         config = Realm.Configuration()
         config.deleteRealmIfMigrationNeeded = true
         let realm = try! Realm()
+        
         
 		// Firebase initialization
 		FirebaseApp.configure()

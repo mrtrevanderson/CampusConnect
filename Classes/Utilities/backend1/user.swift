@@ -7,7 +7,6 @@ func LogoutUser(delAccount: Int32) {
 
 
 	if (FUser.logOut()) {
-		RealmManager.cleanupDatabase()
 		NotificationCenterX.post(notification: NOTIFICATION_USER_LOGGED_OUT)
 	} else {
 		ProgressHUD.showError("Logout error.")

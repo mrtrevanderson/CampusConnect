@@ -13,7 +13,6 @@ class ChatsCell: MGSwipeTableCell {
 	func bindData(dbchat: DBChat) {
 
 		let lastRead = Status.lastRead(chatId: dbchat.chatId)
-		let mutedUntil = Status.mutedUntil(chatId: dbchat.chatId)
 
 		viewUnread.isHidden = (lastRead >= dbchat.lastIncoming)
 

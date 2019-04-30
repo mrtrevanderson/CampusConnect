@@ -13,6 +13,9 @@ PODS:
   - Firebase/Database (5.8.0):
     - Firebase/CoreOnly
     - FirebaseDatabase (= 5.0.3)
+  - Firebase/Performance (5.8.0):
+    - Firebase/Core
+    - FirebasePerformance (= 2.1.1)
   - Firebase/Storage (5.8.0):
     - Firebase/CoreOnly
     - FirebaseStorage (= 3.0.2)
@@ -39,6 +42,15 @@ PODS:
   - FirebaseInstanceID (3.2.1):
     - FirebaseCore (~> 5.1)
     - GoogleUtilities/Environment (~> 5.2)
+  - FirebasePerformance (2.1.1):
+    - FirebaseAnalytics (~> 5.1)
+    - FirebaseInstanceID (~> 3.2)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - GoogleUtilities/ISASwizzler (~> 5.2.0)
+    - GoogleUtilities/MethodSwizzler (~> 5.2.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+    - Protobuf (~> 3.5)
   - FirebaseStorage (3.0.2):
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 5.0)
@@ -50,11 +62,17 @@ PODS:
     - GoogleUtilities/Network (~> 5.2)
     - "GoogleUtilities/NSData+zlib (~> 5.2)"
     - nanopb (~> 0.3)
+  - GoogleToolboxForMac/Defines (2.2.0)
+  - GoogleToolboxForMac/Logger (2.2.0):
+    - GoogleToolboxForMac/Defines (= 2.2.0)
+  - "GoogleToolboxForMac/NSData+zlib (2.2.0)":
+    - GoogleToolboxForMac/Defines (= 2.2.0)
   - GoogleUtilities/AppDelegateSwizzler (5.2.3):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
   - GoogleUtilities/Environment (5.2.3)
+  - GoogleUtilities/ISASwizzler (5.2.3)
   - GoogleUtilities/Logger (5.2.3):
     - GoogleUtilities/Environment
   - GoogleUtilities/MethodSwizzler (5.2.3):
@@ -83,6 +101,7 @@ PODS:
     - NYTPhotoViewer/Core
   - NYTPhotoViewer/Core (1.2.0)
   - ProgressHUD (2.60)
+  - Protobuf (3.7.0)
   - Reachability (3.2)
   - Realm (3.9.0):
     - Realm/Headers (= 3.9.0)
@@ -98,6 +117,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - Firebase/Performance
   - Firebase/Storage
   - MBProgressHUD
   - MGSwipeTableCell
@@ -119,9 +139,11 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseDatabase
     - FirebaseInstanceID
+    - FirebasePerformance
     - FirebaseStorage
     - FLAnimatedImage
     - GoogleAppMeasurement
+    - GoogleToolboxForMac
     - GoogleUtilities
     - GTMSessionFetcher
     - leveldb-library
@@ -130,6 +152,7 @@ SPEC REPOS:
     - nanopb
     - NYTPhotoViewer
     - ProgressHUD
+    - Protobuf
     - Reachability
     - Realm
     - RealmSwift
@@ -146,9 +169,11 @@ SPEC CHECKSUMS:
   FirebaseCore: 27bd80e5bfaaf9552a1f5cacb4c7e8bb925bab22
   FirebaseDatabase: e2bcbc106adc4b11a2da3ec2eb63c0c4a44f2f54
   FirebaseInstanceID: ea5af6920d0a4a29b40459d055bebe4a6c1333c4
+  FirebasePerformance: e732cd3fe9488c68bf2e9ae7a55672e873d0c55a
   FirebaseStorage: fd82e5e5c474897e19972b34b22ac0f589dce04e
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   GoogleAppMeasurement: fc4a4c3fe0144db9313cbf443ffe62e6b1d6268c
+  GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
   GoogleUtilities: 6f681e27050c5e130325e89fa0316dfca826f954
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
@@ -157,12 +182,13 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NYTPhotoViewer: 323217e4590a1586eb3c9674b3fefb0fb8b57896
   ProgressHUD: 4e4efbaf4f5de8bd32e0c4c3b6644a90ea1a8c3e
+  Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   Realm: 3d36f208bf3aff8335dc3298742140182bde4edb
   RealmSwift: aa4d11917bfcfaa3ed51f219102a487ecd895447
   RNCryptor-objc: d1b228f9c02e2173df063f0617684c134aed890e
   SoundManager: 99ae328a3ec9b259db774c9851a65feeceba8183
 
-PODFILE CHECKSUM: 3f44cf7c96334dfedd2ca536acea341f1d225228
+PODFILE CHECKSUM: fcc35d90b3078f5b1e2f27feb5938666d063c50f
 
 COCOAPODS: 1.7.0.beta.3

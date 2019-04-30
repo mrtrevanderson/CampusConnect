@@ -7,6 +7,7 @@ inhibit_all_warnings!
 target 'app' do
 	pod 'Crashlytics'
 	pod 'Firebase/Core'
+	pod 'Firebase/Performance'
 	pod 'Firebase/Auth'
 	pod 'Firebase/Database'
 	pod 'Firebase/Storage'
