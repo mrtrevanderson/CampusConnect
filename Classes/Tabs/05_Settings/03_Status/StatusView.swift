@@ -11,7 +11,7 @@ class StatusView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
-		title = "Status"
+		title = "Major"
 
 		loadStatuses()
 	}

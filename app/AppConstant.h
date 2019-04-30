@@ -89,9 +89,6 @@
 #define		FMESSAGE_AUDIO_DURATION				@"audio_duration"		//	Number
 #define		FMESSAGE_AUDIO_MD5					@"audio_md5"			//	String
 
-#define		FMESSAGE_LATITUDE					@"latitude"				//	Number
-#define		FMESSAGE_LONGITUDE					@"longitude"			//	Number
-
 #define		FMESSAGE_STATUS						@"status"				//	String
 #define		FMESSAGE_ISDELETED					@"isDeleted"			//	Boolean
 

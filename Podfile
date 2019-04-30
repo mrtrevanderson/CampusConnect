@@ -10,7 +10,7 @@ target 'app' do
 	pod 'Firebase/Auth'
 	pod 'Firebase/Database'
 	pod 'Firebase/Storage'
-	pod 'Realm'
+	pod 'RealmSwift'
 	pod 'Fabric'
 	pod 'MBProgressHUD'
 	pod 'MGSwipeTableCell'

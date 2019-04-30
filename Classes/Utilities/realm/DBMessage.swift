@@ -15,10 +15,6 @@ class DBMessage: RLMObject {
 	@objc dynamic var recipientInitials = ""
 	@objc dynamic var recipientPicture = ""
 
-	@objc dynamic var groupId = ""
-	@objc dynamic var groupName = ""
-	@objc dynamic var groupPicture = ""
-
 	@objc dynamic var type = ""
 	@objc dynamic var text = ""
 

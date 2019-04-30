@@ -20,9 +20,6 @@ class MessageRelay: NSObject {
 		message[FMESSAGE_RECIPIENTINITIALS] = dbmessage.recipientInitials
 		message[FMESSAGE_RECIPIENTPICTURE] = dbmessage.recipientPicture
 
-		message[FMESSAGE_GROUPID] = dbmessage.groupId
-		message[FMESSAGE_GROUPNAME] = dbmessage.groupName
-		message[FMESSAGE_GROUPPICTURE] = dbmessage.groupPicture
 
 		message[FMESSAGE_TYPE] = dbmessage.type
 		message[FMESSAGE_TEXT] = Cryptor.encrypt(text: dbmessage.text, chatId: dbmessage.chatId)

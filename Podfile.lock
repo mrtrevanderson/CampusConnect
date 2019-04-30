@@ -1,5 +1,4 @@
 PODS:
-  - ApiAI/Core (0.7.2)
   - Crashlytics (3.10.7):
     - Fabric (~> 1.7.11)
   - Fabric (1.7.11)
@@ -88,11 +87,12 @@ PODS:
   - Realm (3.9.0):
     - Realm/Headers (= 3.9.0)
   - Realm/Headers (3.9.0)
+  - RealmSwift (3.9.0):
+    - Realm (= 3.9.0)
   - RNCryptor-objc (3.0.6)
   - SoundManager (1.4.2)
 
 DEPENDENCIES:
-  - ApiAI/Core
   - Crashlytics
   - Fabric
   - Firebase/Auth
@@ -104,13 +104,12 @@ DEPENDENCIES:
   - NYTPhotoViewer (= 1.2.0)
   - ProgressHUD
   - Reachability
-  - Realm
+  - RealmSwift
   - RNCryptor-objc
   - SoundManager
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - ApiAI
     - Crashlytics
     - Fabric
     - Firebase
@@ -133,11 +132,11 @@ SPEC REPOS:
     - ProgressHUD
     - Reachability
     - Realm
+    - RealmSwift
     - RNCryptor-objc
     - SoundManager
 
 SPEC CHECKSUMS:
-  ApiAI: d4b49d3736f33ce6f3ef66dc33c0e0fccb23579e
   Crashlytics: ccaac42660eb9351b9960c0d66106b0bcf99f4fa
   Fabric: f233c9492b3bbc1f04e3882986740f7988a58edb
   Firebase: 25812f43e7a53b11ae2f0a5f4c6d12faeb1f7cd7
@@ -160,9 +159,10 @@ SPEC CHECKSUMS:
   ProgressHUD: 4e4efbaf4f5de8bd32e0c4c3b6644a90ea1a8c3e
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   Realm: 3d36f208bf3aff8335dc3298742140182bde4edb
+  RealmSwift: aa4d11917bfcfaa3ed51f219102a487ecd895447
   RNCryptor-objc: d1b228f9c02e2173df063f0617684c134aed890e
   SoundManager: 99ae328a3ec9b259db774c9851a65feeceba8183
 
-PODFILE CHECKSUM: 006bbc320ad01c6451de6313d8bb3d7ac730cfc5
+PODFILE CHECKSUM: 3f44cf7c96334dfedd2ca536acea341f1d225228
 
 COCOAPODS: 1.7.0.beta.3

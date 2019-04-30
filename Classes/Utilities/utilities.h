@@ -13,7 +13,6 @@
 
 #pragma mark -
 
-#import <ApiAI/ApiAI.h>
 #import <Crashlytics/Crashlytics.h>
 #import <Fabric/Fabric.h>
 #import <Firebase/Firebase.h>
@@ -37,19 +36,7 @@
 
 #pragma mark - backend1
 
-#pragma mark - backend2
-
-#pragma mark - backend3
-
-#pragma mark - backend4
-
 #pragma mark - general1
-
-#pragma mark - general2
-
-#pragma mark - general3
-
-#pragma mark - general4
 
 #pragma mark - manager
 

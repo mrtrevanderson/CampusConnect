@@ -44,13 +44,7 @@ class Chat: NSObject {
 				dbchat.details		= outgoing ? dbmessage.recipientName	 : dbmessage.senderName
 			}
 
-			if (dbmessage.groupId.count != 0) {
-				dbchat.recipientId	= ""
-				dbchat.groupId		= dbmessage.groupId
-				dbchat.initials		= ""
-				dbchat.picture		= dbmessage.groupPicture
-				dbchat.details		= dbmessage.groupName
-			}
+
 
 			dbchat.lastMessage = dbmessage.text
 			dbchat.lastMessageDate = dbmessage.createdAt
