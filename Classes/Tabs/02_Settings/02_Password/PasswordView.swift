@@ -8,8 +8,7 @@ class PasswordView: UIViewController, UITableViewDataSource, UITableViewDelegate
 	@IBOutlet var fieldPassword0: UITextField!
 	@IBOutlet var fieldPassword1: UITextField!
 	@IBOutlet var fieldPassword2: UITextField!
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+    
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -23,28 +22,28 @@ class PasswordView: UIViewController, UITableViewDataSource, UITableViewDelegate
 		gestureRecognizer.cancelsTouchesInView = false
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------
 	override func viewDidAppear(_ animated: Bool) {
 
 		super.viewDidAppear(animated)
 		fieldPassword0.becomeFirstResponder()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------
 	override func viewWillDisappear(_ animated: Bool) {
 
 		super.viewWillDisappear(animated)
 		dismissKeyboard()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@objc func dismissKeyboard() {
 
 		view.endEditing(true)
 	}
 
 	// MARK: - Backend actions
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------
 	func checkPassword() {
 
 		ProgressHUD.show(nil, interaction: false)
@@ -65,7 +64,7 @@ class PasswordView: UIViewController, UITableViewDataSource, UITableViewDelegate
 		} else { ProgressHUD.showError("Check password error.") }
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func updatePassword() {
 
 		if let firuser = Auth.auth().currentUser {
@@ -83,13 +82,13 @@ class PasswordView: UIViewController, UITableViewDataSource, UITableViewDelegate
 	}
 
 	// MARK: - User actions
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@objc func actionCancel() {
 
 		dismiss(animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@objc func actionDone() {
 
 		let password0 = fieldPassword0.text ?? ""
@@ -104,13 +103,13 @@ class PasswordView: UIViewController, UITableViewDataSource, UITableViewDelegate
 	}
 
 	// MARK: - Table view data source
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------
 	func numberOfSections(in tableView: UITableView) -> Int {
 
 		return 2
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
 		if (section == 0) { return 1 }
@@ -119,7 +118,7 @@ class PasswordView: UIViewController, UITableViewDataSource, UITableViewDelegate
 		return 0
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
 		if (indexPath.section == 0) && (indexPath.row == 0) { return cellPassword0	}
@@ -130,14 +129,14 @@ class PasswordView: UIViewController, UITableViewDataSource, UITableViewDelegate
 	}
 
 	// MARK: - Table view delegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 		tableView.deselectRow(at: indexPath, animated: true)
 	}
 
 	// MARK: - UITextField delegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
 		if (textField == fieldPassword0) { fieldPassword1.becomeFirstResponder()	}

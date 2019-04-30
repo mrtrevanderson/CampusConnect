@@ -20,7 +20,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	private var timer: Timer?
 	private var indexForward: IndexPath?
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func myInit(recipientId recipientId_: String) {
 
 		recipientId = recipientId_
@@ -28,7 +28,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		chatId = Chat.chatId(recipientId: recipientId)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -63,7 +63,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		createLastReadObservers()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewWillAppear(_ animated: Bool) {
 
 		super.viewWillAppear(animated)
@@ -77,7 +77,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		updateTitleDetails()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewDidDisappear(_ animated: Bool) {
 
 		super.viewDidDisappear(animated)
@@ -91,7 +91,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	}
 
 	// MARK: - Realm methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func loadMessages() {
 
 		let predicate = NSPredicate(format: "chatId == %@ AND isDeleted == NO", chatId)
@@ -99,7 +99,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	}
 
 	// MARK: - DBMessage methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func index(_ indexPath: IndexPath) -> Int {
 
 		let count = min(insertCounter, Int(dbmessages.count))
@@ -108,14 +108,14 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		return (indexPath.section + offset)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func dbmessage(_ indexPath: IndexPath) -> DBMessage {
 
 		let index = self.index(indexPath)
 		return dbmessages[UInt(index)] as! DBMessage
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func dbmessageAbove(_ indexPath: IndexPath) -> DBMessage? {
 
 		if (indexPath.section > 0) {
@@ -126,7 +126,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	}
 
 	// MARK: - Message methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func rcmessage(_ indexPath: IndexPath) -> RCMessage {
 
 		let dbmessage = self.dbmessage(indexPath)
@@ -172,14 +172,14 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	}
 
 	// MARK: - Avatar methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func avatarInitials(_ indexPath: IndexPath) -> String {
 
 		let dbmessage = self.dbmessage(indexPath)
 		return dbmessage.senderInitials
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func avatarImage(_ indexPath: IndexPath) -> UIImage? {
 
 		let dbmessage = self.dbmessage(indexPath)
@@ -191,7 +191,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		return avatarImages[dbmessage.senderId]
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func loadAvatarImage(_ dbmessage: DBMessage) {
 
 		let userId = dbmessage.senderId
@@ -215,7 +215,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	}
 
 	// MARK: - Header, Footer methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func textSectionHeader(_ indexPath: IndexPath) -> String? {
 
 		if (indexPath.section % 3 == 0) {
@@ -229,7 +229,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func textBubbleHeader(_ indexPath: IndexPath) -> String? {
 
 		let rcmessage = self.rcmessage(indexPath)
@@ -245,13 +245,13 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		return nil
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func textBubbleFooter(_ indexPath: IndexPath) -> String? {
 
 		return nil
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func textSectionFooter(_ indexPath: IndexPath) -> String? {
 		
 		let rcmessage = self.rcmessage(indexPath)
@@ -263,7 +263,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	}
 
 	// MARK: - Menu controller methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func menuItems(_ indexPath: IndexPath) -> [Any]? {
 
 		let menuItemCopy = RCMenuItem(title: "Copy", action: #selector(actionMenuCopy(_:)))
@@ -290,7 +290,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		return array
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
 
 		if (action == #selector(actionMenuCopy(_:)))	{ return true	}
@@ -301,7 +301,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	}
 
 	// MARK: - Typing indicator methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func typingIndicatorObserver() {
 
 		firebase1 = Database.database().reference(withPath: FTYPING_PATH).child(chatId)
@@ -314,7 +314,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		})
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func typingIndicatorUpdate() {
 
 		typingCounter += 1
@@ -325,7 +325,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func typingIndicatorStop() {
 
 		typingCounter -= 1
@@ -334,14 +334,14 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func typingIndicatorSave(_ typing: Bool) {
 
 		firebase1?.updateChildValues([FUser.currentId(): typing])
 	}
 
 	// MARK: - LastRead methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func createLastReadObservers() {
 
 		firebase2 = Database.database().reference(withPath: FLASTREAD_PATH).child(chatId)
@@ -362,7 +362,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	}
 
 	// MARK: - Title details methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@objc func updateTitleDetails() {
 
 		let predicate = NSPredicate(format: "objectId == %@", recipientId)
@@ -372,7 +372,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	}
 
 	// MARK: - Refresh methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@objc func refreshTableView1() {
 
 		refreshTableView2()
@@ -380,7 +380,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		Status.updateLastRead(chatId: chatId)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@objc func refreshTableView2() {
 
 		let show = (insertCounter < dbmessages.count)
@@ -390,7 +390,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	}
 
 	// MARK: - Message send methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func messageSend(_ text: String?, picture: UIImage?, video: URL?, audio: String?) {
 
 		MessageQueue.send(chatId: chatId, recipientId: recipientId, status: nil, text: text, picture: picture, video: video, audio: audio)
@@ -399,7 +399,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	}
 
 	// MARK: - Message delete methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func messageDelete(_ indexPath: IndexPath) {
 
 		let dbmessage = self.dbmessage(indexPath)
@@ -407,13 +407,13 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	}
 
 	// MARK: - User actions
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------
 	@objc func actionBack() {
 
 		navigationController?.popViewController(animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func actionTitle() {
 
 		let profileView = ProfileView()
@@ -421,9 +421,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		navigationController?.pushViewController(profileView, animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func actionAttachMessage() {
 
 		view.endEditing(true)
@@ -454,13 +452,13 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		present(alert, animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func actionSendMessage(_ text: String) {
 
 		messageSend(text, picture: nil, video: nil, audio: nil)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func actionAudio() {
 
 		let audioView = AudioView()
@@ -471,7 +469,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 
 
 	// MARK: - UIImagePickerControllerDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
 
 		let video = info[.mediaURL] as? URL
@@ -483,7 +481,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	}
 
 	// MARK: - AudioDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func didRecordAudio(path: String) {
 
 		messageSend(nil, picture: nil, video: nil, audio: path)
@@ -491,16 +489,16 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 
 
 
-	// MARK: - User actions (load earlier)
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	// MARK: - load earlier
+	//----------------------------------------------
 	override func actionLoadEarlier() {
 
 		insertCounter += Int(INSERT_MESSAGES)
 		refreshTableView2()
 	}
 
-	// MARK: - User actions (bubble tap)
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	// MARK: - bubble tap
+	//----------------------------------------------
 	override func actionTapBubble(_ indexPath: IndexPath) {
 
 		let dbmessage = self.dbmessage(indexPath)
@@ -566,8 +564,8 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		
 	}
 
-	// MARK: - User actions (avatar tap)
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	// MARK: - avatar tap
+	//----------------------------------------------
 	override func actionTapAvatar(_ indexPath: IndexPath) {
 
 		let dbmessage = self.dbmessage(indexPath)
@@ -580,8 +578,8 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		}
 	}
 
-	// MARK: - User actions (menu)
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	// MARK: - Umenu
+	//----------------------------------------------
 	@objc func actionMenuCopy(_ sender: Any?) {
 
 		if let indexPath = RCMenuItem.indexPath(sender as! UIMenuController) {
@@ -590,7 +588,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@objc func actionMenuSave(_ sender: Any?) {
 
 		if let indexPath = RCMenuItem.indexPath(sender as! UIMenuController) {
@@ -618,7 +616,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@objc func actionMenuDelete(_ sender: Any?) {
 
 		if let indexPath = RCMenuItem.indexPath(sender as! UIMenuController) {
@@ -627,33 +625,28 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	}
 
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeMutableRawPointer?) {
 
 		if (error != nil) { ProgressHUD.showError("Saving failed.") } else { ProgressHUD.showSuccess("Successfully saved.") }
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@objc func video(_ videoPath: String, didFinishSavingWithError error: NSError?, contextInfo: UnsafeMutableRawPointer?) {
 
 		if (error != nil) { ProgressHUD.showError("Saving failed.") } else { ProgressHUD.showSuccess("Successfully saved.") }
 	}
 
-	// MARK: - SelectUsersDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func didSelectUsers(users: [DBUser]) {
-
-	}
 
 	// MARK: - Table view data source
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------
 	override func numberOfSections(in tableView: UITableView) -> Int {
 
 		return min(insertCounter, Int(dbmessages.count))
 	}
 
 	// MARK: - Cleanup methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func actionCleanup() {
 
 		Messages.resignChatId()

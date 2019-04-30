@@ -9,13 +9,13 @@ class NetworkView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 	private var mediaType: Int = 0
 	private var selectedNetwork: Int = 0
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------
 	func myInit(mediaType mediaType_: Int) {
 
 		mediaType = mediaType_
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -27,7 +27,7 @@ class NetworkView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 		loadUser()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewWillDisappear(_ animated: Bool) {
 
 		super.viewWillDisappear(animated)
@@ -36,7 +36,7 @@ class NetworkView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 	}
 
 	// MARK: - Backend methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func loadUser() {
 
 		if (mediaType == MEDIA_IMAGE) { selectedNetwork = FUser.networkImage()	}
@@ -46,7 +46,7 @@ class NetworkView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 		updateDetails()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func saveUser() {
 
 		let user = FUser.currentUser()
@@ -63,19 +63,19 @@ class NetworkView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 	}
 
 	// MARK: - Table view data source
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------
 	func numberOfSections(in tableView: UITableView) -> Int {
 
 		return 1
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
 		return 3
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
 		if (indexPath.section == 0) && (indexPath.row == 0) { return cellManual	}
@@ -86,7 +86,7 @@ class NetworkView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 	}
 
 	// MARK: - Table view delegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 		tableView.deselectRow(at: indexPath, animated: true)
@@ -99,7 +99,7 @@ class NetworkView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 	}
 
 	// MARK: - Helper methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func updateDetails() {
 
 		cellManual.accessoryType = (selectedNetwork == NETWORK_MANUAL) ? .checkmark : .none

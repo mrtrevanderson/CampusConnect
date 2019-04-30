@@ -17,13 +17,13 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 
 	private var isOnboard = false
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func myInit(isOnboard isOnboard_: Bool) {
 
 		isOnboard = isOnboard_
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -44,7 +44,7 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 		loadUser()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewWillDisappear(_ animated: Bool) {
 
 		super.viewWillDisappear(animated)
@@ -52,14 +52,14 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 		dismissKeyboard()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	@objc func dismissKeyboard() {
 
 		view.endEditing(true)
 	}
 
 	// MARK: - Backend actions
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func loadUser() {
 
 		let user = FUser.currentUser()
@@ -84,7 +84,7 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 		updateDetails()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func saveUser(firstname: String, lastname: String, country: String, location: String) {
 
 		let user = FUser.currentUser()
@@ -105,7 +105,7 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 		})
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func saveUserPicture(link: String) {
 
 		let user = FUser.currentUser()
@@ -121,7 +121,7 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 		})
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func saveUserThumbnail(link: String) {
 
 		let user = FUser.currentUser()
@@ -136,7 +136,7 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 	}
 
 	// MARK: - User actions
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@objc func actionCancel() {
 
 		if (isOnboard) {
@@ -145,8 +145,8 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 		dismiss(animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	@objc func actionDone() {
+	//---------------------------------------------
+    @objc func actionDone() {
 
 		let firstname = fieldFirstname.text ?? ""
 		let lastname = fieldLastname.text ?? ""
@@ -163,7 +163,7 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 		dismiss(animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@IBAction func actionPhoto(_ sender: Any) {
 
 		let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -179,7 +179,7 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 		present(alert, animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func actionCountries() {
 
 		let countriesView = CountriesView()
@@ -189,7 +189,7 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 	}
 
 	// MARK: - UIImagePickerControllerDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
 
 		if let image = info[.editedImage] as? UIImage {
@@ -200,7 +200,7 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 		picker.dismiss(animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func uploadUserPicture(image: UIImage) {
 
 		let squared = Image.square(image: image, size: 300)
@@ -218,7 +218,7 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func uploadUserThumbnail(image: UIImage) {
 
 		let squared = Image.square(image: image, size: 100)
@@ -235,7 +235,7 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 	}
 
 	// MARK: - CountriesDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func didSelectCountry(name: String, code: String) {
 
 		labelCountry.text = name
@@ -244,13 +244,13 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 	}
 
 	// MARK: - Table view data source
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func numberOfSections(in tableView: UITableView) -> Int {
 
 		return 1
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
 		if (section == 0) { return 4 }
@@ -258,7 +258,7 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 		return 0
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
 		if (indexPath.section == 0) && (indexPath.row == 0) { return cellFirstname	}
@@ -270,7 +270,7 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 	}
 
 	// MARK: - Table view delegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 		tableView.deselectRow(at: indexPath, animated: true)
@@ -279,7 +279,7 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 	}
 
 	// MARK: - UITextField delegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
 		if (textField == fieldFirstname)	{ fieldLastname.becomeFirstResponder()	}
@@ -290,7 +290,7 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 	}
 
 	// MARK: - Helper methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------
 	func updateDetails() {
 
 		labelPlaceholder.isHidden = labelCountry.text != nil

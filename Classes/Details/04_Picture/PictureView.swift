@@ -4,7 +4,7 @@ class PictureView: NYTPhotosViewController{
 	private var isMessages = false
 	private var statusBarIsHidden = false
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func photos(picture: UIImage) -> [NYTPhoto] {
 
 		let photoItem = NYTPhotoItem()
@@ -12,7 +12,7 @@ class PictureView: NYTPhotosViewController{
 		return [photoItem]
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func photos(messageId: String, chatId: String) -> [String: Any] {
 
 		var photoItems: [NYTPhotoItem] = []
@@ -55,13 +55,13 @@ class PictureView: NYTPhotosViewController{
 		return ["photoItems": photoItems, "initialPhoto": initialPhoto]
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func setMessages(messages: Bool)
 	{
 		isMessages = messages
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -73,20 +73,20 @@ class PictureView: NYTPhotosViewController{
 		updateOverlayViewConstraints()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override var prefersStatusBarHidden: Bool {
 
 		return statusBarIsHidden
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override var preferredStatusBarStyle: UIStatusBarStyle {
 
 		return .lightContent
 	}
 
 	// MARK: - Initialization methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func updateOverlayViewConstraints() {
 
 		if let overlay = overlayView {
@@ -101,7 +101,7 @@ class PictureView: NYTPhotosViewController{
 	}
 
 	// MARK: - User actions
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@objc func actionMore() {
 
 		let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -114,30 +114,9 @@ class PictureView: NYTPhotosViewController{
 		present(alert, animated: true)
 	}
 
-	// MARK: - User actions (save)
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//--------------------------------------------
 	@objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeMutableRawPointer?) {
 
 	}
-
-	// MARK: - User actions (forward)
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-
-	// MARK: - SelectUsersDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func didSelectUsers(users: [DBUser]) {
-
-	}
-
-	// MARK: - User actions (share)
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-
-	// MARK: - User actions (delete)
-
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
 
 }

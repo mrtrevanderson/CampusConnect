@@ -48,7 +48,7 @@ class FUser: FObject {
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func createUser(email: String, password: String, completion: @escaping (_ user: FUser?, _ error: Error?) -> Void) {
 
 		Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
@@ -72,7 +72,7 @@ class FUser: FObject {
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func signIn(credential: AuthCredential, completion: @escaping (_ user: FUser?, _ error: Error?) -> Void) {
 
 		Auth.auth().signInAndRetrieveData(with: credential) { authResult, error in
@@ -93,7 +93,7 @@ class FUser: FObject {
 	}
 
 	// MARK: - Logut methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	class func logOut() -> Bool {
 
 		do {
@@ -107,7 +107,7 @@ class FUser: FObject {
 	}
 
 	// MARK: - Private methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func load(firuser: User, completion: @escaping (_ user: FUser?, _ error: Error?) -> Void) {
 
 		let user = FUser.userWithId(userId: firuser.uid)
@@ -121,7 +121,7 @@ class FUser: FObject {
 		})
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func create(uid: String, email: String?, completion: @escaping (_ user: FUser?, _ error: Error?) -> Void) {
 
 		let user = FUser.userWithId(userId: uid)
@@ -139,9 +139,8 @@ class FUser: FObject {
 		})
 	}
 
-	// MARK: - Instance methods
 	// MARK: - Current user methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func isCurrent() -> Bool {
 		
 		if let objectId = self["objectId"] as? String {
@@ -150,7 +149,7 @@ class FUser: FObject {
 		return false
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func saveLocalIfCurrent() {
 
 		if (isCurrent()) {
@@ -161,14 +160,14 @@ class FUser: FObject {
 	}
 
 	// MARK: - Save methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	override func saveInBackground() {
 
 		saveLocalIfCurrent()
 		super.saveInBackground()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func saveInBackground(block: @escaping (_ error: Error?) -> Void) {
 
 		saveLocalIfCurrent()
@@ -181,7 +180,7 @@ class FUser: FObject {
 	}
 
 	// MARK: - Fetch methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	override func fetchInBackground() {
 
 		super.fetchInBackground(block: { error in
@@ -191,7 +190,7 @@ class FUser: FObject {
 		})
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func fetchInBackground(block: @escaping (_ error: Error?) -> Void) {
 
 		super.fetchInBackground(block: { error in

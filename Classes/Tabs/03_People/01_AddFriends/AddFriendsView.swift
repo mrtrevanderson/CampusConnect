@@ -8,7 +8,7 @@ class AddFriendsView: UIViewController, UISearchBarDelegate, UITableViewDataSour
 	private var sections: [[FUser]] = []
 	private let collation = UILocalizedIndexedCollation.current()
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -23,7 +23,7 @@ class AddFriendsView: UIViewController, UISearchBarDelegate, UITableViewDataSour
 		loadUsers()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//--------------------------------------------
 	override func viewWillDisappear(_ animated: Bool) {
 
 		super.viewWillDisappear(animated)
@@ -31,14 +31,14 @@ class AddFriendsView: UIViewController, UISearchBarDelegate, UITableViewDataSour
 		dismissKeyboard()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func dismissKeyboard() {
 
 		view.endEditing(true)
 	}
 
 	// MARK: - Backend methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func loadUsers() {
 
 		let firebase = Database.database().reference(withPath: FUSER_PATH)
@@ -61,7 +61,7 @@ class AddFriendsView: UIViewController, UISearchBarDelegate, UITableViewDataSour
 		})
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func setObjects() {
 
 		sections.removeAll()
@@ -84,7 +84,7 @@ class AddFriendsView: UIViewController, UISearchBarDelegate, UITableViewDataSour
 		refreshTableView()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func createFriend(user: FUser) {
 
 		let userId = user[FUSER_OBJECTID] as! String
@@ -99,58 +99,58 @@ class AddFriendsView: UIViewController, UISearchBarDelegate, UITableViewDataSour
 	}
 
 	// MARK: - Refresh methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func refreshTableView() {
 
 		tableView.reloadData()
 	}
 
 	// MARK: - User actions
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@objc func actionDone() {
 
 		dismiss(animated: true)
 	}
 
 	// MARK: - UIScrollViewDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
 
 		dismissKeyboard()
 	}
 
 	// MARK: - Table view data source
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func numberOfSections(in tableView: UITableView) -> Int {
 
 		return sections.count
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
 		return sections[section].count
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 
 		return (sections[section].count != 0) ? collation.sectionTitles[section] : nil
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func sectionIndexTitles(for tableView: UITableView) -> [String]? {
 
 		return collation.sectionIndexTitles
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
 
 		return collation.section(forSectionIndexTitle: index)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
 		let cell = tableView.dequeueReusableCell(withIdentifier: "AddFriendsCell", for: indexPath) as! AddFriendsCell
@@ -164,7 +164,7 @@ class AddFriendsView: UIViewController, UISearchBarDelegate, UITableViewDataSour
 	}
 
 	// MARK: - Table view delegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 		tableView.deselectRow(at: indexPath, animated: true)
@@ -179,25 +179,25 @@ class AddFriendsView: UIViewController, UISearchBarDelegate, UITableViewDataSour
 	}
 
 	// MARK: - UISearchBarDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
 		//loadUsers()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func searchBarTextDidBeginEditing(_ searchBar_: UISearchBar) {
 
 		searchBar.setShowsCancelButton(true, animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func searchBarTextDidEndEditing(_ searchBar_: UISearchBar) {
 
 		searchBar.setShowsCancelButton(false, animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func searchBarCancelButtonClicked(_ searchBar_: UISearchBar) {
 
 		searchBar.text = ""
@@ -205,7 +205,7 @@ class AddFriendsView: UIViewController, UISearchBarDelegate, UITableViewDataSour
 		//loadUsers()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func searchBarSearchButtonClicked(_ searchBar_: UISearchBar) {
 
 		searchBar.resignFirstResponder()

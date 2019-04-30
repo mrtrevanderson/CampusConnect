@@ -4,13 +4,13 @@ class RelayManager: NSObject {
 	private var inProgress = false
 	private var dbmessages: RLMResults = DBMessage.objects(with: NSPredicate(value: false))
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------
 	static let shared: RelayManager = {
 		let instance = RelayManager()
 		return instance
 	} ()
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	override init() {
 
 		super.init()
@@ -21,7 +21,7 @@ class RelayManager: NSObject {
 		dbmessages = DBMessage.objects(with: predicate).sortedResults(usingKeyPath: FMESSAGE_CREATEDAT, ascending: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@objc func relayMessages() {
 
 		if (FUser.currentId() != "") {
@@ -33,7 +33,7 @@ class RelayManager: NSObject {
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func relayNextMessage() {
 
 		if let dbmessage = dbmessages.firstObject() as? DBMessage {

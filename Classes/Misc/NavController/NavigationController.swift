@@ -1,7 +1,6 @@
 
 class NavigationController: UINavigationController {
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -12,7 +11,7 @@ class NavigationController: UINavigationController {
 		navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//------------------------------------------
 	override var preferredStatusBarStyle: UIStatusBarStyle {
 
 		return .lightContent

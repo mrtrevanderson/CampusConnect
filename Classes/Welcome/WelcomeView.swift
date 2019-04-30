@@ -1,6 +1,6 @@
 class WelcomeView: UIViewController, LoginEmailDelegate, RegisterEmailDelegate {
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -19,11 +19,11 @@ class WelcomeView: UIViewController, LoginEmailDelegate, RegisterEmailDelegate {
 
 
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//------------------------------------------------
 
 
 	// MARK: - Email login methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//------------------------------------------------
 	@IBAction func actionLoginEmail(_ sender: Any) {
 
 		let loginEmailView = LoginEmailView()
@@ -31,7 +31,7 @@ class WelcomeView: UIViewController, LoginEmailDelegate, RegisterEmailDelegate {
 		present(loginEmailView, animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func didLoginEmail() {
 
 		dismiss(animated: true) {
@@ -40,7 +40,7 @@ class WelcomeView: UIViewController, LoginEmailDelegate, RegisterEmailDelegate {
 	}
 
 	// MARK: - Email register methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	@IBAction func actionRegisterEmail(_ sender: Any) {
 
 		let registerEmailView = RegisterEmailView()
@@ -48,7 +48,7 @@ class WelcomeView: UIViewController, LoginEmailDelegate, RegisterEmailDelegate {
 		present(registerEmailView, animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func didRegisterUser() {
 
 		dismiss(animated: true) {

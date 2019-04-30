@@ -3,7 +3,7 @@
 	func didLoginEmail()
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------
 class LoginEmailView: UIViewController, UITextFieldDelegate {
 
 	@IBOutlet weak var delegate: LoginEmailDelegate?
@@ -11,7 +11,7 @@ class LoginEmailView: UIViewController, UITextFieldDelegate {
 	@IBOutlet var fieldEmail: UITextField!
 	@IBOutlet var fieldPassword: UITextField!
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -21,7 +21,7 @@ class LoginEmailView: UIViewController, UITextFieldDelegate {
 		gestureRecognizer.cancelsTouchesInView = false
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewWillDisappear(_ animated: Bool) {
 
 		super.viewWillDisappear(animated)
@@ -29,14 +29,14 @@ class LoginEmailView: UIViewController, UITextFieldDelegate {
 		dismissKeyboard()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	@objc func dismissKeyboard() {
 
 		view.endEditing(true)
 	}
 
 	// MARK: - User actions
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------
 	@IBAction func actionLogin(_ sender: Any) {
 
 		var email = (fieldEmail.text ?? "").lowercased()
@@ -61,14 +61,14 @@ class LoginEmailView: UIViewController, UITextFieldDelegate {
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	@IBAction func actionDismiss(_ sender: Any) {
 
 		dismiss(animated: true)
 	}
 
 	// MARK: - UITextField delegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
 		if (textField == fieldEmail) {

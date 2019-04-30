@@ -7,7 +7,7 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 	private var timer: Timer?
 	private var dbchats: RLMResults = DBChat.objects(with: NSPredicate(value: false))
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
 
 		super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -24,13 +24,13 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 		NotificationCenterX.addObserver(target: self, selector: #selector(refreshTabCounter), name: NOTIFICATION_REFRESH_STATUSES)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	required init?(coder aDecoder: NSCoder) {
 		
 		super.init(coder: aDecoder)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -48,7 +48,7 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 		loadChats()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------
 	override func viewDidAppear(_ animated: Bool) {
 
 		super.viewDidAppear(animated)
@@ -65,7 +65,7 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 	}
 
 	// MARK: - Realm methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func loadChats() {
 
 		var predicate = NSPredicate(format: "isDeleted == NO")
@@ -83,13 +83,13 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 	}
 
 	// MARK: - Refresh methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	@objc func refreshTableView() {
 
 		tableView.reloadData()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	@objc func refreshTabCounter() {
 
 		var total: Int = 0
@@ -125,7 +125,7 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 		actionCompose()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func actionRecentUser(userId: String) {
 
 		if (tabBarController?.tabBar.isHidden ?? true) { return }
@@ -135,10 +135,7 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 		actionChatPrivate(recipientId: userId)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------
 	func actionChatPrivate(recipientId: String) {
 
 		let chatPrivateView = ChatPrivateView()
@@ -164,7 +161,7 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 	}
 
 	// MARK: - SelectUserDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func didSelectUser(dbuser: DBUser) {
 
 		actionChatPrivate(recipientId: dbuser.objectId)
@@ -179,26 +176,26 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 	}
 
 	// MARK: - UIScrollViewDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
 
 		view.endEditing(true)
 	}
 
 	// MARK: - Table view data source
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func numberOfSections(in tableView: UITableView) -> Int {
 
 		return 1
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
 		return Int(dbchats.count)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
 		let cell = tableView.dequeueReusableCell(withIdentifier: "ChatsCell", for: indexPath) as! ChatsCell
@@ -216,7 +213,7 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 	}
 
 	// MARK: - MGSwipeTableCellDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func swipeTableCell(_ cell: MGSwipeTableCell, tappedButtonAt index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
 
 		if (index == 0) { actionDelete(index: cell.tag) }
@@ -225,7 +222,7 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 	}
 
 	// MARK: - Table view delegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 		tableView.deselectRow(at: indexPath, animated: true)
@@ -236,25 +233,25 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 	}
 
 	// MARK: - UISearchBarDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
 		loadChats()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func searchBarTextDidBeginEditing(_ searchBar_: UISearchBar) {
 
 		searchBar.setShowsCancelButton(true, animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func searchBarTextDidEndEditing(_ searchBar_: UISearchBar) {
 
 		searchBar.setShowsCancelButton(false, animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func searchBarCancelButtonClicked(_ searchBar_: UISearchBar) {
 
 		searchBar.text = ""
@@ -262,7 +259,7 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 		loadChats()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func searchBarSearchButtonClicked(_ searchBar_: UISearchBar) {
 
 		searchBar.resignFirstResponder()

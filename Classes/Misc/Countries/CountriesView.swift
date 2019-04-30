@@ -4,7 +4,6 @@
 	func didSelectCountry(name: String, code: String)
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
 class CountriesView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
 	@IBOutlet weak var delegate: CountriesDelegate?
@@ -15,7 +14,6 @@ class CountriesView: UIViewController, UITableViewDataSource, UITableViewDelegat
 	private var sections: [[[String: String]]] = []
 	private let collation = UILocalizedIndexedCollation.current()
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -26,7 +24,7 @@ class CountriesView: UIViewController, UITableViewDataSource, UITableViewDelegat
 		loadCountries()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func loadCountries() {
 
 		if let aCountries = NSArray(contentsOfFile: Dir.application("countries.plist")) {
@@ -44,44 +42,44 @@ class CountriesView: UIViewController, UITableViewDataSource, UITableViewDelegat
 	}
 
 	// MARK: - User actions
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@objc func actionCancel() {
 
 		dismiss(animated: true)
 	}
 
 	// MARK: - Table view data source
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func numberOfSections(in tableView: UITableView) -> Int {
 
 		return sections.count
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
 		return sections[section].count
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 
 		return (sections[section].count != 0) ? collation.sectionTitles[section] : nil
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func sectionIndexTitles(for tableView: UITableView) -> [String]? {
 
 		return collation.sectionIndexTitles
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
 
 		return collation.section(forSectionIndexTitle: index)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
 		var cell: UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: "cell")
@@ -94,7 +92,7 @@ class CountriesView: UIViewController, UITableViewDataSource, UITableViewDelegat
 	}
 
 	// MARK: - Table view delegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 		tableView.deselectRow(at: indexPath, animated: true)

@@ -5,7 +5,7 @@ class AllMediaCell: UICollectionViewCell {
 	@IBOutlet var imageVideo: UIImageView!
 	@IBOutlet var imageSelected: UIImageView!
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func bindData(dbmessage: DBMessage, selected: Bool) {
 
 		imageItem.image = UIImage(named: "allmedia_blank")
@@ -22,7 +22,7 @@ class AllMediaCell: UICollectionViewCell {
 		imageSelected.isHidden = (selected == false)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func bindPicture(dbmessage: DBMessage) {
 
 		if let path = DownloadManager.pathImage(link: dbmessage.picture) {
@@ -32,7 +32,7 @@ class AllMediaCell: UICollectionViewCell {
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func bindVideo(dbmessage: DBMessage) {
 
 		if let path = DownloadManager.pathVideo(link: dbmessage.video) {

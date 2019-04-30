@@ -37,14 +37,14 @@ class DBMessage: RLMObject {
 	@objc dynamic var createdAt: Int64 = 0
 	@objc dynamic var updatedAt: Int64 = 0
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	class func lastUpdatedAt() -> Int64 {
 
 		let dbmessage = DBMessage.allObjects().sortedResults(usingKeyPath: "updatedAt", ascending: true).lastObject() as? DBMessage
 		return dbmessage?.updatedAt ?? 0
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override static func primaryKey() -> String? {
 
 		return FMESSAGE_OBJECTID

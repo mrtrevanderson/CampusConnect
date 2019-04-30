@@ -13,7 +13,6 @@ class PeopleView: UIViewController, UISearchBarDelegate, UITableViewDataSource, 
 	private var sections: [[DBUser]] = []
 	private let collation = UILocalizedIndexedCollation.current()
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
 	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
 
 		super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -28,13 +27,13 @@ class PeopleView: UIViewController, UISearchBarDelegate, UITableViewDataSource, 
 		NotificationCenterX.addObserver(target: self, selector: #selector(refreshTableView), name: NOTIFICATION_REFRESH_USERS)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	required init?(coder aDecoder: NSCoder) {
 
 		super.init(coder: aDecoder)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -52,7 +51,7 @@ class PeopleView: UIViewController, UISearchBarDelegate, UITableViewDataSource, 
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewDidAppear(_ animated: Bool) {
 
 		super.viewDidAppear(animated)
@@ -69,13 +68,13 @@ class PeopleView: UIViewController, UISearchBarDelegate, UITableViewDataSource, 
 	}
 
 	// MARK: - Realm methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@objc func loadBlockers() {
 
 		loadFriends()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	@objc func loadFriends() {
 
 		friendIds.removeAll()
@@ -91,7 +90,7 @@ class PeopleView: UIViewController, UISearchBarDelegate, UITableViewDataSource, 
 		loadUsers()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func loadUsers() {
 
 		var predicate = NSPredicate(format: "NOT objectId IN %@ AND objectId IN %@", blockerIds, friendIds)
@@ -108,7 +107,7 @@ class PeopleView: UIViewController, UISearchBarDelegate, UITableViewDataSource, 
 	}
 
 	// MARK: - Refresh methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@objc func refreshTableView() {
 
 		setObjects()
@@ -117,11 +116,10 @@ class PeopleView: UIViewController, UISearchBarDelegate, UITableViewDataSource, 
 		labelTitle.text = "(\(dbusers.count) friends)"
 
 		DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-			self.setSpotlightSearch()
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func setObjects() {
 
 		sections.removeAll()
@@ -141,13 +139,8 @@ class PeopleView: UIViewController, UISearchBarDelegate, UITableViewDataSource, 
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func setSpotlightSearch() {
-
-	}
-
 	// MARK: - User actions
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@objc func actionAddFriends() {
 
 		let addFriendsView = AddFriendsView()
@@ -156,51 +149,51 @@ class PeopleView: UIViewController, UISearchBarDelegate, UITableViewDataSource, 
 	}
 
 	// MARK: - Cleanup methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------
 	@objc func actionCleanup() {
 
 		refreshTableView()
 	}
 
 	// MARK: - UIScrollViewDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
 
 		view.endEditing(true)
 	}
 
 	// MARK: - Table view data source
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func numberOfSections(in tableView: UITableView) -> Int {
 
 		return sections.count
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
 		return sections[section].count
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 
 		return (sections[section].count != 0) ? collation.sectionTitles[section] : nil
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func sectionIndexTitles(for tableView: UITableView) -> [String]? {
 
 		return collation.sectionIndexTitles
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
 
 		return collation.section(forSectionIndexTitle: index)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
 		let cell = tableView.dequeueReusableCell(withIdentifier: "PeopleCell", for: indexPath) as! PeopleCell
@@ -213,7 +206,7 @@ class PeopleView: UIViewController, UISearchBarDelegate, UITableViewDataSource, 
 	}
 
 	// MARK: - Table view delegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 		tableView.deselectRow(at: indexPath, animated: true)
@@ -227,25 +220,25 @@ class PeopleView: UIViewController, UISearchBarDelegate, UITableViewDataSource, 
 	}
 
 	// MARK: - UISearchBarDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
 		loadUsers()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func searchBarTextDidBeginEditing(_ searchBar_: UISearchBar) {
 
 		searchBar.setShowsCancelButton(true, animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func searchBarTextDidEndEditing(_ searchBar_: UISearchBar) {
 
 		searchBar.setShowsCancelButton(false, animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func searchBarCancelButtonClicked(_ searchBar_: UISearchBar) {
 
 		searchBar.text = ""
@@ -253,7 +246,7 @@ class PeopleView: UIViewController, UISearchBarDelegate, UITableViewDataSource, 
 		loadUsers()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func searchBarSearchButtonClicked(_ searchBar_: UISearchBar) {
 
 		searchBar.resignFirstResponder()
