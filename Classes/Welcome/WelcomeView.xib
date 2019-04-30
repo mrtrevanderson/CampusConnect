@@ -27,17 +27,17 @@
                         <constraint firstAttribute="height" constant="130" id="fwm-4A-mu5"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wf-8f-ELf">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wf-8f-ELf" customClass="RoundedWhiteButton" customModule="app" customModuleProvider="target">
                     <rect key="frame" x="20" y="440" width="280" height="50"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="xmT-Ux-TZe"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <size key="titleShadowOffset" width="28" height="3"/>
                     <state key="normal" title="Log In">
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -48,16 +48,15 @@
                         <action selector="actionLoginEmail:" destination="-1" eventType="touchUpInside" id="6KZ-Hj-GEN"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rka-Wf-v14">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rka-Wf-v14" customClass="RoundedWhiteButton" customModule="app" customModuleProvider="target">
                     <rect key="frame" x="20" y="500" width="280" height="50"/>
-                    <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="dzB-yi-hxU"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                     <state key="normal" title="Sign Up">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">

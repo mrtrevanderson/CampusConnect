@@ -188,6 +188,7 @@
 		71794A3C227555E30017712C /* chat_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71794A3B227555E20017712C /* chat_back@2x.png */; };
 		71C8B67322765CC200746A16 /* DBMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C8B67222765CC200746A16 /* DBMessage.swift */; };
 		71EBE2A92276716C00683CCB /* Statuses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EBE2A82276716C00683CCB /* Statuses.swift */; };
+		71EBE2AB2277E27300683CCB /* RoundedWhiteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EBE2AA2277E27200683CCB /* RoundedWhiteButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -376,6 +377,7 @@
 		71794A3B227555E20017712C /* chat_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat_back@2x.png"; sourceTree = "<group>"; };
 		71C8B67222765CC200746A16 /* DBMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBMessage.swift; sourceTree = "<group>"; };
 		71EBE2A82276716C00683CCB /* Statuses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statuses.swift; sourceTree = "<group>"; };
+		71EBE2AA2277E27200683CCB /* RoundedWhiteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedWhiteButton.swift; sourceTree = "<group>"; };
 		7393A6F3A4D6270AF7ACDCFA /* Pods-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-app/Pods-app.release.xcconfig"; sourceTree = "<group>"; };
 		AA3F4F54A03FBAE7CEC0B5DB /* app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "app-Bridging-Header.h"; sourceTree = "<group>"; };
 		DED94DC0AC66CCD8277DB3AF /* app-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "app-Prefix.pch"; sourceTree = "<group>"; };
@@ -790,6 +792,7 @@
 		2960212F1F2CF5F600544468 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
+				71EBE2AA2277E27200683CCB /* RoundedWhiteButton.swift */,
 				296021301F2CF5F600544468 /* LoginEmail */,
 				296021401F2CF5F600544468 /* RegisterEmail */,
 				296021451F2CF5F600544468 /* WelcomeView.swift */,
@@ -1224,6 +1227,7 @@
 				TargetAttributes = {
 					29D29EF01D9A59E4006CA074 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = N78FC247QB;
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -1506,6 +1510,7 @@
 				296021841F2CF5F600544468 /* EditProfileView.swift in Sources */,
 				2960219E1F2CF5F600544468 /* WallpapersView.swift in Sources */,
 				296021E81F2CF5F600544468 /* DBStatus.swift in Sources */,
+				71EBE2AB2277E27300683CCB /* RoundedWhiteButton.swift in Sources */,
 				296021DE1F2CF5F600544468 /* MessageQueue.swift in Sources */,
 				296021681F2CF5F600544468 /* SelectUserView.swift in Sources */,
 				296021C51F2CF5F600544468 /* user.swift in Sources */,
@@ -1663,9 +1668,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
-				CODE_SIGN_ENTITLEMENTS = app/app.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = N78FC247QB;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "app-Prefix.pch";
 				INFOPLIST_FILE = app/Info.plist;
@@ -1688,8 +1694,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
-				CODE_SIGN_ENTITLEMENTS = app/app.entitlements;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = N78FC247QB;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "app-Prefix.pch";
 				INFOPLIST_FILE = app/Info.plist;

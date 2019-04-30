@@ -65,7 +65,7 @@
                         <constraint firstAttribute="height" constant="1" id="zWr-mk-HlB"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVC-Fi-mBC">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVC-Fi-mBC" customClass="RoundedWhiteButton" customModule="app" customModuleProvider="target">
                     <rect key="frame" x="20" y="340" width="280" height="50"/>
                     <color key="backgroundColor" red="0.98823529409999999" green="0.76862745099999996" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
