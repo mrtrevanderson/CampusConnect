@@ -37,12 +37,10 @@ class RelayManager: NSObject {
 	func relayNextMessage() {
 
 		if let dbmessage = dbmessages.firstObject() as? DBMessage {
-            ProgressHUD.showError()
 			inProgress = true
 			MessageRelay.send(dbmessage: dbmessage) { error in
 				if (error == nil) {
 					do {
-
 						let realm = RLMRealm.default()
 						realm.beginWriteTransaction()
 						dbmessage.status = TEXT_SENT

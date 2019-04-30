@@ -71,8 +71,8 @@ class StatusView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 
-		if (section == 0) { return "Your current status is"	}
-		if (section == 1) { return "Select your new status"	}
+		if (section == 0) { return "Your current major is"	}
+		if (section == 1) { return "Select your new major"	}
 
 		return nil
 	}
