@@ -71,8 +71,6 @@
 	<string>We use your camera to capture photos and videos.</string>
 	<key>NSContactsUsageDescription</key>
 	<string>We use your contacts to sync Chat contacts with this device.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We use your location to send location messages.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>We use your microphone to send audio messages.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>

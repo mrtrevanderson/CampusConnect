@@ -27,7 +27,6 @@
 #define		RC_TYPE_PICTURE						4
 #define		RC_TYPE_VIDEO						5
 #define		RC_TYPE_AUDIO						6
-#define		RC_TYPE_LOCATION					7
 //---------------------------------------------------------------------------------
 #define		RC_STATUS_LOADING					1
 #define		RC_STATUS_SUCCEED					2

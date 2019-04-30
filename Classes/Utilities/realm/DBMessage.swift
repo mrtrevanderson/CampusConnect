@@ -35,9 +35,6 @@ class DBMessage: RLMObject {
 	@objc dynamic var audio_duration: Int = 0
 	@objc dynamic var audio_md5 = ""
 
-	@objc dynamic var latitude: CLLocationDegrees = 0
-	@objc dynamic var longitude: CLLocationDegrees = 0
-
 	@objc dynamic var status = ""
 	@objc dynamic var isDeleted = false
 

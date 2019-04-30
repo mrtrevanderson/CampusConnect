@@ -5,7 +5,6 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'app' do
-	pod 'ApiAI/Core'
 	pod 'Crashlytics'
 	pod 'Firebase/Core'
 	pod 'Firebase/Auth'

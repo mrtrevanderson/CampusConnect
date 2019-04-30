@@ -156,7 +156,7 @@ class EditProfileView: UIViewController, UITableViewDataSource, UITableViewDeleg
 		if (firstname.count == 0)	{ ProgressHUD.showError("Firstname must be set.");		return	}
 		if (lastname.count == 0)	{ ProgressHUD.showError("Lastname must be set.");		return	}
 		if (country.count == 0)		{ ProgressHUD.showError("Country must be set.");		return	}
-		if (location.count == 0)	{ ProgressHUD.showError("Location must be set.");		return	}
+		if (location.count == 0)	{ ProgressHUD.showError("School must be set.");		return	}
 
 		saveUser(firstname: firstname, lastname: lastname, country: country, location: location)
 

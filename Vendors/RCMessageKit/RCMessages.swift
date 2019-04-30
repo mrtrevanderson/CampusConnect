@@ -140,14 +140,6 @@ import UIKit
 
 	var audioFont: UIFont					= UIFont.systemFont(ofSize: 16)
 
-	// Location cell
-	//-----------------------------------------------------------------------------
-	var locationBubbleWidth: CGFloat		= 200.0
-	var locationBubbleHeight: CGFloat		= 145.0
-
-	var locationBubbleColorOutgoing: UIColor = UIColor(red: 230/255, green: 229/255, blue: 234/255, alpha: 1.0)
-	var locationBubbleColorIncoming: UIColor = UIColor(red: 230/255, green: 229/255, blue: 234/255, alpha: 1.0)
-
 	// Input view
 	//-----------------------------------------------------------------------------
 	var inputViewBackColor: UIColor			= UIColor.groupTableViewBackground

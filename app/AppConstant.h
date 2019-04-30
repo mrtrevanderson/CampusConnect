@@ -34,7 +34,6 @@
 #define		MESSAGE_PICTURE						@"picture"
 #define		MESSAGE_VIDEO						@"video"
 #define		MESSAGE_AUDIO						@"audio"
-#define		MESSAGE_LOCATION					@"location"
 //---------------------------------------------------------------------------------
 #define		LOGIN_EMAIL							@"Email"
 

@@ -1,4 +1,3 @@
-import CoreLocation
 import MapKit
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
@@ -22,10 +21,6 @@ import MapKit
 	var audio_path = ""
 	var audio_duration: Int = 0
 	var audio_status: Int = 0
-
-	var latitude: CLLocationDegrees = 0
-	var longitude: CLLocationDegrees = 0
-	var location_thumbnail: UIImage?
 
 	var status: Int = 0
 
@@ -120,50 +115,6 @@ import MapKit
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
-	init(latitude: CLLocationDegrees, longitude: CLLocationDegrees, incoming incoming_: Bool, completion: @escaping () -> Void) {
 
-		super.init()
-
-		type = Int(RC_TYPE_LOCATION)
-
-		incoming = incoming_
-		outgoing = !incoming
-
-		self.latitude = latitude
-		self.longitude = longitude
-
-		status = Int(RC_STATUS_LOADING)
-
-		var region: MKCoordinateRegion = MKCoordinateRegion()
-		region.center.latitude = self.latitude
-		region.center.longitude = self.longitude
-		region.span.latitudeDelta = CLLocationDegrees(0.005)
-		region.span.longitudeDelta = CLLocationDegrees(0.005)
-
-		let options = MKMapSnapshotter.Options()
-		options.region = region
-		options.size = CGSize(width: RCMessages().locationBubbleWidth, height: RCMessages().locationBubbleHeight)
-		options.scale = UIScreen.main.scale
-
-		let snapshotter = MKMapSnapshotter(options: options)
-		snapshotter.start(with: DispatchQueue.global(qos: .default), completionHandler: { snapshot, error in
-			if (snapshot != nil) {
-				DispatchQueue.main.async {
-					UIGraphicsBeginImageContextWithOptions(snapshot!.image.size, true, snapshot!.image.scale)
-					do {
-						snapshot!.image.draw(at: CGPoint.zero)
-						let pin = MKPinAnnotationView(annotation: nil, reuseIdentifier: nil)
-						var point = snapshot!.point(for: CLLocationCoordinate2DMake(self.latitude, self.longitude))
-						point.x += pin.centerOffset.x - (pin.bounds.size.width / 2)
-						point.y += pin.centerOffset.y - (pin.bounds.size.height / 2)
-						pin.image!.draw(at: point)
-						self.location_thumbnail = UIGraphicsGetImageFromCurrentImageContext()
-					}
-					UIGraphicsEndImageContext()
-					self.status = Int(RC_STATUS_SUCCEED)
-					completion()
-				}
-			}
-		})
-	}
+	
 }
