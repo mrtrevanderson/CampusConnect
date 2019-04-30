@@ -1,3 +1,5 @@
+//Defining all constants used throughout the project
+
 #define		FIREBASE_STORAGE					@"gs://chatproject-b824e.appspot.com"
 //---------------------------------------------------------------------------------
 #define		DEFAULT_TAB							0

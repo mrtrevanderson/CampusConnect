@@ -10,10 +10,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
 	var settingsView: SettingsView!
 
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------------
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         
-        // Handle Migration
+        // Handle Migration if needed
         var config = Realm.Configuration(
             schemaVersion: 4,
             migrationBlock: { migration, oldSchemaVersion in
@@ -26,14 +26,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         let realm = try! Realm()
         
 		// Firebase initialization
-		//-----------------------------------------------------------------------------------------------------------------------------------------
 		FirebaseApp.configure()
 		Database.database().isPersistenceEnabled = false
 		FirebaseConfiguration().setLoggerLevel(.error)
 
-		//-----------------------------------------------------------------------------------------------------------------------------------------
+
 		// Crashlytics initialization
-		//-----------------------------------------------------------------------------------------------------------------------------------------
 		Fabric.with([Crashlytics.self])
 
 		if (UserDefaultsX.bool(key: "Initialized") == false) {
@@ -42,6 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
 		}
 
 
+        
+        //Object initialization for realm
 		Shortcut.create()
 
 		_ = Connection.shared
@@ -53,9 +53,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
 		_ = Users.shared
 		_ = UserStatuses.shared
 
-		//-----------------------------------------------------------------------------------------------------------------------------------------
+
 		// UI initialization
-		//-----------------------------------------------------------------------------------------------------------------------------------------
 		window = UIWindow(frame: UIScreen.main.bounds)
 
 		chatsView = ChatsView(nibName: "ChatsView", bundle: nil)
@@ -82,54 +81,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
 		return true
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------------------------
 	func applicationWillResignActive(_ application: UIApplication) {
 
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------------------------
 	func applicationDidEnterBackground(_ application: UIApplication) {
 
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------------------------
 	func applicationWillEnterForeground(_ application: UIApplication) {
 
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------------------------
 	func applicationDidBecomeActive(_ application: UIApplication) {
 
-		CacheManager.cleanupExpired()
 
 		NotificationCenterX.post(notification: NOTIFICATION_APP_STARTED)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------------------------
 	func applicationWillTerminate(_ application: UIApplication) {
 
 	}
-
+    //-----------------------------------------------------
 	func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
 
 		return false
 	}
-
+    //-----------------------------------------------------
 	func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
 
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------------
 	func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
 
 	}
-
+    //-----------------------------------------------------
 	func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
 
 	}
-
-	// MARK: -
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------
 	func topViewController() -> UIViewController? {
 
 		var viewController = UIApplication.shared.keyWindow?.rootViewController
