@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1092408171194-c907fbb5g90taib7uicnlcb69tnvb28p.apps.googleusercontent.com</string>
+	<string>1092408171194-assbmt6i8rcdred56qtk33h1mlf28fbl.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1092408171194-c907fbb5g90taib7uicnlcb69tnvb28p</string>
+	<string>com.googleusercontent.apps.1092408171194-assbmt6i8rcdred56qtk33h1mlf28fbl</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDKfHtMksOQ9ZYS4V6r8MTRkD1vALnJSGM</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,23 +13,23 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.CampusConnect.chat</string>
+	<string>com.CampusConnect.CSULB</string>
 	<key>PROJECT_ID</key>
 	<string>chatproject-b824e</string>
 	<key>STORAGE_BUCKET</key>
 	<string>chatproject-b824e.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1092408171194:ios:0dacc13e2241854f</string>
+	<string>1:1092408171194:ios:51938d0fe3b9eef8</string>
 	<key>DATABASE_URL</key>
 	<string>https://chatproject-b824e.firebaseio.com</string>
 </dict>
