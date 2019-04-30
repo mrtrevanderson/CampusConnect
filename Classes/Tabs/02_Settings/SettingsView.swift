@@ -9,7 +9,6 @@ class SettingsView: UITableViewController {
 	@IBOutlet var cellPassword: UITableViewCell!
 	@IBOutlet var cellStatus: UITableViewCell!
 	@IBOutlet var cellBlocked: UITableViewCell!
-	@IBOutlet var cellArchive: UITableViewCell!
 	@IBOutlet var cellCache: UITableViewCell!
 	@IBOutlet var cellMedia: UITableViewCell!
 	@IBOutlet var cellWallpapers: UITableViewCell!

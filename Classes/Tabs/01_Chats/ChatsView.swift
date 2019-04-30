@@ -68,11 +68,11 @@ class ChatsView: UIViewController, UISearchBarDelegate, UITableViewDataSource, U
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func loadChats() {
 
-		var predicate = NSPredicate(format: "isArchived == NO AND isDeleted == NO")
+		var predicate = NSPredicate(format: "isDeleted == NO")
 
 		if let text = searchBar.text {
 			if (text.count != 0) {
-				predicate = NSPredicate(format: "isArchived == NO AND isDeleted == NO AND details CONTAINS[c] %@", text)
+				predicate = NSPredicate(format: "isDeleted == NO AND details CONTAINS[c] %@", text)
 			}
 		}
 

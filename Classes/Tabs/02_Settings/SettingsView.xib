@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsView">
             <connections>
-                <outlet property="cellArchive" destination="KbT-JM-1tb" id="8BN-d7-a8Q"/>
                 <outlet property="cellLogout" destination="8xF-qI-TWS" id="eTj-bM-SOb"/>
                 <outlet property="cellPassword" destination="5Ge-vf-v3w" id="usc-7L-JJN"/>
                 <outlet property="cellProfile" destination="NH3-nC-Etw" id="Smx-fg-3TL"/>
@@ -132,24 +131,6 @@
                 </subviews>
             </tableViewCellContentView>
             <point key="canvasLocation" x="578.26086956521749" y="131.25"/>
-        </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Jlx-kd-lO1" style="IBUITableViewCellStyleDefault" id="KbT-JM-1tb">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-            <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KbT-JM-1tb" id="Dsc-gL-o1F">
-                <rect key="frame" x="0.0" y="0.0" width="286" height="49.5"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Archived Chats" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jlx-kd-lO1">
-                        <rect key="frame" x="16" y="0.0" width="269" height="49.5"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                </subviews>
-            </tableViewCellContentView>
-            <point key="canvasLocation" x="578.26086956521749" y="253.79464285714283"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="FHq-9N-6V6" style="IBUITableViewCellStyleDefault" id="IzK-kO-VDW">
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>

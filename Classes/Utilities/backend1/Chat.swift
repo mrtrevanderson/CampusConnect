@@ -51,7 +51,6 @@ class Chat: NSObject {
 				dbchat.lastIncoming = dbmessage.createdAt
 			}
 
-			dbchat.isArchived = false
 			dbchat.isDeleted = false
 
 			dbchat.createdAt = Date().timestamp()
@@ -77,7 +76,7 @@ class Chat: NSObject {
 		return dbchat
 	}
 
-	// MARK: - Delete, Archive methods
+	// MARK: - Delete
 	//----------------------------------------------
 	class func deleteItem(dbchat: DBChat) {
 

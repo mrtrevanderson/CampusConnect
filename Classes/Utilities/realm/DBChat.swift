@@ -11,7 +11,7 @@ class DBChat: RLMObject {
 	@objc dynamic var lastMessageDate: Int64 = 0
 	@objc dynamic var lastIncoming: Int64 = 0
 
-	@objc dynamic var isArchived = false
+
 	@objc dynamic var isDeleted = false
 
 	@objc dynamic var createdAt: Int64 = 0
