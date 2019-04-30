@@ -21,7 +21,6 @@ class ChatsCell: MGSwipeTableCell {
 		labelLastMessage.text = dbchat.lastMessage
 
 		labelElapsed.text = TimeElapsed(timestamp: dbchat.lastMessageDate)
-		imageMuted.isHidden = (mutedUntil < Date().timestamp())
 	}
 
 	//---------------------------------------------------------------------------------------------------------------------------------------------
