@@ -3,19 +3,19 @@ func Date2Short(date: Date) -> String {
 	return DateFormatter.localizedString(from: date, dateStyle: .short, timeStyle: .none)
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------
 func Date2Medium(date: Date) -> String {
 
 	return DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .none)
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------
 func Date2MediumTime(date: Date) -> String {
 
 	return DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .short)
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------
 func TimeElapsed(timestamp: Int64) -> String {
 
 	var elapsed = ""

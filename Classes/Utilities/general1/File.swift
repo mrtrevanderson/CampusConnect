@@ -1,6 +1,6 @@
 class File: NSObject {
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------
 	class func temp(ext: String) -> String {
 
 		let timestamp = Date().timestamp()
@@ -8,19 +8,19 @@ class File: NSObject {
 		return Dir.cache(file)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------
 	class func exist(path: String) -> Bool {
 
 		return FileManager.default.fileExists(atPath: path)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------
 	class func remove(path: String) {
 
 		try? FileManager.default.removeItem(at: URL(fileURLWithPath: path))
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//--------------------------------------------
 	class func copy(src: String, dest: String, overwrite: Bool) {
 
 		if (overwrite) { remove(path: dest) }
@@ -30,28 +30,28 @@ class File: NSObject {
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//--------------------------------------------
 	class func created(path: String) -> Date {
 
 		let attributes = try! FileManager.default.attributesOfItem(atPath: path)
 		return attributes[.creationDate] as! Date
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-------------------------------------------
 	class func modified(path: String) -> Date {
 
 		let attributes = try! FileManager.default.attributesOfItem(atPath: path)
 		return attributes[.modificationDate] as! Date
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-------------------------------------------
 	class func size(path: String) -> Int64 {
 
 		let attributes = try! FileManager.default.attributesOfItem(atPath: path)
 		return attributes[.size] as! Int64
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//------------------------------------------
 	class func diskFree() -> Int64 {
 
 		let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!

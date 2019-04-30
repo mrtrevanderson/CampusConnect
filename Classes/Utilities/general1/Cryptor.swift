@@ -1,6 +1,6 @@
 class Cryptor: NSObject {
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func encrypt(text: String, chatId: String) -> String? {
 
 		if let dataDecrypted = text.data(using: .utf8) {
@@ -11,7 +11,7 @@ class Cryptor: NSObject {
 		return nil
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func decrypt(text: String, chatId: String) -> String? {
 
 		if let dataEncrypted = Data(base64Encoded: text, options: []) {
@@ -22,21 +22,21 @@ class Cryptor: NSObject {
 		return nil
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func encrypt(data: Data, chatId: String) -> Data? {
 
 		let password = Password.get(chatId: chatId)
 		return try? RNEncryptor.encryptData(data, with: kRNCryptorAES256Settings, password: password)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func decrypt(data: Data, chatId: String) -> Data? {
 
 		let password = Password.get(chatId: chatId)
 		return try? RNDecryptor.decryptData(data, withPassword: password)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func encrypt(path: String, chatId: String) {
 
 		do {
@@ -49,7 +49,7 @@ class Cryptor: NSObject {
 		} catch { print("Cryptor encryptFile error.") }
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func decrypt(path: String, chatId: String) {
 
 		do {

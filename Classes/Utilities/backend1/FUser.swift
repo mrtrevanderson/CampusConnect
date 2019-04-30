@@ -2,7 +2,7 @@
 class FUser: FObject {
 
 	// MARK: - Class methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func currentId() -> String {
 
 		if let currentUser = Auth.auth().currentUser {
@@ -11,7 +11,7 @@ class FUser: FObject {
 		return ""
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func currentUser() -> FUser {
 
 		if let dictionary = UserDefaults.standard.object(forKey: "CurrentUser") as? [String: Any] {
@@ -20,7 +20,7 @@ class FUser: FObject {
 		return FUser(path: "User")
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func userWithId(userId: String) -> FUser {
 
 		let user = FUser(path: "User")
@@ -28,7 +28,7 @@ class FUser: FObject {
 		return user
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func signIn(email: String, password: String, completion: @escaping (_ user: FUser?, _ error: Error?) -> Void) {
 
 		Auth.auth().signIn(withEmail: email, password: password) { authResult, error in

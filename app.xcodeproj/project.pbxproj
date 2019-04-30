@@ -33,8 +33,6 @@
 		296021541F2CF5F600544468 /* VideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29601FFF1F2CF5F600544468 /* VideoView.xib */; };
 		2960215C1F2CF5F600544468 /* CountriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296020121F2CF5F600544468 /* CountriesView.swift */; };
 		2960215D1F2CF5F600544468 /* CountriesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 296020131F2CF5F600544468 /* CountriesView.xib */; };
-		296021621F2CF5F600544468 /* SelectUsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960201D1F2CF5F600544468 /* SelectUsersCell.swift */; };
-		296021631F2CF5F600544468 /* SelectUsersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2960201E1F2CF5F600544468 /* SelectUsersCell.xib */; };
 		296021661F2CF5F600544468 /* SelectUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296020241F2CF5F600544468 /* SelectUserCell.swift */; };
 		296021671F2CF5F600544468 /* SelectUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 296020251F2CF5F600544468 /* SelectUserCell.xib */; };
 		296021681F2CF5F600544468 /* SelectUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296020271F2CF5F600544468 /* SelectUserView.swift */; };
@@ -208,8 +206,6 @@
 		29601FFF1F2CF5F600544468 /* VideoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoView.xib; sourceTree = "<group>"; };
 		296020121F2CF5F600544468 /* CountriesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesView.swift; sourceTree = "<group>"; };
 		296020131F2CF5F600544468 /* CountriesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountriesView.xib; sourceTree = "<group>"; };
-		2960201D1F2CF5F600544468 /* SelectUsersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectUsersCell.swift; sourceTree = "<group>"; };
-		2960201E1F2CF5F600544468 /* SelectUsersCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectUsersCell.xib; sourceTree = "<group>"; };
 		296020241F2CF5F600544468 /* SelectUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectUserCell.swift; sourceTree = "<group>"; };
 		296020251F2CF5F600544468 /* SelectUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectUserCell.xib; sourceTree = "<group>"; };
 		296020271F2CF5F600544468 /* SelectUserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectUserView.swift; sourceTree = "<group>"; };
@@ -427,10 +423,10 @@
 		29601FE61F2CF5F600544468 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				29601FFC1F2CF5F600544468 /* 03_Video */,
 				29601FE71F2CF5F600544468 /* 01_Profile */,
-				29601FEF1F2CF5F600544468 /* 03_AllMedia */,
+				29601FEF1F2CF5F600544468 /* 02_AllMedia */,
 				29601FF91F2CF5F600544468 /* 04_Picture */,
-				29601FFC1F2CF5F600544468 /* 05_Video */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -444,7 +440,7 @@
 			path = 01_Profile;
 			sourceTree = "<group>";
 		};
-		29601FEF1F2CF5F600544468 /* 03_AllMedia */ = {
+		29601FEF1F2CF5F600544468 /* 02_AllMedia */ = {
 			isa = PBXGroup;
 			children = (
 				29601FF11F2CF5F600544468 /* AllMediaCell.swift */,
@@ -454,7 +450,7 @@
 				29601FF71F2CF5F600544468 /* AllMediaView.swift */,
 				29601FF81F2CF5F600544468 /* AllMediaView.xib */,
 			);
-			path = 03_AllMedia;
+			path = 02_AllMedia;
 			sourceTree = "<group>";
 		};
 		29601FF91F2CF5F600544468 /* 04_Picture */ = {
@@ -465,13 +461,13 @@
 			path = 04_Picture;
 			sourceTree = "<group>";
 		};
-		29601FFC1F2CF5F600544468 /* 05_Video */ = {
+		29601FFC1F2CF5F600544468 /* 03_Video */ = {
 			isa = PBXGroup;
 			children = (
 				29601FFE1F2CF5F600544468 /* VideoView.swift */,
 				29601FFF1F2CF5F600544468 /* VideoView.xib */,
 			);
-			path = 05_Video;
+			path = 03_Video;
 			sourceTree = "<group>";
 		};
 		296020041F2CF5F600544468 /* Misc */ = {
@@ -481,7 +477,6 @@
 				296020101F2CF5F600544468 /* Countries */,
 				296020051F2CF5F600544468 /* NavController */,
 				296020221F2CF5F600544468 /* SelectUser */,
-				2960201B1F2CF5F600544468 /* SelectUsers */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -503,15 +498,6 @@
 			path = Countries;
 			sourceTree = "<group>";
 		};
-		2960201B1F2CF5F600544468 /* SelectUsers */ = {
-			isa = PBXGroup;
-			children = (
-				2960201D1F2CF5F600544468 /* SelectUsersCell.swift */,
-				2960201E1F2CF5F600544468 /* SelectUsersCell.xib */,
-			);
-			path = SelectUsers;
-			sourceTree = "<group>";
-		};
 		296020221F2CF5F600544468 /* SelectUser */ = {
 			isa = PBXGroup;
 			children = (
@@ -528,7 +514,7 @@
 			children = (
 				2960203B1F2CF5F600544468 /* 01_Chats */,
 				296020461F2CF5F600544468 /* 03_People */,
-				296020581F2CF5F600544468 /* 05_Settings */,
+				296020581F2CF5F600544468 /* 02_Settings */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -556,18 +542,18 @@
 			path = 03_People;
 			sourceTree = "<group>";
 		};
-		296020581F2CF5F600544468 /* 05_Settings */ = {
+		296020581F2CF5F600544468 /* 02_Settings */ = {
 			isa = PBXGroup;
 			children = (
 				296020591F2CF5F600544468 /* 01_EditProfile */,
 				2960205D1F2CF5F600544468 /* 02_Password */,
 				296020611F2CF5F600544468 /* 03_Status */,
-				2960207F1F2CF5F600544468 /* 07_Media */,
-				296020871F2CF5F600544468 /* 08_Wallpapers */,
+				2960207F1F2CF5F600544468 /* 04_Media */,
+				296020871F2CF5F600544468 /* 05_Wallpapers */,
 				296020A21F2CF5F600544468 /* SettingsView.swift */,
 				296020A31F2CF5F600544468 /* SettingsView.xib */,
 			);
-			path = 05_Settings;
+			path = 02_Settings;
 			sourceTree = "<group>";
 		};
 		296020591F2CF5F600544468 /* 01_EditProfile */ = {
@@ -597,14 +583,14 @@
 			path = 03_Status;
 			sourceTree = "<group>";
 		};
-		2960207F1F2CF5F600544468 /* 07_Media */ = {
+		2960207F1F2CF5F600544468 /* 04_Media */ = {
 			isa = PBXGroup;
 			children = (
 				296020801F2CF5F600544468 /* 01_Network */,
 				296020851F2CF5F600544468 /* MediaView.swift */,
 				296020861F2CF5F600544468 /* MediaView.xib */,
 			);
-			path = 07_Media;
+			path = 04_Media;
 			sourceTree = "<group>";
 		};
 		296020801F2CF5F600544468 /* 01_Network */ = {
@@ -616,7 +602,7 @@
 			path = 01_Network;
 			sourceTree = "<group>";
 		};
-		296020871F2CF5F600544468 /* 08_Wallpapers */ = {
+		296020871F2CF5F600544468 /* 05_Wallpapers */ = {
 			isa = PBXGroup;
 			children = (
 				296020891F2CF5F600544468 /* WallpapersCell.swift */,
@@ -624,7 +610,7 @@
 				2960208C1F2CF5F600544468 /* WallpapersView.swift */,
 				2960208D1F2CF5F600544468 /* WallpapersView.xib */,
 			);
-			path = 08_Wallpapers;
+			path = 05_Wallpapers;
 			sourceTree = "<group>";
 		};
 		296020A41F2CF5F600544468 /* Utilities */ = {
@@ -1262,7 +1248,6 @@
 				2960219B1F2CF5F600544468 /* MediaView.xib in Resources */,
 				29BB8FAC1F5C266100560F3F /* chat_camera@2x.png in Resources */,
 				2989906D1F1B6FFD00AC73B3 /* wallpapers07@2x.jpg in Resources */,
-				296021631F2CF5F600544468 /* SelectUsersCell.xib in Resources */,
 				296021671F2CF5F600544468 /* SelectUserCell.xib in Resources */,
 				29D7606D20EFD4DF006C7148 /* rcmessages_audiopause@2x.png in Resources */,
 				29898FC81F1B6FFD00AC73B3 /* countries.plist in Resources */,
@@ -1430,7 +1415,6 @@
 				296021CE1F2CF5F600544468 /* Cryptor.swift in Sources */,
 				29D7605F20EFD49E006C7148 /* RCBubbleHeaderCell.swift in Sources */,
 				29DC391A20EF76E1004E41BE /* FUser+Util.swift in Sources */,
-				296021621F2CF5F600544468 /* SelectUsersCell.swift in Sources */,
 				29D7605820EFD49D006C7148 /* RCVideoMessageCell.swift in Sources */,
 				2960214E1F2CF5F600544468 /* AllMediaHeader.swift in Sources */,
 				296021F31F2CF5F600544468 /* RegisterEmailView.swift in Sources */,

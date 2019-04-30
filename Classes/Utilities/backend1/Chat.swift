@@ -1,7 +1,7 @@
 class Chat: NSObject {
 
 	// MARK: - Update methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func updateChat(chatId: String) {
 
 		let predicate = NSPredicate(format: "chatId == %@ AND isDeleted == NO", chatId)
@@ -14,7 +14,7 @@ class Chat: NSObject {
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func removeChat(chatId: String) {
 
 		let predicate = NSPredicate(format: "chatId == %@", chatId)
@@ -24,7 +24,7 @@ class Chat: NSObject {
 	}
 
 	// MARK: -
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func updateItem(dbmessage: DBMessage) {
 		
 		do {
@@ -37,7 +37,6 @@ class Chat: NSObject {
 			let incoming = (dbmessage.senderId != FUser.currentId())
 
 			if (dbmessage.recipientId.count != 0) {
-				dbchat.groupId		= ""
 				dbchat.recipientId	= outgoing ? dbmessage.recipientId		 : dbmessage.senderId
 				dbchat.initials		= outgoing ? dbmessage.recipientInitials : dbmessage.senderInitials
 				dbchat.picture		= outgoing ? dbmessage.recipientPicture	 : dbmessage.senderPicture
@@ -65,7 +64,7 @@ class Chat: NSObject {
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func fetchOrCreateItem(chatId: String) -> DBChat {
 
 		let predicate = NSPredicate(format: "chatId == %@", chatId)
@@ -79,7 +78,7 @@ class Chat: NSObject {
 	}
 
 	// MARK: - Delete, Archive methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func deleteItem(dbchat: DBChat) {
 
 		do {
@@ -92,35 +91,9 @@ class Chat: NSObject {
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	class func archiveItem(dbchat: DBChat) {
-
-		do {
-			let realm = RLMRealm.default()
-			realm.beginWriteTransaction()
-			dbchat.isArchived = true
-			try realm.commitWriteTransaction()
-		} catch {
-			ProgressHUD.showError("Realm commit error.")
-		}
-	}
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	class func unarchiveItem(dbchat: DBChat) {
-
-		do {
-			let realm = RLMRealm.default()
-			realm.beginWriteTransaction()
-			dbchat.isArchived = false
-			try realm.commitWriteTransaction()
-
-		} catch {
-			ProgressHUD.showError("Realm commit error.")
-		}
-	}
-
+	
 	// MARK: - ChatId methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func chatId(recipientId: String) -> String {
 
 		let currentId = FUser.currentId()
@@ -129,9 +102,4 @@ class Chat: NSObject {
 		return Checksum.md5HashOf(string: sorted.joined(separator: ""))
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	class func chatId(groupId: String) -> String {
-
-		return Checksum.md5HashOf(string: groupId)
-	}
 }

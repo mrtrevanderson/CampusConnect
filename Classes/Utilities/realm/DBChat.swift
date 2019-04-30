@@ -3,8 +3,6 @@ class DBChat: RLMObject {
 	@objc dynamic var chatId = ""
 
 	@objc dynamic var recipientId = ""
-	@objc dynamic var groupId = ""
-
 	@objc dynamic var initials = ""
 	@objc dynamic var picture = ""
 	@objc dynamic var details = ""

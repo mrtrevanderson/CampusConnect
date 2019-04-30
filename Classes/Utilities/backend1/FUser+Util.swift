@@ -35,7 +35,7 @@ extension FUser {
 	func wallpaper() -> String			{ return (self[FUSER_WALLPAPER] as? String)		?? ""						}
 	func isOnboardOk() -> Bool			{ return self[FUSER_FULLNAME] != nil										}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func initials() -> String {
 
 		if let firstname = self[FUSER_FIRSTNAME] as? String {

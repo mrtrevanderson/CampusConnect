@@ -14,7 +14,7 @@ func LogoutUser(delAccount: Int32) {
 	}
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------
 func LoginUser(target: Any) {
 
 	let viewController = target as! UIViewController
@@ -24,7 +24,7 @@ func LoginUser(target: Any) {
 	}
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------
 func OnboardUser(target: Any) {
 
 	let viewController = target as! UIViewController
@@ -34,7 +34,7 @@ func OnboardUser(target: Any) {
 	viewController.present(navController, animated: true)
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------
 func UserLoggedIn(loginMethod: String) {
 
 	UpdateUserSettings(loginMethod: loginMethod)
@@ -50,7 +50,7 @@ func UserLoggedIn(loginMethod: String) {
 	NotificationCenterX.post(notification: NOTIFICATION_USER_LOGGED_IN)
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------
 func UpdateUserSettings(loginMethod: String) {
 
 	var update = false

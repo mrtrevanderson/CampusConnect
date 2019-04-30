@@ -71,10 +71,6 @@
 #define		FMESSAGE_RECIPIENTINITIALS			@"recipientInitials"	//	String
 #define		FMESSAGE_RECIPIENTPICTURE			@"recipientPicture"		//	String
 
-#define		FMESSAGE_GROUPID					@"groupId"				//	String
-#define		FMESSAGE_GROUPNAME					@"groupName"			//	String
-#define		FMESSAGE_GROUPPICTURE				@"groupPicture"			//	String
-
 #define		FMESSAGE_TYPE						@"type"					//	String
 #define		FMESSAGE_TEXT						@"text"					//	String
 
@@ -164,7 +160,6 @@
 #define		NOTIFICATION_REFRESH_CALLHISTORIES	@"NotificationRefreshCallHistories"
 #define		NOTIFICATION_REFRESH_CHATS			@"NotificationRefreshChats"
 #define		NOTIFICATION_REFRESH_FRIENDS		@"NotificationRefreshFriends"
-#define		NOTIFICATION_REFRESH_GROUPS			@"NotificationRefreshGroups"
 #define		NOTIFICATION_REFRESH_MESSAGES1		@"NotificationRefreshMessages1"
 #define		NOTIFICATION_REFRESH_MESSAGES2		@"NotificationRefreshMessages2"
 #define		NOTIFICATION_REFRESH_STATUSES		@"NotificationRefreshStatuses"

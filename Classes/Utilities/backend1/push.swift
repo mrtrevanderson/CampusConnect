@@ -23,7 +23,7 @@ func SendPushNotification1(message: FObject) {
 	})
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------
 func SendPushNotification2(userIds: [String], text: String) {
 	let predicate = NSPredicate(format: "objectId IN %@", userIds)
 	let dbusers = DBUser.objects(with: predicate).sortedResults(usingKeyPath: FUSER_FULLNAME, ascending: true)
