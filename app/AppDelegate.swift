@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
 	//----------------------------------------------
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         
-        // Handle Migration
+        // Handle Migration if needed increment versions
         var config = Realm.Configuration(
             schemaVersion: 8,
             migrationBlock: { migration, oldSchemaVersion in
@@ -31,7 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
 		Database.database().isPersistenceEnabled = false
 		FirebaseConfiguration().setLoggerLevel(.error)
 
-		//-----------------------------------------------------------------------------------------------------------------------------------------
 		// Crashlytics initialization
 		//-----------------------------------------------------------------------------------------------------------------------------------------
 		Fabric.with([Crashlytics.self])

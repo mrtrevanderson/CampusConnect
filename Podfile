@@ -8,6 +8,7 @@ target 'app' do
 	pod 'Crashlytics'
 	pod 'Firebase/Core'
 	pod 'Firebase/Auth'
+	pod 'Firebase/Performance'
 	pod 'Firebase/Database'
 	pod 'Firebase/Storage'
 	pod 'RealmSwift'
