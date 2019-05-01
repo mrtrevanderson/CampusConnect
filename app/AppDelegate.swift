@@ -10,14 +10,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
 	var settingsView: SettingsView!
 
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         
         // Handle Migration
         var config = Realm.Configuration(
-            schemaVersion: 4,
+            schemaVersion: 8,
             migrationBlock: { migration, oldSchemaVersion in
-                if (oldSchemaVersion < 3) {
+                if (oldSchemaVersion < 7) {
                 }
         })
         Realm.Configuration.defaultConfiguration = config

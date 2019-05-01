@@ -37,7 +37,7 @@ class Chat: NSObject {
 			let incoming = (dbmessage.senderId != FUser.currentId())
 
 			if (dbmessage.recipientId.count != 0) {
-				dbchat.groupId		= ""
+
 				dbchat.recipientId	= outgoing ? dbmessage.recipientId		 : dbmessage.senderId
 				dbchat.initials		= outgoing ? dbmessage.recipientInitials : dbmessage.senderInitials
 				dbchat.picture		= outgoing ? dbmessage.recipientPicture	 : dbmessage.senderPicture
@@ -129,9 +129,6 @@ class Chat: NSObject {
 		return Checksum.md5HashOf(string: sorted.joined(separator: ""))
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	class func chatId(groupId: String) -> String {
 
-		return Checksum.md5HashOf(string: groupId)
-	}
+
 }

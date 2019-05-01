@@ -26,9 +26,6 @@ class MessageQueue: NSObject {
 		message[FMESSAGE_RECIPIENTINITIALS] = dbuser.initials()
 		message[FMESSAGE_RECIPIENTPICTURE] = recipientPicture
 
-		message[FMESSAGE_GROUPID] = ""
-		message[FMESSAGE_GROUPNAME] = ""
-		message[FMESSAGE_GROUPPICTURE] = ""
 
 		message[FMESSAGE_TYPE] = ""
 		message[FMESSAGE_TEXT] = ""

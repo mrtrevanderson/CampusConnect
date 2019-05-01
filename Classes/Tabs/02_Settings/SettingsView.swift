@@ -261,7 +261,7 @@ class SettingsView: UITableViewController {
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 
-		if (section == 1) { return "Status" }
+		if (section == 1) { return "Major" }
         if (section == 2) { return "Message Background" }
         if (section == 3) { return "     " }
 
