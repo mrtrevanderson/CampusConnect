@@ -37,9 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
 		FirebaseConfiguration().setLoggerLevel(.error)
 
 
-		// Crashlytics initialization
-		Fabric.with([Crashlytics.self])
-
 		if (UserDefaultsX.bool(key: "Initialized") == false) {
 			UserDefaultsX.setObject(value: true, key: "Initialized")
 			FUser.logOut()
@@ -59,6 +56,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
 		_ = Users.shared
 		_ = UserStatuses.shared
 
+
+        // Crashlytics initialization
+        Fabric.with([Crashlytics.self])
 
 		// UI initialization
 		window = UIWindow(frame: UIScreen.main.bounds)

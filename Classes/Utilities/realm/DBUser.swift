@@ -28,14 +28,14 @@ class DBUser: RLMObject {
 	@objc dynamic var createdAt: Int64 = 0
 	@objc dynamic var updatedAt: Int64 = 0
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func lastUpdatedAt() -> Int64 {
 
 		let dbuser = DBUser.allObjects().sortedResults(usingKeyPath: "updatedAt", ascending: true).lastObject() as? DBUser
 		return dbuser?.updatedAt ?? 0
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func initials() -> String {
 
 		let initial1 = (firstname.count != 0) ? firstname.prefix(1) : ""
@@ -44,7 +44,7 @@ class DBUser: RLMObject {
 		return "\(initial1)\(initial2)"
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override static func primaryKey() -> String? {
 
 		return FUSER_OBJECTID

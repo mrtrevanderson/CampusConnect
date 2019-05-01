@@ -17,7 +17,7 @@ class DBChat: RLMObject {
 	@objc dynamic var createdAt: Int64 = 0
 	@objc dynamic var updatedAt: Int64 = 0
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override static func primaryKey() -> String? {
 
 		return "chatId"
