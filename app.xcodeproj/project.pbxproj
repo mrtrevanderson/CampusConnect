@@ -452,7 +452,7 @@
 				29601FE71F2CF5F600544468 /* 01_Profile */,
 				29601FEF1F2CF5F600544468 /* 03_AllMedia */,
 				29601FF91F2CF5F600544468 /* 04_Picture */,
-				29601FFC1F2CF5F600544468 /* 05_Video */,
+				29601FFC1F2CF5F600544468 /* 02_Video */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -487,13 +487,13 @@
 			path = 04_Picture;
 			sourceTree = "<group>";
 		};
-		29601FFC1F2CF5F600544468 /* 05_Video */ = {
+		29601FFC1F2CF5F600544468 /* 02_Video */ = {
 			isa = PBXGroup;
 			children = (
 				29601FFE1F2CF5F600544468 /* VideoView.swift */,
 				29601FFF1F2CF5F600544468 /* VideoView.xib */,
 			);
-			path = 05_Video;
+			path = 02_Video;
 			sourceTree = "<group>";
 		};
 		296020041F2CF5F600544468 /* Misc */ = {
@@ -552,7 +552,7 @@
 			children = (
 				2960203B1F2CF5F600544468 /* 01_Chats */,
 				296020461F2CF5F600544468 /* 03_People */,
-				296020581F2CF5F600544468 /* 05_Settings */,
+				296020581F2CF5F600544468 /* 02_Settings */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -580,7 +580,7 @@
 			path = 03_People;
 			sourceTree = "<group>";
 		};
-		296020581F2CF5F600544468 /* 05_Settings */ = {
+		296020581F2CF5F600544468 /* 02_Settings */ = {
 			isa = PBXGroup;
 			children = (
 				296020591F2CF5F600544468 /* 01_EditProfile */,
@@ -589,11 +589,11 @@
 				296020701F2CF5F600544468 /* 05_Archive */,
 				296020771F2CF5F600544468 /* 06_Cache */,
 				2960207F1F2CF5F600544468 /* 07_Media */,
-				296020871F2CF5F600544468 /* 08_Wallpapers */,
+				296020871F2CF5F600544468 /* 04_Wallpapers */,
 				296020A21F2CF5F600544468 /* SettingsView.swift */,
 				296020A31F2CF5F600544468 /* SettingsView.xib */,
 			);
-			path = 05_Settings;
+			path = 02_Settings;
 			sourceTree = "<group>";
 		};
 		296020591F2CF5F600544468 /* 01_EditProfile */ = {
@@ -672,7 +672,7 @@
 			path = 01_Network;
 			sourceTree = "<group>";
 		};
-		296020871F2CF5F600544468 /* 08_Wallpapers */ = {
+		296020871F2CF5F600544468 /* 04_Wallpapers */ = {
 			isa = PBXGroup;
 			children = (
 				296020891F2CF5F600544468 /* WallpapersCell.swift */,
@@ -680,7 +680,7 @@
 				2960208C1F2CF5F600544468 /* WallpapersView.swift */,
 				2960208D1F2CF5F600544468 /* WallpapersView.xib */,
 			);
-			path = 08_Wallpapers;
+			path = 04_Wallpapers;
 			sourceTree = "<group>";
 		};
 		296020A41F2CF5F600544468 /* Utilities */ = {
