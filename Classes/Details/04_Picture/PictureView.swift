@@ -1,5 +1,5 @@
 
-class PictureView: NYTPhotosViewController{
+class PictureView: NYTPhotosViewController, SelectUsersDelegate {
 
 	private var isMessages = false
 	private var statusBarIsHidden = false
