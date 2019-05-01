@@ -20,7 +20,7 @@ class SettingsView: UITableViewController {
 	@IBOutlet var cellLogout: UITableViewCell!
 	@IBOutlet var cellLogoutAll: UITableViewCell!
 
-	//-----------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
 
 		super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -32,13 +32,13 @@ class SettingsView: UITableViewController {
 		NotificationCenterX.addObserver(target: self, selector: #selector(actionCleanup), name: NOTIFICATION_USER_LOGGED_OUT)
 	}
 
-	//-----------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	required init?(coder aDecoder: NSCoder) {
 
 		super.init(coder: aDecoder)
 	}
 
-	//----------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -52,7 +52,7 @@ class SettingsView: UITableViewController {
 		tableView.tableHeaderView = viewHeader
 	}
 
-	//----------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	override func viewDidAppear(_ animated: Bool) {
 
 		super.viewDidAppear(animated)
@@ -69,6 +69,7 @@ class SettingsView: UITableViewController {
 	}
 
 	// MARK: - Backend actions
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	@objc func loadUser() {
 
 		let user = FUser.currentUser()
@@ -90,6 +91,7 @@ class SettingsView: UITableViewController {
 	}
 
 	// MARK: - User actions
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func actionProfile() {
 
 		let editProfileView = EditProfileView()
@@ -98,7 +100,7 @@ class SettingsView: UITableViewController {
 		present(navController, animated: true)
 	}
 
-	//----------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func actionPassword() {
 
 		let passwordView = PasswordView()
@@ -106,7 +108,7 @@ class SettingsView: UITableViewController {
 		present(navController, animated: true)
 	}
 
-	//----------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func actionStatus() {
 
 		let statusView = StatusView()
@@ -114,9 +116,26 @@ class SettingsView: UITableViewController {
 		navigationController?.pushViewController(statusView, animated: true)
 	}
 
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	
 
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	func actionArchive() {
 
-	//---------------------------------------------
+		let archiveView = ArchiveView()
+		archiveView.hidesBottomBarWhenPushed = true
+		navigationController?.pushViewController(archiveView, animated: true)
+	}
+
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	func actionCache() {
+
+		let cacheView = CacheView()
+		cacheView.hidesBottomBarWhenPushed = true
+		navigationController?.pushViewController(cacheView, animated: true)
+	}
+
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func actionMedia() {
 
 		let mediaView = MediaView()
@@ -124,7 +143,7 @@ class SettingsView: UITableViewController {
 		navigationController?.pushViewController(mediaView, animated: true)
 	}
 
-	//------------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func actionWallpapers() {
 
 		let wallpapersView = WallpapersView()
@@ -132,6 +151,16 @@ class SettingsView: UITableViewController {
 		present(navController, animated: true)
 	}
 
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+
+	//--------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func actionLogout() {
 
 		let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -144,7 +173,7 @@ class SettingsView: UITableViewController {
 		present(alert, animated: true)
 	}
 
-	//----------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func actionLogoutAll() {
 
 		let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -157,7 +186,7 @@ class SettingsView: UITableViewController {
 		present(alert, animated: true)
 	}
 
-	//-------------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func actionLogoutUser() {
 
 		LogoutUser(delAccount: DEL_ACCOUNT_ONE)
@@ -169,7 +198,7 @@ class SettingsView: UITableViewController {
 		}
 	}
 
-	//------------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func actionSwitchNextUser() {
 
 		ProgressHUD.show(nil, interaction: false)
@@ -192,7 +221,7 @@ class SettingsView: UITableViewController {
 		}
 	}
 
-	//------------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func actionLogoutAllUser() {
 
 		LogoutUser(delAccount: DEL_ACCOUNT_ALL)
@@ -200,6 +229,7 @@ class SettingsView: UITableViewController {
 	}
 
 	// MARK: - Cleanup methods
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	@objc func actionCleanup() {
 
 		imageUser.image = UIImage(named: "settings_blank")
@@ -207,27 +237,28 @@ class SettingsView: UITableViewController {
 	}
 
 	// MARK: - Table view data source
-
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	override func numberOfSections(in tableView: UITableView) -> Int {
 
 		return 4
 	}
 
-	//-------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
 		let emailLogin = (FUser.loginMethod() == LOGIN_EMAIL)
 
-		if (section == 0) { return 2				}
+		if (section == 0) { return emailLogin ? 2 : 1				}
 		if (section == 1) { return 1								}
 		if (section == 2) { return 1								}
 		if (section == 3) { return 1								}
-
+		if (section == 4) { return emailLogin ? 2 : 0				}
+		if (section == 5) { return (Account.count() > 1) ? 2 : 1	}
 		
 		return 0
 	}
 
-	//-----------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 
 		if (section == 1) { return "Status" }
@@ -238,7 +269,7 @@ class SettingsView: UITableViewController {
 		return nil
 	}
 
-	//---------------------------------------------
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
 		if (indexPath.section == 0) && (indexPath.row == 0) { return cellProfile			}
@@ -251,7 +282,7 @@ class SettingsView: UITableViewController {
 	}
 
 	// MARK: - Table view delegate
-
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 		tableView.deselectRow(at: indexPath, animated: true)

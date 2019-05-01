@@ -1,5 +1,5 @@
 
-class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AudioDelegate {
+class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AudioDelegate, SelectUsersDelegate {
 
 	private var recipientId = ""
 	private var chatId = ""

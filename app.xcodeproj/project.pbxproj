@@ -35,6 +35,8 @@
 		2960215D1F2CF5F600544468 /* CountriesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 296020131F2CF5F600544468 /* CountriesView.xib */; };
 		296021621F2CF5F600544468 /* SelectUsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960201D1F2CF5F600544468 /* SelectUsersCell.swift */; };
 		296021631F2CF5F600544468 /* SelectUsersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2960201E1F2CF5F600544468 /* SelectUsersCell.xib */; };
+		296021641F2CF5F600544468 /* SelectUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296020201F2CF5F600544468 /* SelectUsersView.swift */; };
+		296021651F2CF5F600544468 /* SelectUsersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 296020211F2CF5F600544468 /* SelectUsersView.xib */; };
 		296021661F2CF5F600544468 /* SelectUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296020241F2CF5F600544468 /* SelectUserCell.swift */; };
 		296021671F2CF5F600544468 /* SelectUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 296020251F2CF5F600544468 /* SelectUserCell.xib */; };
 		296021681F2CF5F600544468 /* SelectUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296020271F2CF5F600544468 /* SelectUserView.swift */; };
@@ -53,6 +55,14 @@
 		296021871F2CF5F600544468 /* PasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 296020601F2CF5F600544468 /* PasswordView.xib */; };
 		2960218A1F2CF5F600544468 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296020671F2CF5F600544468 /* StatusView.swift */; };
 		2960218B1F2CF5F600544468 /* StatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 296020681F2CF5F600544468 /* StatusView.xib */; };
+		296021901F2CF5F600544468 /* ArchiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296020721F2CF5F600544468 /* ArchiveCell.swift */; };
+		296021911F2CF5F600544468 /* ArchiveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 296020731F2CF5F600544468 /* ArchiveCell.xib */; };
+		296021921F2CF5F600544468 /* ArchiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296020751F2CF5F600544468 /* ArchiveView.swift */; };
+		296021931F2CF5F600544468 /* ArchiveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 296020761F2CF5F600544468 /* ArchiveView.xib */; };
+		296021941F2CF5F600544468 /* KeepMediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960207A1F2CF5F600544468 /* KeepMediaView.swift */; };
+		296021951F2CF5F600544468 /* KeepMediaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2960207B1F2CF5F600544468 /* KeepMediaView.xib */; };
+		296021961F2CF5F600544468 /* CacheView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960207D1F2CF5F600544468 /* CacheView.swift */; };
+		296021971F2CF5F600544468 /* CacheView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2960207E1F2CF5F600544468 /* CacheView.xib */; };
 		296021981F2CF5F600544468 /* NetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296020821F2CF5F600544468 /* NetworkView.swift */; };
 		296021991F2CF5F600544468 /* NetworkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 296020831F2CF5F600544468 /* NetworkView.xib */; };
 		2960219A1F2CF5F600544468 /* MediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296020851F2CF5F600544468 /* MediaView.swift */; };
@@ -88,6 +98,7 @@
 		296021D51F2CF5F600544468 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296020FE1F2CF5F600544468 /* Video.swift */; };
 		296021D61F2CF5F600544468 /* camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296021011F2CF5F600544468 /* camera.swift */; };
 		296021D81F2CF5F600544468 /* converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296021051F2CF5F600544468 /* converter.swift */; };
+		296021D91F2CF5F600544468 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296021081F2CF5F600544468 /* CacheManager.swift */; };
 		296021DA1F2CF5F600544468 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960210A1F2CF5F600544468 /* DownloadManager.swift */; };
 		296021DB1F2CF5F600544468 /* MediaLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960210C1F2CF5F600544468 /* MediaLoader.swift */; };
 		296021DC1F2CF5F600544468 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2960210E1F2CF5F600544468 /* RealmManager.swift */; };
@@ -210,6 +221,8 @@
 		296020131F2CF5F600544468 /* CountriesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountriesView.xib; sourceTree = "<group>"; };
 		2960201D1F2CF5F600544468 /* SelectUsersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectUsersCell.swift; sourceTree = "<group>"; };
 		2960201E1F2CF5F600544468 /* SelectUsersCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectUsersCell.xib; sourceTree = "<group>"; };
+		296020201F2CF5F600544468 /* SelectUsersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectUsersView.swift; sourceTree = "<group>"; };
+		296020211F2CF5F600544468 /* SelectUsersView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectUsersView.xib; sourceTree = "<group>"; };
 		296020241F2CF5F600544468 /* SelectUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectUserCell.swift; sourceTree = "<group>"; };
 		296020251F2CF5F600544468 /* SelectUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectUserCell.xib; sourceTree = "<group>"; };
 		296020271F2CF5F600544468 /* SelectUserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectUserView.swift; sourceTree = "<group>"; };
@@ -228,6 +241,14 @@
 		296020601F2CF5F600544468 /* PasswordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PasswordView.xib; sourceTree = "<group>"; };
 		296020671F2CF5F600544468 /* StatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		296020681F2CF5F600544468 /* StatusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusView.xib; sourceTree = "<group>"; };
+		296020721F2CF5F600544468 /* ArchiveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchiveCell.swift; sourceTree = "<group>"; };
+		296020731F2CF5F600544468 /* ArchiveCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArchiveCell.xib; sourceTree = "<group>"; };
+		296020751F2CF5F600544468 /* ArchiveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchiveView.swift; sourceTree = "<group>"; };
+		296020761F2CF5F600544468 /* ArchiveView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArchiveView.xib; sourceTree = "<group>"; };
+		2960207A1F2CF5F600544468 /* KeepMediaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeepMediaView.swift; sourceTree = "<group>"; };
+		2960207B1F2CF5F600544468 /* KeepMediaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeepMediaView.xib; sourceTree = "<group>"; };
+		2960207D1F2CF5F600544468 /* CacheView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheView.swift; sourceTree = "<group>"; };
+		2960207E1F2CF5F600544468 /* CacheView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CacheView.xib; sourceTree = "<group>"; };
 		296020821F2CF5F600544468 /* NetworkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkView.swift; sourceTree = "<group>"; };
 		296020831F2CF5F600544468 /* NetworkView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetworkView.xib; sourceTree = "<group>"; };
 		296020851F2CF5F600544468 /* MediaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaView.swift; sourceTree = "<group>"; };
@@ -263,6 +284,7 @@
 		296020FE1F2CF5F600544468 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		296021011F2CF5F600544468 /* camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = camera.swift; sourceTree = "<group>"; };
 		296021051F2CF5F600544468 /* converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = converter.swift; sourceTree = "<group>"; };
+		296021081F2CF5F600544468 /* CacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		2960210A1F2CF5F600544468 /* DownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		2960210C1F2CF5F600544468 /* MediaLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaLoader.swift; sourceTree = "<group>"; };
 		2960210E1F2CF5F600544468 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
@@ -508,6 +530,8 @@
 			children = (
 				2960201D1F2CF5F600544468 /* SelectUsersCell.swift */,
 				2960201E1F2CF5F600544468 /* SelectUsersCell.xib */,
+				296020201F2CF5F600544468 /* SelectUsersView.swift */,
+				296020211F2CF5F600544468 /* SelectUsersView.xib */,
 			);
 			path = SelectUsers;
 			sourceTree = "<group>";
@@ -562,6 +586,8 @@
 				296020591F2CF5F600544468 /* 01_EditProfile */,
 				2960205D1F2CF5F600544468 /* 02_Password */,
 				296020611F2CF5F600544468 /* 03_Status */,
+				296020701F2CF5F600544468 /* 05_Archive */,
+				296020771F2CF5F600544468 /* 06_Cache */,
 				2960207F1F2CF5F600544468 /* 07_Media */,
 				296020871F2CF5F600544468 /* 08_Wallpapers */,
 				296020A21F2CF5F600544468 /* SettingsView.swift */,
@@ -595,6 +621,36 @@
 				296020681F2CF5F600544468 /* StatusView.xib */,
 			);
 			path = 03_Status;
+			sourceTree = "<group>";
+		};
+		296020701F2CF5F600544468 /* 05_Archive */ = {
+			isa = PBXGroup;
+			children = (
+				296020721F2CF5F600544468 /* ArchiveCell.swift */,
+				296020731F2CF5F600544468 /* ArchiveCell.xib */,
+				296020751F2CF5F600544468 /* ArchiveView.swift */,
+				296020761F2CF5F600544468 /* ArchiveView.xib */,
+			);
+			path = 05_Archive;
+			sourceTree = "<group>";
+		};
+		296020771F2CF5F600544468 /* 06_Cache */ = {
+			isa = PBXGroup;
+			children = (
+				296020781F2CF5F600544468 /* 01_KeepMedia */,
+				2960207D1F2CF5F600544468 /* CacheView.swift */,
+				2960207E1F2CF5F600544468 /* CacheView.xib */,
+			);
+			path = 06_Cache;
+			sourceTree = "<group>";
+		};
+		296020781F2CF5F600544468 /* 01_KeepMedia */ = {
+			isa = PBXGroup;
+			children = (
+				2960207A1F2CF5F600544468 /* KeepMediaView.swift */,
+				2960207B1F2CF5F600544468 /* KeepMediaView.xib */,
+			);
+			path = 01_KeepMedia;
 			sourceTree = "<group>";
 		};
 		2960207F1F2CF5F600544468 /* 07_Media */ = {
@@ -693,6 +749,7 @@
 		296021061F2CF5F600544468 /* manager */ = {
 			isa = PBXGroup;
 			children = (
+				296021081F2CF5F600544468 /* CacheManager.swift */,
 				2960210A1F2CF5F600544468 /* DownloadManager.swift */,
 				2960210C1F2CF5F600544468 /* MediaLoader.swift */,
 				2960210E1F2CF5F600544468 /* RealmManager.swift */,
@@ -735,10 +792,10 @@
 		2960212F1F2CF5F600544468 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
+				71EBE2AA2277E27200683CCB /* RoundedWhiteButton.swift */,
 				296021301F2CF5F600544468 /* LoginEmail */,
 				296021401F2CF5F600544468 /* RegisterEmail */,
 				296021451F2CF5F600544468 /* WelcomeView.swift */,
-				71EBE2AA2277E27200683CCB /* RoundedWhiteButton.swift */,
 				296021461F2CF5F600544468 /* WelcomeView.xib */,
 			);
 			path = Welcome;
@@ -1237,8 +1294,10 @@
 				29BB8FBB1F5C266100560F3F /* profile_blank@2x.png in Resources */,
 				29BB8FCC1F5C266100560F3F /* wallpaper_selected@2x.png in Resources */,
 				2989906A1F1B6FFD00AC73B3 /* wallpapers04@2x.jpg in Resources */,
+				296021931F2CF5F600544468 /* ArchiveView.xib in Resources */,
 				29BB8FB01F5C266100560F3F /* chat_video@2x.png in Resources */,
 				29BB8FBA1F5C266100560F3F /* people_blank@2x.png in Resources */,
+				296021971F2CF5F600544468 /* CacheView.xib in Resources */,
 				29BB8FCB1F5C266100560F3F /* tab_settings@2x.png in Resources */,
 				29BB8FC21F5C266100560F3F /* selectuser_blank@2x.png in Resources */,
 				29D7606C20EFD4DF006C7148 /* rcmessage_send@2x.png in Resources */,
@@ -1253,6 +1312,7 @@
 				2960219F1F2CF5F600544468 /* WallpapersView.xib in Resources */,
 				29BB8FB41F5C266100560F3F /* editprofile_blank@2x.png in Resources */,
 				296021851F2CF5F600544468 /* EditProfileView.xib in Resources */,
+				296021951F2CF5F600544468 /* KeepMediaView.xib in Resources */,
 				71794A38227552080017712C /* chat_audio@2x.png in Resources */,
 				2960217D1F2CF5F600544468 /* PeopleView.xib in Resources */,
 				2960217B1F2CF5F600544468 /* PeopleCell.xib in Resources */,
@@ -1268,6 +1328,7 @@
 				29898FC81F1B6FFD00AC73B3 /* countries.plist in Resources */,
 				296021F61F2CF5F600544468 /* WelcomeView.xib in Resources */,
 				2960218B1F2CF5F600544468 /* StatusView.xib in Resources */,
+				296021911F2CF5F600544468 /* ArchiveCell.xib in Resources */,
 				29BB8F951F5C266100560F3F /* allmedia_video@2x.png in Resources */,
 				296021F41F2CF5F600544468 /* RegisterEmailView.xib in Resources */,
 				296021511F2CF5F600544468 /* AllMediaView.xib in Resources */,
@@ -1277,6 +1338,7 @@
 				294E496C1F8A6AA800045345 /* AddFriendsView.xib in Resources */,
 				29BB8F931F5C266100560F3F /* allmedia_blank@2x.png in Resources */,
 				2989906F1F1B6FFD00AC73B3 /* wallpapers09@2x.jpg in Resources */,
+				296021651F2CF5F600544468 /* SelectUsersView.xib in Resources */,
 				7151E0C722764D1900F966BA /* GoogleService-Info.plist in Resources */,
 				296021AB1F2CF5F600544468 /* SettingsView.xib in Resources */,
 				294E496B1F8A6AA800045345 /* AddFriendsCell.xib in Resources */,
@@ -1370,6 +1432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				296021921F2CF5F600544468 /* ArchiveView.swift in Sources */,
 				2921ADC01F8BA13500B70B2F /* DBFriend.swift in Sources */,
 				296021471F2CF5F600544468 /* ChatPrivateView.swift in Sources */,
 				29D7605320EFD49D006C7148 /* RCMenuItem.swift in Sources */,
@@ -1378,11 +1441,13 @@
 				29D7607A20EFD552006C7148 /* RCMessagesView.swift in Sources */,
 				2960215C1F2CF5F600544468 /* CountriesView.swift in Sources */,
 				296021741F2CF5F600544468 /* ChatsCell.swift in Sources */,
+				296021641F2CF5F600544468 /* SelectUsersView.swift in Sources */,
 				29D7605420EFD49D006C7148 /* RCTextMessageCell.swift in Sources */,
 				29D7605520EFD49D006C7148 /* RCEmojiMessageCell.swift in Sources */,
 				2931FF1120ECDFC5002C0A97 /* PictureView.swift in Sources */,
 				296021BB1F2CF5F600544468 /* Users.swift in Sources */,
 				296021501F2CF5F600544468 /* AllMediaView.swift in Sources */,
+				296021941F2CF5F600544468 /* KeepMediaView.swift in Sources */,
 				296021DC1F2CF5F600544468 /* RealmManager.swift in Sources */,
 				296021D31F2CF5F600544468 /* Password.swift in Sources */,
 				296021E41F2CF5F600544468 /* DBChat.swift in Sources */,
@@ -1435,6 +1500,7 @@
 				2960214E1F2CF5F600544468 /* AllMediaHeader.swift in Sources */,
 				296021F31F2CF5F600544468 /* RegisterEmailView.swift in Sources */,
 				296021E91F2CF5F600544468 /* DBUser.swift in Sources */,
+				296021901F2CF5F600544468 /* ArchiveCell.swift in Sources */,
 				299702621F9CC88900830794 /* Friend.swift in Sources */,
 				296021CC1F2CF5F600544468 /* Audio.swift in Sources */,
 				71C8B67322765CC200746A16 /* DBMessage.swift in Sources */,
@@ -1449,6 +1515,7 @@
 				296021C51F2CF5F600544468 /* user.swift in Sources */,
 				296021D81F2CF5F600544468 /* converter.swift in Sources */,
 				296021EB1F2CF5F600544468 /* LoginEmailView.swift in Sources */,
+				296021D91F2CF5F600544468 /* CacheManager.swift in Sources */,
 				296021F51F2CF5F600544468 /* WelcomeView.swift in Sources */,
 				296021481F2CF5F600544468 /* ProfileView.swift in Sources */,
 				29104BC020EFC21B003BD623 /* RCAudioPlayer.swift in Sources */,
@@ -1459,6 +1526,7 @@
 				296021D51F2CF5F600544468 /* Video.swift in Sources */,
 				296021B91F2CF5F600544468 /* Messages.swift in Sources */,
 				29D7605620EFD49D006C7148 /* RCMessageCell.swift in Sources */,
+				296021961F2CF5F600544468 /* CacheView.swift in Sources */,
 				29EABE4E20ECAC3C00A13F26 /* NavigationController.swift in Sources */,
 				2960217A1F2CF5F600544468 /* PeopleCell.swift in Sources */,
 				296021C21F2CF5F600544468 /* Message.swift in Sources */,

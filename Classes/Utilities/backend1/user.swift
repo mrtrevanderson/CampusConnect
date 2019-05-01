@@ -7,6 +7,7 @@ func LogoutUser(delAccount: Int32) {
 
 
 	if (FUser.logOut()) {
+		CacheManager.cleanupManual(logout: true)
 		RealmManager.cleanupDatabase()
 		NotificationCenterX.post(notification: NOTIFICATION_USER_LOGGED_OUT)
 	} else {
