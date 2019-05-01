@@ -24,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         config = Realm.Configuration()
         config.deleteRealmIfMigrationNeeded = true
         let realm = try! Realm()
-        
+
+
 		// Firebase initialization
 		//-----------------------------------------------------------------------------------------------------------------------------------------
 		FirebaseApp.configure()

@@ -1,3 +1,4 @@
+import RealmSwift
 @objc protocol LoginEmailDelegate: class {
 
 	func didLoginEmail()
@@ -38,7 +39,10 @@ class LoginEmailView: UIViewController, UITextFieldDelegate {
 	// MARK: - User actions
 	//----------------------------------------------
 	@IBAction func actionLogin(_ sender: Any) {
-
+        let realm = try! Realm()
+        try! realm.write {
+            realm.deleteAll()
+        }
 		var email = (fieldEmail.text ?? "").lowercased()
 		var password = fieldPassword.text ?? ""
 
