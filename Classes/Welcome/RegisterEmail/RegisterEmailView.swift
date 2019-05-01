@@ -1,3 +1,4 @@
+import RealmSwift
 @objc protocol RegisterEmailDelegate: class {
 
 	func didRegisterUser()
@@ -38,7 +39,10 @@ class RegisterEmailView: UIViewController, UITextFieldDelegate {
 	// MARK: - User actions
 	//----------------------------------------------
 	@IBAction func actionRegister(_ sender: Any) {
-
+        let realm = try! Realm()
+        try! realm.write {
+            realm.deleteAll()
+        }
 		let email = (fieldEmail.text ?? "").lowercased()
 		let password = fieldPassword.text ?? ""
 
