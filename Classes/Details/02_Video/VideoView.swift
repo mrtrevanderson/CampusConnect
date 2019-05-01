@@ -4,13 +4,13 @@ class VideoView: UIViewController {
 	private var url: URL!
 	private var controller: AVPlayerViewController?
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func myInit(url url_: URL) {
 
 		url = url_
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -19,7 +19,7 @@ class VideoView: UIViewController {
 		NotificationCenterX.addObserver(target: self, selector: #selector(actionDone), name: notification.rawValue)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewWillAppear(_ animated: Bool) {
 
 		super.viewWillAppear(animated)
@@ -37,7 +37,7 @@ class VideoView: UIViewController {
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewWillDisappear(_ animated: Bool) {
 
 		super.viewWillDisappear(animated)
@@ -46,7 +46,7 @@ class VideoView: UIViewController {
 	}
 
 	// MARK: - User actions
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	@objc func actionDone() {
 
 		dismiss(animated: true)

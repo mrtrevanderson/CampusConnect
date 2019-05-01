@@ -6,7 +6,7 @@ class MediaView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	@IBOutlet var cellVideo: UITableViewCell!
 	@IBOutlet var cellAudio: UITableViewCell!
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -15,7 +15,7 @@ class MediaView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewWillAppear(_ animated: Bool) {
 
 		super.viewWillAppear(animated)
@@ -23,7 +23,7 @@ class MediaView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		loadUser()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewDidAppear(_ animated: Bool) {
 
 		super.viewDidAppear(animated)
@@ -31,7 +31,7 @@ class MediaView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	}
 
 	// MARK: - Backend methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func loadUser() {
 
 		updateCell(selectedNetwork: FUser.networkImage(), cell: cellImage)
@@ -42,7 +42,7 @@ class MediaView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	}
 
 	// MARK: - Helper methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func updateCell(selectedNetwork: Int, cell: UITableViewCell) {
 
 		if (selectedNetwork == NETWORK_MANUAL)	{ cell.detailTextLabel?.text = "Manual"				}
@@ -51,7 +51,7 @@ class MediaView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	}
 
 	// MARK: - User actions
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func actionNetwork(mediaType: Int) {
 
 		let networkView = NetworkView()
@@ -60,19 +60,19 @@ class MediaView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	}
 
 	// MARK: - Table view data source
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func numberOfSections(in tableView: UITableView) -> Int {
 
 		return 1
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
 		return 3
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
 		if (indexPath.section == 0) && (indexPath.row == 0) { return cellImage		}
@@ -83,7 +83,7 @@ class MediaView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	}
 
 	// MARK: - Table view delegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 		tableView.deselectRow(at: indexPath, animated: true)

@@ -1,6 +1,6 @@
 class Checksum: NSObject {
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func md5HashOf(data: Data) -> String {
 
 		var digestData = Data(count: Int(CC_MD5_DIGEST_LENGTH))
@@ -18,7 +18,7 @@ class Checksum: NSObject {
 		return md5
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	class func md5HashOf(path: String) -> String {
 
 		if let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
@@ -27,7 +27,7 @@ class Checksum: NSObject {
 		return ""
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	class func md5HashOf(string: String) -> String {
 
 		if let data = string.data(using: .utf8) {

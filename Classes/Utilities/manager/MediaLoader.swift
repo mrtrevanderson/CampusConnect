@@ -1,7 +1,7 @@
 class MediaLoader: NSObject {
 
 	// MARK: - Picture public
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------
 	class func loadPicture(rcmessage: RCMessage, dbmessage: DBMessage, tableView: UITableView) {
 
 		if let path = DownloadManager.pathImage(link: dbmessage.picture) {
@@ -11,13 +11,13 @@ class MediaLoader: NSObject {
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-------------------------------------------
 	class func loadPictureManual(rcmessage: RCMessage, dbmessage: DBMessage, tableView: UITableView) {
 
 	}
 
 	// MARK: - Picture private
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//--------------------------------------------
 	class func loadPictureMedia(rcmessage: RCMessage, dbmessage: DBMessage, tableView: UITableView) {
 
 		let network = FUser.networkImage()
@@ -29,7 +29,7 @@ class MediaLoader: NSObject {
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func downloadPictureMedia(rcmessage: RCMessage, dbmessage: DBMessage, tableView: UITableView) {
 
 		rcmessage.status = Int(STATUS_LOADING)
@@ -47,7 +47,7 @@ class MediaLoader: NSObject {
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------
 	class func showPictureFile(rcmessage: RCMessage, path: String, tableView: UITableView) {
 
 		rcmessage.picture_image = UIImage(contentsOfFile: path)
@@ -55,7 +55,7 @@ class MediaLoader: NSObject {
 	}
 
 	// MARK: - Video public
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func loadVideo(rcmessage: RCMessage, dbmessage: DBMessage, tableView: UITableView) {
 
 		if let path = DownloadManager.pathVideo(link: dbmessage.video) {
@@ -65,13 +65,12 @@ class MediaLoader: NSObject {
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
 	class func loadVideoManual(rcmessage: RCMessage, dbmessage: DBMessage, tableView: UITableView) {
 
 	}
 
 	// MARK: - Video private
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func loadVideoMedia(rcmessage: RCMessage, dbmessage: DBMessage, tableView: UITableView) {
 
 		let network = FUser.networkVideo()
@@ -83,7 +82,7 @@ class MediaLoader: NSObject {
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//------------------------------------------------
 	class func downloadVideoMedia(rcmessage: RCMessage, dbmessage: DBMessage, tableView: UITableView) {
 
 		rcmessage.status = Int(STATUS_LOADING)
@@ -101,7 +100,7 @@ class MediaLoader: NSObject {
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func showVideoFile(rcmessage: RCMessage, path: String, tableView: UITableView) {
 
 		rcmessage.video_path = path
@@ -111,7 +110,7 @@ class MediaLoader: NSObject {
 	}
 
 	// MARK: - Audio public
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	class func loadAudio(rcmessage: RCMessage, dbmessage: DBMessage, tableView: UITableView) {
 
 		if let path = DownloadManager.pathAudio(link: dbmessage.audio) {
@@ -121,13 +120,13 @@ class MediaLoader: NSObject {
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func loadAudioManual(rcmessage: RCMessage, dbmessage: DBMessage, tableView: UITableView) {
 
 	}
 
 	// MARK: - Audio private
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func loadAudioMedia(rcmessage: RCMessage, dbmessage: DBMessage, tableView: UITableView) {
 
 		let network = FUser.networkAudio()
@@ -139,7 +138,7 @@ class MediaLoader: NSObject {
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func downloadAudioMedia(rcmessage: RCMessage, dbmessage: DBMessage, tableView: UITableView) {
 
 		rcmessage.status = Int(STATUS_LOADING)
@@ -157,7 +156,7 @@ class MediaLoader: NSObject {
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	class func showAudioFile(rcmessage: RCMessage, path: String, tableView: UITableView) {
 
 		rcmessage.audio_path = path

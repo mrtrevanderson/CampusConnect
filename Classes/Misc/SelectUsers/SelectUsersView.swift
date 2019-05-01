@@ -4,7 +4,7 @@
 	func didSelectUsers(users: [DBUser])
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------
 class SelectUsersView: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
 
 	@IBOutlet weak var delegate: SelectUsersDelegate?
@@ -20,7 +20,7 @@ class SelectUsersView: UIViewController, UISearchBarDelegate, UITableViewDataSou
 	private var sections: [[DBUser]] = []
 	private let collation = UILocalizedIndexedCollation.current()
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -36,7 +36,7 @@ class SelectUsersView: UIViewController, UISearchBarDelegate, UITableViewDataSou
 		loadBlockers()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewWillDisappear(_ animated: Bool) {
 
 		super.viewWillDisappear(animated)
@@ -44,21 +44,21 @@ class SelectUsersView: UIViewController, UISearchBarDelegate, UITableViewDataSou
 		dismissKeyboard()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func dismissKeyboard() {
 
 		view.endEditing(true)
 	}
 
 	// MARK: - Realm methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func loadBlockers() {
 		let predicate = NSPredicate(format: "isDeleted == NO")
 
 		loadFriends()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func loadFriends() {
 
 		friendIds.removeAll()
@@ -74,7 +74,7 @@ class SelectUsersView: UIViewController, UISearchBarDelegate, UITableViewDataSou
 		loadUsers()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func loadUsers() {
 
 		var predicate = NSPredicate(format: "NOT objectId IN %@ AND objectId IN %@", blockerIds, friendIds)
@@ -91,14 +91,14 @@ class SelectUsersView: UIViewController, UISearchBarDelegate, UITableViewDataSou
 	}
 
 	// MARK: - Refresh methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func refreshTableView() {
 
 		setObjects()
 		tableView.reloadData()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func setObjects() {
 
 		sections.removeAll()
@@ -119,13 +119,13 @@ class SelectUsersView: UIViewController, UISearchBarDelegate, UITableViewDataSou
 	}
 
 	// MARK: - User actions
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@objc func actionCancel() {
 
 		dismiss(animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@objc func actionDone() {
 
 		if (selection.count == 0) {
@@ -148,44 +148,44 @@ class SelectUsersView: UIViewController, UISearchBarDelegate, UITableViewDataSou
 	}
 
 	// MARK: - UIScrollViewDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
 
 		dismissKeyboard()
 	}
 
 	// MARK: - Table view data source
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func numberOfSections(in tableView: UITableView) -> Int {
 
 		return sections.count
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
 		return sections[section].count
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 
 		return (sections[section].count != 0) ? collation.sectionTitles[section] : nil
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func sectionIndexTitles(for tableView: UITableView) -> [String]? {
 
 		return collation.sectionIndexTitles
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
 
 		return collation.section(forSectionIndexTitle: index)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
 		let cell = tableView.dequeueReusableCell(withIdentifier: "SelectUsersCell", for: indexPath) as! SelectUsersCell
@@ -201,7 +201,7 @@ class SelectUsersView: UIViewController, UISearchBarDelegate, UITableViewDataSou
 	}
 
 	// MARK: - Table view delegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 		tableView.deselectRow(at: indexPath, animated: true)
@@ -221,25 +221,25 @@ class SelectUsersView: UIViewController, UISearchBarDelegate, UITableViewDataSou
 	}
 
 	// MARK: - UISearchBarDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
 		loadUsers()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func searchBarTextDidBeginEditing(_ searchBar_: UISearchBar) {
 
 		searchBar.setShowsCancelButton(true, animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func searchBarTextDidEndEditing(_ searchBar_: UISearchBar) {
 
 		searchBar.setShowsCancelButton(false, animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func searchBarCancelButtonClicked(_ searchBar_: UISearchBar) {
 
 		searchBar.text = ""
@@ -247,7 +247,7 @@ class SelectUsersView: UIViewController, UISearchBarDelegate, UITableViewDataSou
 		loadUsers()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func searchBarSearchButtonClicked(_ searchBar_: UISearchBar) {
 
 		searchBar.resignFirstResponder()

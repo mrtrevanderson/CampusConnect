@@ -1,6 +1,6 @@
 class UploadManager: NSObject {
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func upload(data: Data, name: String, ext: String, completion: @escaping (_ link: String?, _ error: Error?) -> Void) {
 		
 		let timestamp = Date().timestamp()
@@ -26,7 +26,7 @@ class UploadManager: NSObject {
 		})
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	class func upload(data: Data, name: String, ext: String, progress: @escaping (_ progress: Float) -> Void,
 					  completion: @escaping (_ link: String?, _ error: Error?) -> Void) {
 

@@ -19,7 +19,7 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 	private var timer: Timer?
 	private var dbuser: DBUser!
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//---------------------------------------------
 	func myInit(userId userId_: String, chat chat_: Bool) {
 
 		userId = userId_
@@ -27,7 +27,7 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -43,7 +43,7 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 		loadUser()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewWillAppear(_ animated: Bool) {
 
 		super.viewWillAppear(animated)
@@ -51,7 +51,7 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 		timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(loadUser), userInfo: nil, repeats: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	override func viewWillDisappear(_ animated: Bool) {
 
 		super.viewWillDisappear(animated)
@@ -61,7 +61,7 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 	}
 
 	// MARK: - Realm methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@objc func loadUser() {
 
 		let predicate = NSPredicate(format: "objectId == %@", userId)
@@ -88,7 +88,7 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 	}
 
 	// MARK: - User actions
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@IBAction func actionPhoto(_ sender: Any) {
 
 		if let picture = imageUser.image {
@@ -98,7 +98,7 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 
 
 
@@ -113,7 +113,7 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 		navigationController?.pushViewController(allMediaView, animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func actionChatPrivate() {
 
 		let chatPrivateView = ChatPrivateView()
@@ -122,13 +122,13 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 	}
 
 	// MARK: - User actions (Friend/Unfriend)
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func actionFriendOrUnfriend() {
 
 		Friend.isFriend(userId: userId) ? actionUnfriend() : actionFriend()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func actionFriend() {
 
 		let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -141,14 +141,14 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 		present(alert, animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func actionFriendUser() {
 
 		Friend.createItem(userId: userId)
 		cellFriend.textLabel?.text = "Remove Friend"
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func actionUnfriend() {
 
 		let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -161,32 +161,22 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 		present(alert, animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func actionUnfriendUser() {
 
 		Friend.deleteItem(userId: userId)
 		cellFriend.textLabel?.text = "Add Friend"
 	}
 
-	// MARK: - User actions (Block/Unblock)
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-
 
 	// MARK: - Table view data source
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func numberOfSections(in tableView: UITableView) -> Int {
 
 		return 3
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
 		if (section == 0) {		return 3 }
@@ -196,7 +186,7 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 		return 0
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
 		if (indexPath.section == 0) && (indexPath.row == 0) {	return cellStatus			}
@@ -210,8 +200,8 @@ class ProfileView: UIViewController, UITableViewDataSource, UITableViewDelegate 
 	}
 
 	// MARK: - Table view delegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+	//----------------------------------------------
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 		tableView.deselectRow(at: indexPath, animated: true)
 

@@ -9,7 +9,7 @@ class ArchiveCell: MGSwipeTableCell {
 	@IBOutlet var labelElapsed: UILabel!
 	@IBOutlet var imageMuted: UIImageView!
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func bindData(dbchat: DBChat) {
 
 		let lastRead = Status.lastRead(chatId: dbchat.chatId)
@@ -24,7 +24,7 @@ class ArchiveCell: MGSwipeTableCell {
 		imageMuted.isHidden = (mutedUntil < Date().timestamp())
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func loadImage(dbchat: DBChat, tableView: UITableView, indexPath: IndexPath) {
 
 		imageUser.layer.cornerRadius = imageUser.frame.size.width / 2
@@ -40,7 +40,7 @@ class ArchiveCell: MGSwipeTableCell {
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//------------------------------------------------
 	func downloadImage(dbchat: DBChat, tableView: UITableView, indexPath: IndexPath) {
 
 		DownloadManager.image(link: dbchat.picture) { path, error, network in

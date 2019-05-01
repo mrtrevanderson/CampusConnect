@@ -6,14 +6,14 @@ class AddFriendsCell: UITableViewCell {
 	@IBOutlet var labelName: UILabel!
 	@IBOutlet var labelStatus: UILabel!
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func bindData(user: FUser) {
 
 		labelName.text = user[FUSER_FULLNAME] as? String
 		labelStatus.text = user[FUSER_STATUS] as? String
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func loadImage(user: FUser, tableView: UITableView, indexPath: IndexPath) {
 
 		imageUser.layer.cornerRadius = imageUser.frame.size.width / 2
@@ -34,7 +34,7 @@ class AddFriendsCell: UITableViewCell {
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func downloadImage(thumbnail: String, tableView: UITableView, indexPath: IndexPath) {
 
 		DownloadManager.image(link: thumbnail) { path, error, network in

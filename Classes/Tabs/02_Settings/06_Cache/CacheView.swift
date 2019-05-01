@@ -99,7 +99,7 @@ class CacheView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		return 50
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
 		if (indexPath.section == 0) && (indexPath.row == 0) { return cellKeepMedia		}
@@ -111,7 +111,7 @@ class CacheView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	}
 
 	// MARK: - Table view delegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 		tableView.deselectRow(at: indexPath, animated: true)

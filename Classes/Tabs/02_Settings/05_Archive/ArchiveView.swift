@@ -7,7 +7,7 @@ class ArchiveView: UIViewController, UISearchBarDelegate, UITableViewDataSource,
 	private var timer: Timer?
 	private var dbchats: RLMResults = DBChat.objects(with: NSPredicate(value: false))
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -20,7 +20,7 @@ class ArchiveView: UIViewController, UISearchBarDelegate, UITableViewDataSource,
 		loadChats()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	override func viewWillAppear(_ animated: Bool) {
 
 		super.viewWillAppear(animated)
@@ -30,7 +30,7 @@ class ArchiveView: UIViewController, UISearchBarDelegate, UITableViewDataSource,
 		refreshTableView()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	override func viewWillDisappear(_ animated: Bool) {
 
 		super.viewWillDisappear(animated)
@@ -40,7 +40,7 @@ class ArchiveView: UIViewController, UISearchBarDelegate, UITableViewDataSource,
 	}
 
 	// MARK: - Realm methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func loadChats() {
 
 		var predicate = NSPredicate(format: "isArchived == YES AND isDeleted == NO")
@@ -57,16 +57,14 @@ class ArchiveView: UIViewController, UISearchBarDelegate, UITableViewDataSource,
 	}
 
 	// MARK: - Refresh methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	@objc func refreshTableView() {
 
 		tableView.reloadData()
 	}
 
 	// MARK: - User actions
-	//---------------------------------------------------------------------------------------------------------------------------------------------
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func actionChatPrivate(recipientId: String) {
 
 		let chatPrivateView = ChatPrivateView()
@@ -74,7 +72,7 @@ class ArchiveView: UIViewController, UISearchBarDelegate, UITableViewDataSource,
 		navigationController?.pushViewController(chatPrivateView, animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func actionMore(index: Int) {
 
 		let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -87,7 +85,7 @@ class ArchiveView: UIViewController, UISearchBarDelegate, UITableViewDataSource,
 		present(alert, animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func actionUnarchive(index: Int) {
 
 		let dbchat = dbchats[UInt(index)] as! DBChat
@@ -103,7 +101,7 @@ class ArchiveView: UIViewController, UISearchBarDelegate, UITableViewDataSource,
 		NotificationCenterX.post(notification: NOTIFICATION_REFRESH_CHATS)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func actionDelete(index: Int) {
 
 		let dbchat = dbchats[UInt(index)] as! DBChat
@@ -118,32 +116,31 @@ class ArchiveView: UIViewController, UISearchBarDelegate, UITableViewDataSource,
 	}
 
 	// MARK: - UIScrollViewDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
 
 		view.endEditing(true)
 	}
 
 	// MARK: - Table view data source
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func numberOfSections(in tableView: UITableView) -> Int {
 
 		return 1
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
 		return Int(dbchats.count)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
 		let cell = tableView.dequeueReusableCell(withIdentifier: "ArchiveCell", for: indexPath) as! ArchiveCell
 
-		cell.rightButtons = [MGSwipeButton(title: "Delete", backgroundColor: UIColor.red),
-							 MGSwipeButton(title: "More", backgroundColor: UIColor.lightGray)]
+		cell.rightButtons = [MGSwipeButton(title: "Delete", backgroundColor: UIColor.red)]
 
 		cell.delegate = self
 		cell.tag = indexPath.row
@@ -156,7 +153,7 @@ class ArchiveView: UIViewController, UISearchBarDelegate, UITableViewDataSource,
 	}
 
 	// MARK: - MGSwipeTableCellDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func swipeTableCell(_ cell: MGSwipeTableCell, tappedButtonAt index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
 
 		if (index == 0) { actionDelete(index: cell.tag)	}
@@ -166,7 +163,7 @@ class ArchiveView: UIViewController, UISearchBarDelegate, UITableViewDataSource,
 	}
 
 	// MARK: - Table view delegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 		tableView.deselectRow(at: indexPath, animated: true)
@@ -176,25 +173,25 @@ class ArchiveView: UIViewController, UISearchBarDelegate, UITableViewDataSource,
 	}
 
 	// MARK: - UISearchBarDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
 		loadChats()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func searchBarTextDidBeginEditing(_ searchBar_: UISearchBar) {
 
 		searchBar.setShowsCancelButton(true, animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func searchBarTextDidEndEditing(_ searchBar_: UISearchBar) {
 
 		searchBar.setShowsCancelButton(false, animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func searchBarCancelButtonClicked(_ searchBar_: UISearchBar) {
 
 		searchBar.text = ""
@@ -202,7 +199,7 @@ class ArchiveView: UIViewController, UISearchBarDelegate, UITableViewDataSource,
 		loadChats()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func searchBarSearchButtonClicked(_ searchBar_: UISearchBar) {
 
 		searchBar.resignFirstResponder()

@@ -26,7 +26,7 @@ func PresentPhotoCamera(target: Any, edit: Bool) {
 	}
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------
 func PresentVideoCamera(target: Any, edit: Bool) {
 
 	let type = kUTTypeMovie as String
@@ -56,7 +56,7 @@ func PresentVideoCamera(target: Any, edit: Bool) {
 	}
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------
 func PresentMultiCamera(target: Any, edit: Bool) {
 
 	let type1 = kUTTypeImage as String
@@ -87,7 +87,7 @@ func PresentMultiCamera(target: Any, edit: Bool) {
 	}
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------
 func PresentPhotoLibrary(target: Any, edit: Bool) {
 
 	let type = kUTTypeImage as String
@@ -124,7 +124,7 @@ func PresentPhotoLibrary(target: Any, edit: Bool) {
 	}
 }
 
-//-------------------------------------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------
 func PresentVideoLibrary(target: Any, edit: Bool) {
 
 	let type = kUTTypeMovie as String

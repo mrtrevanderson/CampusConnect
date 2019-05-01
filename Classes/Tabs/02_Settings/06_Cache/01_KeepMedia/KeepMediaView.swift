@@ -8,7 +8,7 @@ class KeepMediaView: UIViewController, UITableViewDataSource, UITableViewDelegat
 
 	private var keepMedia: Int = 0
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -17,15 +17,15 @@ class KeepMediaView: UIViewController, UITableViewDataSource, UITableViewDelegat
 		loadUser()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func loadUser() {
 
 		keepMedia = FUser.keepMedia()
 		updateDetails()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	func saveUser() {
+	//----------------------------------------------
+    func saveUser() {
 
 		let user = FUser.currentUser()
 
@@ -39,19 +39,19 @@ class KeepMediaView: UIViewController, UITableViewDataSource, UITableViewDelegat
 	}
 
 	// MARK: - Table view data source
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func numberOfSections(in tableView: UITableView) -> Int {
 
 		return 1
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
 		return 3
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
 		if (indexPath.section == 0) && (indexPath.row == 0) { return cellWeek		}
@@ -62,7 +62,7 @@ class KeepMediaView: UIViewController, UITableViewDataSource, UITableViewDelegat
 	}
 
 	// MARK: - Table view delegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 		tableView.deselectRow(at: indexPath, animated: true)
@@ -76,7 +76,7 @@ class KeepMediaView: UIViewController, UITableViewDataSource, UITableViewDelegat
 	}
 
 	// MARK: - Helper methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func updateDetails() {
 
 		cellWeek.accessoryType = (keepMedia == KEEPMEDIA_WEEK) ? .checkmark : .none

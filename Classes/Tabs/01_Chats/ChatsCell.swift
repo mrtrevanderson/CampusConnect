@@ -9,7 +9,7 @@ class ChatsCell: MGSwipeTableCell {
 	@IBOutlet var labelElapsed: UILabel!
 	@IBOutlet var imageMuted: UIImageView!
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func bindData(dbchat: DBChat) {
 
 		let lastRead = Status.lastRead(chatId: dbchat.chatId)
@@ -23,7 +23,7 @@ class ChatsCell: MGSwipeTableCell {
 		labelElapsed.text = TimeElapsed(timestamp: dbchat.lastMessageDate)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func loadImage(dbchat: DBChat, tableView: UITableView) {
 
 		imageUser.layer.cornerRadius = imageUser.frame.size.width / 2
@@ -39,7 +39,7 @@ class ChatsCell: MGSwipeTableCell {
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func downloadImage(dbchat: DBChat, tableView: UITableView) {
 
 		DownloadManager.image(link: dbchat.picture) { path, error, network in

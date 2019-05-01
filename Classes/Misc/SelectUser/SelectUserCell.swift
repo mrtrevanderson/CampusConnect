@@ -6,14 +6,14 @@ class SelectUserCell: UITableViewCell {
 	@IBOutlet var labelName: UILabel!
 	@IBOutlet var labelStatus: UILabel!
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func bindData(dbuser: DBUser) {
 
 		labelName.text = dbuser.fullname
 		labelStatus.text = dbuser.status
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func loadImage(dbuser: DBUser, tableView: UITableView, indexPath: IndexPath) {
 
 		imageUser.layer.cornerRadius = imageUser.frame.size.width / 2
@@ -34,7 +34,7 @@ class SelectUserCell: UITableViewCell {
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func downloadImage(dbuser: DBUser, tableView: UITableView, indexPath: IndexPath) {
 
 		DownloadManager.image(link: dbuser.thumbnail) { path, error, network in

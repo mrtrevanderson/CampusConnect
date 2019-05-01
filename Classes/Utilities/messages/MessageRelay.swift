@@ -1,6 +1,6 @@
 class MessageRelay: NSObject {
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func send(dbmessage: DBMessage, completion: @escaping (_ error: Error?) -> Void) {
 
 		let message = FObject(path: FMESSAGE_PATH)
@@ -51,7 +51,7 @@ class MessageRelay: NSObject {
 		if (dbmessage.type == MESSAGE_AUDIO)	{ sendAudioMessage(message: message, completion: completion)	}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	class func sendPictureMessage(message: FObject, completion: @escaping (_ error: Error?) -> Void) {
 
 		let chatId = message[FMESSAGE_CHATID] as! String
@@ -74,7 +74,7 @@ class MessageRelay: NSObject {
 		} else { completion(NSError.description("Missing media file.", code: 103)) }
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	class func sendVideoMessage(message: FObject, completion: @escaping (_ error: Error?) -> Void) {
 
 		let chatId = message[FMESSAGE_CHATID] as! String
@@ -97,7 +97,7 @@ class MessageRelay: NSObject {
 		} else { completion(NSError.description("Missing media file.", code: 103)) }
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	class func sendAudioMessage(message: FObject, completion: @escaping (_ error: Error?) -> Void) {
 
 		let chatId = message[FMESSAGE_CHATID] as! String
@@ -120,7 +120,7 @@ class MessageRelay: NSObject {
 		} else { completion(NSError.description("Missing media file.", code: 103)) }
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func sendMessage(message: FObject, completion: @escaping (_ error: Error?) -> Void) {
 
 		var multiple: [String: Any] = [:]

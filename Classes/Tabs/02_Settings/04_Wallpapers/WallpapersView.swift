@@ -5,7 +5,7 @@ class WallpapersView: UIViewController, UIImagePickerControllerDelegate, UINavig
 
 	private var wallpapers: [String] = []
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -19,7 +19,7 @@ class WallpapersView: UIViewController, UIImagePickerControllerDelegate, UINavig
 	}
 
 	// MARK: - Load stickers
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func loadWallpapers() {
 
 		if let files = try? FileManager.default.contentsOfDirectory(atPath: Dir.application()) {
@@ -32,7 +32,7 @@ class WallpapersView: UIViewController, UIImagePickerControllerDelegate, UINavig
 	}
 
 	// MARK: - Backend methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func saveUser(path: String) {
 
 		let user = FUser.currentUser()
@@ -47,41 +47,40 @@ class WallpapersView: UIViewController, UIImagePickerControllerDelegate, UINavig
 	}
 
 	// MARK: - User actions
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	@objc func actionCancel() {
 
 		dismiss(animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func actionDone() {
 
 		dismiss(animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
 	
 
 	// MARK: - UIImagePickerControllerDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
 
 	}
 
 	// MARK: - UICollectionViewDataSource
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 
 		return 1
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
 		return wallpapers.count
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WallpapersCell", for: indexPath) as! WallpapersCell
@@ -92,7 +91,6 @@ class WallpapersView: UIViewController, UIImagePickerControllerDelegate, UINavig
 	}
 
 	// MARK: - UICollectionViewDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
 		collectionView.deselectItem(at: indexPath, animated: true)

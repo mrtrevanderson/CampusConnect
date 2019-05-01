@@ -7,7 +7,7 @@ class StatusView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
 	private var dbuserstatuses: RLMResults = DBUserStatus.objects(with: NSPredicate(value: false))
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -16,7 +16,7 @@ class StatusView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		loadStatuses()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	override func viewWillAppear(_ animated: Bool) {
 
 		super.viewWillAppear(animated)
@@ -25,19 +25,19 @@ class StatusView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	}
 
 	// MARK: - Backend actions
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func loadStatuses() {
 
 		dbuserstatuses = DBUserStatus.allObjects().sortedResults(usingKeyPath: FUSERSTATUS_CREATEDAT, ascending: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func loadUser() {
 
 		cellStatus.textLabel?.text = FUser.status()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func saveUser(status: String) {
 
 		let user = FUser.currentUser()
@@ -52,13 +52,13 @@ class StatusView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	}
 
 	// MARK: - Table view data source
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func numberOfSections(in tableView: UITableView) -> Int {
 
 		return (dbuserstatuses.count == 0) ? 1 : 3
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
 		if (section == 0) { return 1							}
@@ -68,7 +68,7 @@ class StatusView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		return 0
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 
 		if (section == 0) { return "Your current major is"	}
@@ -77,7 +77,7 @@ class StatusView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 		return nil
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
 		if (indexPath.section == 0) && (indexPath.row == 0) {
@@ -102,7 +102,7 @@ class StatusView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	}
 
 	// MARK: - Table view delegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 		tableView.deselectRow(at: indexPath, animated: true)
@@ -121,7 +121,7 @@ class StatusView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	}
 
 	// MARK: - Helper methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func updateStatus(status: String) {
 
 		cellStatus.textLabel?.text = status

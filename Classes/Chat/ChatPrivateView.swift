@@ -20,7 +20,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	private var timer: Timer?
 	private var indexForward: IndexPath?
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	func myInit(recipientId recipientId_: String) {
 
 		recipientId = recipientId_
@@ -28,7 +28,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		chatId = Chat.chatId(recipientId: recipientId)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -63,7 +63,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		createLastReadObservers()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	override func viewWillAppear(_ animated: Bool) {
 
 		super.viewWillAppear(animated)
@@ -77,7 +77,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		updateTitleDetails()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewDidDisappear(_ animated: Bool) {
 
 		super.viewDidDisappear(animated)
@@ -91,7 +91,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	}
 
 	// MARK: - Realm methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func loadMessages() {
 
 		let predicate = NSPredicate(format: "chatId == %@ AND isDeleted == NO", chatId)
@@ -99,7 +99,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	}
 
 	// MARK: - DBMessage methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func index(_ indexPath: IndexPath) -> Int {
 
 		let count = min(insertCounter, Int(dbmessages.count))
@@ -108,14 +108,14 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		return (indexPath.section + offset)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func dbmessage(_ indexPath: IndexPath) -> DBMessage {
 
 		let index = self.index(indexPath)
 		return dbmessages[UInt(index)] as! DBMessage
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func dbmessageAbove(_ indexPath: IndexPath) -> DBMessage? {
 
 		if (indexPath.section > 0) {
@@ -126,7 +126,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	}
 
 	// MARK: - Message methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func rcmessage(_ indexPath: IndexPath) -> RCMessage {
 
 		let dbmessage = self.dbmessage(indexPath)
@@ -172,14 +172,14 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	}
 
 	// MARK: - Avatar methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func avatarInitials(_ indexPath: IndexPath) -> String {
 
 		let dbmessage = self.dbmessage(indexPath)
 		return dbmessage.senderInitials
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	override func avatarImage(_ indexPath: IndexPath) -> UIImage? {
 
 		let dbmessage = self.dbmessage(indexPath)
@@ -191,7 +191,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		return avatarImages[dbmessage.senderId]
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func loadAvatarImage(_ dbmessage: DBMessage) {
 
 		let userId = dbmessage.senderId
@@ -215,7 +215,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	}
 
 	// MARK: - Header, Footer methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func textSectionHeader(_ indexPath: IndexPath) -> String? {
 
 		if (indexPath.section % 3 == 0) {
@@ -436,13 +436,13 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 		present(alert, animated: true)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func actionSendMessage(_ text: String) {
 
 		messageSend(text, picture: nil, video: nil, audio: nil)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func actionAudio() {
 
 		let audioView = AudioView()
@@ -453,7 +453,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 
 
 	// MARK: - UIImagePickerControllerDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
 
 		let video = info[.mediaURL] as? URL
@@ -465,7 +465,7 @@ class ChatPrivateView: RCMessagesView, UIGestureRecognizerDelegate, UIImagePicke
 	}
 
 	// MARK: - AudioDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func didRecordAudio(path: String) {
 
 		messageSend(nil, picture: nil, video: nil, audio: path)

@@ -1,6 +1,6 @@
 class Image: NSObject {
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func square(image: UIImage, size: CGFloat) -> UIImage {
 
 		var cropped: UIImage!
@@ -18,7 +18,7 @@ class Image: NSObject {
 		return resize(image: cropped, width: size, height: size, scale: 1)
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func resize(image: UIImage, width: CGFloat, height: CGFloat, scale: CGFloat) -> UIImage {
 
 		let size = CGSize(width: width, height: height)
@@ -32,7 +32,7 @@ class Image: NSObject {
 		return resized
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//-----------------------------------------------
 	class func crop(image: UIImage, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat) -> UIImage {
 
 		let rect = CGRect(x: x, y: y, width: width, height: height)

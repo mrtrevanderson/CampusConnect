@@ -1,6 +1,6 @@
 class Friend: NSObject {
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func createItem(userId: String) {
 
 		let object = FObject(path: FFRIEND_PATH, subpath: FUser.currentId())
@@ -16,7 +16,7 @@ class Friend: NSObject {
 		})
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func deleteItem(userId: String) {
 
 		let object = FObject(path: FFRIEND_PATH, subpath: FUser.currentId())
@@ -31,7 +31,7 @@ class Friend: NSObject {
 		})
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	class func isFriend(userId: String) -> Bool {
 
 		let predicate = NSPredicate(format: "friendId == %@ AND isDeleted == NO", userId)

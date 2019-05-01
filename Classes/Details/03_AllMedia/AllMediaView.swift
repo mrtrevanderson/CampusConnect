@@ -17,13 +17,13 @@ class AllMediaView: UIViewController, UICollectionViewDataSource, UICollectionVi
 	private var buttonDone: UIBarButtonItem?
 	private var buttonSelect: UIBarButtonItem?
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func myInit(chatId chatId_: String) {
 
 		chatId = chatId_
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
@@ -40,7 +40,7 @@ class AllMediaView: UIViewController, UICollectionViewDataSource, UICollectionVi
 	}
 
 	// MARK: - Load methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func loadMedia() {
 
 		months.removeAll()
@@ -94,7 +94,7 @@ class AllMediaView: UIViewController, UICollectionViewDataSource, UICollectionVi
 	}
 
 	// MARK: - User actions
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@objc func actionCancel() {
 
 		isSelecting = false
@@ -104,20 +104,15 @@ class AllMediaView: UIViewController, UICollectionViewDataSource, UICollectionVi
 		collectionView.reloadData()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	@objc func actionSelect() {
 
 		isSelecting = true
 		updateDetails()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-	
-	//---------------------------------------------------------------------------------------------------------------------------------------------
-
-
 	// MARK: - Helper methods
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func updateDetails() {
 
 		navigationItem.rightBarButtonItem = (isSelecting) ? buttonDone : buttonSelect
@@ -130,13 +125,13 @@ class AllMediaView: UIViewController, UICollectionViewDataSource, UICollectionVi
 	}
 
 	// MARK: - UICollectionViewDataSource
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 
 		return months.count
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
 		let month = months[section]
@@ -146,7 +141,7 @@ class AllMediaView: UIViewController, UICollectionViewDataSource, UICollectionVi
 		return 0
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 
 		if (kind == UICollectionView.elementKindSectionHeader) {
@@ -157,7 +152,7 @@ class AllMediaView: UIViewController, UICollectionViewDataSource, UICollectionVi
 		return UICollectionReusableView()
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AllMediaCell", for: indexPath) as! AllMediaCell
@@ -173,7 +168,7 @@ class AllMediaView: UIViewController, UICollectionViewDataSource, UICollectionVi
 	}
 
 	// MARK: - UICollectionViewDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
 		collectionView.deselectItem(at: indexPath, animated: true)
@@ -204,7 +199,7 @@ class AllMediaView: UIViewController, UICollectionViewDataSource, UICollectionVi
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func showPicture(dbmessage: DBMessage) {
 
 		if let path = DownloadManager.pathImage(link: dbmessage.picture) {
@@ -220,7 +215,7 @@ class AllMediaView: UIViewController, UICollectionViewDataSource, UICollectionVi
 		}
 	}
 
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func showVideo(dbmessage: DBMessage) {
 
 		if let path = DownloadManager.pathVideo(link: dbmessage.video) {
@@ -232,7 +227,7 @@ class AllMediaView: UIViewController, UICollectionViewDataSource, UICollectionVi
 	}
 
 	// MARK: - NYTPhotosViewControllerDelegate
-	//---------------------------------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------
 	func photosViewControllerWillDismiss(_ photosViewController: NYTPhotosViewController) {
 
 		loadMedia()
